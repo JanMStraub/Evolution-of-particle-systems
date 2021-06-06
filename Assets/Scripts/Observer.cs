@@ -8,6 +8,7 @@ public class Observer : MonoBehaviour {
     void Awake() {
         for (int i = 0; i < 9; i++) {
             Instantiate(Agent);
+            
         }
     }
 }
