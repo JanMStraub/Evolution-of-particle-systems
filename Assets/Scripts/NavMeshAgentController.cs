@@ -1,31 +1,47 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class NavMeshAgentController : MonoBehaviour {
 
     [SerializeField]
     Transform _destination;
-    UnityEngine.AI.NavMeshAgent _agent;
+    NavMeshAgent _agent;
+    AgentAgendaController _agentAgendaController;
+    int interval = 10;
 
     void Start() {
-        _agent = this.GetComponent<UnityEngine.AI.NavMeshAgent>();
+        _agent = this.GetComponent<NavMeshAgent>();
 
         if(_agent == null) {
             Debug.LogError("The nav mesh agent component is not attached to " + gameObject.name);
-        } else {
-            SetDestination();
-        }
+        } 
     }
 
     void Update() {
-        SetDestination();
+        if (Time.frameCount % interval == 0) {
+            _agent.SetDestination(_destination.transform.position);
+            if (reachedDestination()) {
+                Timer(3.0f);
+            }
+        }
     }
 
-    private void SetDestination() {
-        if(_destination != null){
-            Vector3 targetVector = _destination.transform.position;
-            _agent.SetDestination(targetVector);
+    bool reachedDestination() {
+        if (_agent.remainingDistance < _agent.stoppingDistance) {
+            _agent.isStopped = true;
+            return true;
+        }
+        return false;
+    }
+
+    void Timer(float time) {
+        float targetTime = time;
+        targetTime -= Time.deltaTime;
+
+        if (targetTime <= 0.0f) {
+            print("Test");
         }
     }
 }

@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Observer : MonoBehaviour {
     public GameObject Agent;
+    public int agentCount = 5;
 
     void Awake() {
-        for (int i = 0; i < 9; i++) {
+        for (int i = 1; i < agentCount; i++) {
             Instantiate(Agent);
             
         }

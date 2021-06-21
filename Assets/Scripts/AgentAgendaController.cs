@@ -2,13 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CommuteController : MonoBehaviour {    
-    private int _agentCounter = 0;
+public class AgentAgendaController : MonoBehaviour {
+
+    void Update() {
+        
+    }
 
     private void OnTriggerEnter(Collider collision) {
         GameObject agent = collision.gameObject;
-        _agentCounter++;
         
-        // agent.GetComponent<NavMeshAgent>().isStopped = true;
+        // agent.GetComponent<NavMeshAgentController>().enabled = false;
     }
+
+
 }
