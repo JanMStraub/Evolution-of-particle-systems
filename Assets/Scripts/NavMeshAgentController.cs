@@ -8,7 +8,6 @@ public class NavMeshAgentController : MonoBehaviour {
     [SerializeField]
     Transform _workDestination, _homeDestination;
     NavMeshAgent _agent;
-    AgentAgendaController _agentAgendaController;
     int _pauseTime = 5;
     Renderer _agentRenderer;
 
@@ -61,7 +60,7 @@ public class NavMeshAgentController : MonoBehaviour {
         if (distance < _agent.stoppingDistance) {
             Debug.Log(_agent.GetInstanceID() + " destination reached");
             _agentRenderer.enabled = false;
-            _agent.radius = 0.0001f;
+            _agent.radius = 0.0001f; // might find a better solution
             _agent.isStopped = true;
             return true;
         }
