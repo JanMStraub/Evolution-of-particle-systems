@@ -4,15 +4,6 @@ using UnityEngine;
 
 public class AgentAgendaController : MonoBehaviour {
 
-    void Update() {
-        
+    void Start() {
     }
-
-    private void OnTriggerEnter(Collider collision) {
-        GameObject agent = collision.gameObject;
-        
-        // agent.GetComponent<NavMeshAgentController>().enabled = false;
-    }
-
-
 }
