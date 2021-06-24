@@ -6,9 +6,10 @@ using UnityEngine.AI;
 public class NavMeshAgentController : MonoBehaviour {
 
     [SerializeField]
+    int _pauseTime = 5;
+
     Transform _workDestination, _homeDestination;
     NavMeshAgent _agent;
-    int _pauseTime = 5;
     Renderer _agentRenderer;
 
     void Start() {
@@ -60,11 +61,17 @@ public class NavMeshAgentController : MonoBehaviour {
         if (distance < _agent.stoppingDistance) {
             Debug.Log(_agent.GetInstanceID() + " destination reached");
             _agentRenderer.enabled = false;
-            _agent.radius = 0.0001f; // might find a better solution
+            _agent.radius = 0.000001f; // might find a better solution
             _agent.isStopped = true;
             return true;
         }
 
         return false;
     }
+
+    public void setWorkDestination(GameObject destination) => _workDestination = destination.transform 
+        ?? throw new System.ArgumentNullException(nameof(destination));
+
+    public void setHomeDestination(GameObject destination) => _homeDestination = destination.transform
+        ?? throw new System.ArgumentNullException(nameof(destination));
 }
