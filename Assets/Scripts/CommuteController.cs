@@ -13,7 +13,7 @@ public class CommuteController : MonoBehaviour {
     [SerializeField]
     GameObject[] _agentList;
 
-    void Awake() {
+    void Assign() {
 
         // Get list of agents
         if (_agentList == null)

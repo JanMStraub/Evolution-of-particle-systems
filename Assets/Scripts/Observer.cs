@@ -10,8 +10,9 @@ public class Observer : MonoBehaviour {
     [SerializeField]
     GameObject _Agent;
 
-    void Awake() {
+    void Spawn() {
         for (int i = 1; i < agentCount; i++) {
+            _Agent = GameObject.FindGameObjectsWithTag("Agent");
             Instantiate(_Agent);
             
         }
