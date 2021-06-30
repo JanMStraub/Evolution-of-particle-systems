@@ -133,9 +133,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1964449614}
   - component: {fileID: 1964449613}
-  - component: {fileID: 1964449617}
-  - component: {fileID: 1964449616}
-  - component: {fileID: 1964449615}
   m_Layer: 0
   m_Name: __app
   m_TagString: Untagged
@@ -169,45 +166,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1964449615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1964449612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79acbecb624d847beb427e5905524612, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pauseTime: 5
---- !u!114 &1964449616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1964449612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 994ea0bbb67ea44248b1400368a3e64f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _homeList: []
-  _workList: []
-  _agentList: []
---- !u!114 &1964449617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1964449612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad0166ff97e754c4cbdf8ac83c63762e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agentCount: 5
-  _Agent: {fileID: 0}

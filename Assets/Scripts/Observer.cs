@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Observer : MonoBehaviour {
+class Observer : MonoBehaviour {
 
     [SerializeField]
     int agentCount = 5;
 
-    [SerializeField]
     GameObject _Agent;
 
     void Spawn() {

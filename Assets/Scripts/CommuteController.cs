@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CommuteController : MonoBehaviour {    
+class CommuteController : MonoBehaviour {    
 
     [SerializeField]
     GameObject[] _homeList;
