@@ -12,7 +12,7 @@ public class Observer : MonoBehaviour {
 
     void Spawn() {
         for (int i = 1; i < agentCount; i++) {
-            _Agent = GameObject.FindGameObjectsWithTag("Agent");
+            _Agent = GameObject.FindGameObjectWithTag("Agent");
             Instantiate(_Agent);
             
         }
