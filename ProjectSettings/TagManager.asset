@@ -9,6 +9,7 @@ TagManager:
   - Door
   - Home
   - Work
+  - Spawn
   layers:
   - Default
   - TransparentFX

@@ -14,7 +14,6 @@ public class NavMeshAgentController : MonoBehaviour {
 
     void Awake() {
         GameManager.OnGameStateChanced += GameManagerOnGameStateChanged;
-        Debug.Log("Hello");
     }
 
     void OnDestroy() {
@@ -22,14 +21,15 @@ public class NavMeshAgentController : MonoBehaviour {
     }
 
     private void GameManagerOnGameStateChanged (GameState state) {
-        if (state == GameState.ActivateAgents) {
-            Debug.Log("TEST");
+        Debug.Log("GameManagerOnGameStateChanged");
+        if (state == GameState.StartNavMeshAgents) {
+            Debug.Log("GameState.ActivateAgents");
             Activate();
         }
     }
 
     void Activate() {
-        Debug.Log("test");
+        Debug.Log("Activate");
 
         _agent = this.GetComponent<NavMeshAgent>();
         _agentRenderer = GetComponent<Renderer>();

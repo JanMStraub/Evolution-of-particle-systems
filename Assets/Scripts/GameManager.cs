@@ -45,8 +45,8 @@ public class GameManager : MonoBehaviour {
             case GameState.SetAgentCommute:
                 Debug.Log("SetAgentCommute");
                 break;
-            case GameState.ActivateAgents:
-                Debug.Log("ActivateAgents");
+            case GameState.StartNavMeshAgents:
+                Debug.Log("StartNavMeshAgents");
                 break;
             case GameState.RunSimulation:
                 Debug.Log("RunSimulation");
@@ -62,6 +62,6 @@ public class GameManager : MonoBehaviour {
 public enum GameState {
     SpawnAgents,
     SetAgentCommute,
-    ActivateAgents,
+    StartNavMeshAgents,
     RunSimulation
 }
