@@ -4,11 +4,11 @@ using UnityEngine;
 
 class CommuteController : MonoBehaviour {    
 
-    [SerializeField] private GameObject[] _homeList;
+    [SerializeField] GameObject[] _homeList;
 
-    [SerializeField] private GameObject[] _workList;
+    [SerializeField] GameObject[] _workList;
 
-    [SerializeField] private GameObject[] _agentList;
+    [SerializeField] GameObject[] _agentList;
 
     void Awake() {
         GameManager.OnGameStateChanced += GameManagerOnGameStateChanged;

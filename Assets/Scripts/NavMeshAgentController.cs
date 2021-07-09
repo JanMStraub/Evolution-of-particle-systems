@@ -6,7 +6,7 @@ using System;
 
 public class NavMeshAgentController : MonoBehaviour {
 
-    [SerializeField] private int _pauseTime = 5;
+    [SerializeField] int _pauseTime = 5;
 
     [SerializeField] Transform _workDestination, _homeDestination;
     NavMeshAgent _agent;
@@ -14,6 +14,7 @@ public class NavMeshAgentController : MonoBehaviour {
 
     void Awake() {
         GameManager.OnGameStateChanced += GameManagerOnGameStateChanged;
+        Debug.Log("Hello");
     }
 
     void OnDestroy() {
@@ -22,11 +23,13 @@ public class NavMeshAgentController : MonoBehaviour {
 
     private void GameManagerOnGameStateChanged (GameState state) {
         if (state == GameState.ActivateAgents) {
+            Debug.Log("TEST");
             Activate();
         }
     }
 
     void Activate() {
+        Debug.Log("test");
 
         _agent = this.GetComponent<NavMeshAgent>();
         _agentRenderer = GetComponent<Renderer>();

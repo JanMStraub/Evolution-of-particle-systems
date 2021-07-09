@@ -5,7 +5,7 @@ using UnityEngine;
 
 class Observer : MonoBehaviour {
 
-    [SerializeField] private int agentCount = 5;
+    [SerializeField] int agentCount = 5;
 
     GameObject _Agent;
 
