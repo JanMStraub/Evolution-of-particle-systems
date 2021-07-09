@@ -25,15 +25,14 @@ class CommuteController : MonoBehaviour {
     }
 
     void Assign() {
-        Debug.Log("Run Assing");
 
         // Get list of agents
-        if (_agentList == null)
+        if (_agentList.Length == 0)
             _agentList = GameObject.FindGameObjectsWithTag("Agent");
             Debug.Log("Agent list created");
 
         // Assign home to agent
-        if (_homeList == null)
+        if (_homeList.Length == 0)
             _homeList = GameObject.FindGameObjectsWithTag("Home");
             Debug.Log("Home list created");
 
@@ -45,7 +44,7 @@ class CommuteController : MonoBehaviour {
         }
 
         // Assign work to agent
-        if (_workList == null)
+        if (_workList.Length == 0)
             _workList = GameObject.FindGameObjectsWithTag("Work");
             Debug.Log("Work list created");
 
@@ -56,6 +55,6 @@ class CommuteController : MonoBehaviour {
             Debug.Log("Work assigned to " + agent.GetInstanceID());
         } 
 
-        //GameManager.Instance.UpdateGameState(GameState.ActivateAgents);
+        GameManager.Instance.UpdateGameState(GameState.ActivateAgents);
     }
 }

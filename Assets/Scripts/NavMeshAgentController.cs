@@ -8,7 +8,7 @@ public class NavMeshAgentController : MonoBehaviour {
 
     [SerializeField] private int _pauseTime = 5;
 
-    Transform _workDestination, _homeDestination;
+    [SerializeField] Transform _workDestination, _homeDestination;
     NavMeshAgent _agent;
     Renderer _agentRenderer;
 
@@ -27,7 +27,6 @@ public class NavMeshAgentController : MonoBehaviour {
     }
 
     void Activate() {
-        Debug.Log("Run Activate");
 
         _agent = this.GetComponent<NavMeshAgent>();
         _agentRenderer = GetComponent<Renderer>();

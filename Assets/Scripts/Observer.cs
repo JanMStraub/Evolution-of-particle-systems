@@ -24,7 +24,6 @@ class Observer : MonoBehaviour {
     }
 
     public void Spawn() {
-        Debug.Log("Run Spawn");
 
         for (int i = 1; i < agentCount; i++) {
             _Agent = GameObject.FindGameObjectWithTag("Agent");
