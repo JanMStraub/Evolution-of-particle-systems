@@ -1135,13 +1135,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: _Agent
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2701912064039980848, guid: 2028df3e1b5cc457aa479b4d03a617ad, type: 3}
       propertyPath: m_Name
-      value: Main
+      value: GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 2799992550896627588, guid: 2028df3e1b5cc457aa479b4d03a617ad, type: 3}
       propertyPath: m_RootOrder
@@ -1222,6 +1218,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agentCount: 5
+--- !u!114 &1286186861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286186858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 267579d3637514b15879434b9c4cada6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  State: 0
 --- !u!4 &1352394353 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2799992550896627588, guid: 2028df3e1b5cc457aa479b4d03a617ad, type: 3}

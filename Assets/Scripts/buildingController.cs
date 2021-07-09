@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class buildingController : MonoBehaviour {
 
-    [SerializeField]
-    int _agentCounter = 0;
+    [SerializeField] private int _agentCounter = 0;
 
     private void OnTriggerEnter(Collider collision) {
         GameObject agent = collision.gameObject;

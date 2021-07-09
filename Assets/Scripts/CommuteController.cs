@@ -4,16 +4,28 @@ using UnityEngine;
 
 class CommuteController : MonoBehaviour {    
 
-    [SerializeField]
-    GameObject[] _homeList;
+    [SerializeField] private GameObject[] _homeList;
 
-    [SerializeField]
-    GameObject[] _workList;
+    [SerializeField] private GameObject[] _workList;
 
-    [SerializeField]
-    GameObject[] _agentList;
+    [SerializeField] private GameObject[] _agentList;
+
+    void Awake() {
+        GameManager.OnGameStateChanced += GameManagerOnGameStateChanged;
+    }
+
+    void OnDestroy() {
+        GameManager.OnGameStateChanced -= GameManagerOnGameStateChanged;
+    }
+
+    private void GameManagerOnGameStateChanged (GameState state) {
+         if (state == GameState.SetAgentCommute) {
+            Assign();
+        }
+    }
 
     void Assign() {
+        Debug.Log("Run Assing");
 
         // Get list of agents
         if (_agentList == null)
@@ -43,5 +55,7 @@ class CommuteController : MonoBehaviour {
                  .setWorkDestination(_workList[workNumber]);
             Debug.Log("Work assigned to " + agent.GetInstanceID());
         } 
+
+        //GameManager.Instance.UpdateGameState(GameState.ActivateAgents);
     }
 }

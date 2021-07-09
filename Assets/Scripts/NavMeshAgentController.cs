@@ -2,17 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using System;
 
 public class NavMeshAgentController : MonoBehaviour {
 
-    [SerializeField]
-    int _pauseTime = 5;
+    [SerializeField] private int _pauseTime = 5;
 
     Transform _workDestination, _homeDestination;
     NavMeshAgent _agent;
     Renderer _agentRenderer;
 
-    void Start() {
+    void Awake() {
+        GameManager.OnGameStateChanced += GameManagerOnGameStateChanged;
+    }
+
+    void OnDestroy() {
+        GameManager.OnGameStateChanced -= GameManagerOnGameStateChanged;
+    }
+
+    private void GameManagerOnGameStateChanged (GameState state) {
+        if (state == GameState.ActivateAgents) {
+            Activate();
+        }
+    }
+
+    void Activate() {
+        Debug.Log("Run Activate");
+
         _agent = this.GetComponent<NavMeshAgent>();
         _agentRenderer = GetComponent<Renderer>();
         
@@ -20,6 +36,7 @@ public class NavMeshAgentController : MonoBehaviour {
             Debug.LogError("The nav mesh agent component is not attached to " + gameObject.name);
         } 
         
+        GameManager.Instance.UpdateGameState(GameState.RunSimulation);
         StartCoroutine(Commute());
     }
 
