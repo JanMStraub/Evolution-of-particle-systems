@@ -33,7 +33,7 @@ class CommuteController : MonoBehaviour {
 
         // Assign home to agent
         if (_homeList.Length == 0)
-            _homeList = GameObject.FindGameObjectsWithTag("Home");
+            _homeList = GameObject.FindGameObjectsWithTag("HomeDoor");
             Debug.Log("Home list created");
 
         foreach (GameObject agent in _agentList) {
@@ -45,7 +45,7 @@ class CommuteController : MonoBehaviour {
 
         // Assign work to agent
         if (_workList.Length == 0)
-            _workList = GameObject.FindGameObjectsWithTag("Work");
+            _workList = GameObject.FindGameObjectsWithTag("WorkDoor");
             Debug.Log("Work list created");
 
         foreach (GameObject agent in _agentList) {

@@ -21,15 +21,12 @@ public class NavMeshAgentController : MonoBehaviour {
     }
 
     private void GameManagerOnGameStateChanged (GameState state) {
-        Debug.Log("GameManagerOnGameStateChanged");
         if (state == GameState.StartNavMeshAgents) {
-            Debug.Log("GameState.ActivateAgents");
             Activate();
         }
     }
 
     void Activate() {
-        Debug.Log("Activate");
 
         _agent = this.GetComponent<NavMeshAgent>();
         _agentRenderer = GetComponent<Renderer>();

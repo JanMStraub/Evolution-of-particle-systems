@@ -25,11 +25,11 @@ class Spawner : MonoBehaviour {
 
     void Spawn() {
 
-        for (int i = 1; i < agentCount; i++) {
-            _Agent = GameObject.FindGameObjectWithTag("Agent");
+        for (int i = 0; i < agentCount; i++) {
             Instantiate(_Agent);
         }
-
+        
+        _Agent.SetActive(false);
         GameManager.Instance.UpdateGameState(GameState.SetAgentCommute);
     }
 }
