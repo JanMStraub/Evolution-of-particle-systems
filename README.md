@@ -61,6 +61,6 @@ Finished prototype simulation and tested it with 700 agents.
 
 ## Contributors
 
-* Paavo Streibich, kf223@uni-heidelberg.de
+* Paavo Streibich, paavo.streibich@uni-heidelberg.de
 
 * Jan Straub, jan.straub@stud.uni-heidelberg.de
