@@ -17,18 +17,18 @@ In this project we want to simulate a big urban enviroment.
 
 
 ## Meeting notes 11.05.2021 (German)
-• Chemotaxis für Ameisen (Alle laufen in Richtung des höchsten Gradienten -> Weg des geringsten Widerstandes)
-• Simulation: Simulationstechniken
-• Multiagentensysteme
-• Anwendungen: Straßennetz passt am ehesten
-• Kleine Stadt bauen per Zufallsgenerator und dann entwickeln sich Wege (Patrick Henning),
+* Chemotaxis für Ameisen (Alle laufen in Richtung des höchsten Gradienten -> Weg des geringsten Widerstandes)
+* Simulation: Simulationstechniken
+* Multiagentensysteme
+* Anwendungen: Straßennetz passt am ehesten
+* Kleine Stadt bauen per Zufallsgenerator und dann entwickeln sich Wege (Patrick Henning),
 unterschiedliche Größen mit Eingängen und dann einfach mal simulieren lassen. Verschiedene
 Populationen, Anzahl, Interessen etc.
-• Brainstorming machen und dann entscheiden wie wir weiter machen
-• Erst danach konkrete Pläne
-• Open Street Maps für Lagepläne
-• Wie dicht muss ich Knoten auf die Fläche packe, wenn man alle Bewegungen erlaubt
-• Das nächste Mal mit Demo
+* Brainstorming machen und dann entscheiden wie wir weiter machen
+* Erst danach konkrete Pläne
+* Open Street Maps für Lagepläne
+* Wie dicht muss ich Knoten auf die Fläche packe, wenn man alle Bewegungen erlaubt
+* Das nächste Mal mit Demo
 
 ## Technologies 
 * Unity Version 2020.3.12f1
