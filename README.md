@@ -51,6 +51,15 @@ Finished prototype simulation and tested it with 700 agents.
 - - - - -
 
 
+### 14.07.2021
+Implemented NavMesh spawn randomizer to improve performance.
+Also tried to deaktivate collision detection, but that caused other problems.
+
+![Test with 2000 agents, without collision detection](git_res/prototype_test_2000_no-collision.gif)
+
+![Test with 2000 agents, with collision detection](git_res/prototype_test_2000.gif)
+
+
 ## Inspiration
 
 * [Sebastian Lague - Coding Adventure Ant and Slime Simulations](https://www.youtube.com/watch?v=X-iSQQgOd1A&t)
