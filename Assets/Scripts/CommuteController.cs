@@ -29,30 +29,30 @@ class CommuteController : MonoBehaviour {
         // Get list of agents
         if (_agentList.Length == 0)
             _agentList = GameObject.FindGameObjectsWithTag("Agent");
-            Debug.Log("Agent list created");
+            // Debug.Log("Agent list created");
 
         // Assign home to agent
         if (_homeList.Length == 0)
             _homeList = GameObject.FindGameObjectsWithTag("HomeDoor");
-            Debug.Log("Home list created");
+            // Debug.Log("Home list created");
 
         foreach (GameObject agent in _agentList) {
             int homeNumber = Random.Range(0, _homeList.Length);
             agent.GetComponent<NavMeshAgentController>()
                  .setHomeDestination(_homeList[homeNumber]);
-            Debug.Log("Home assigned to " + agent.GetInstanceID());
+            // Debug.Log("Home assigned to " + agent.GetInstanceID());
         }
 
         // Assign work to agent
         if (_workList.Length == 0)
             _workList = GameObject.FindGameObjectsWithTag("WorkDoor");
-            Debug.Log("Work list created");
+            // Debug.Log("Work list created");
 
         foreach (GameObject agent in _agentList) {
             int workNumber = Random.Range(0, _workList.Length);
             agent.GetComponent<NavMeshAgentController>()
                  .setWorkDestination(_workList[workNumber]);
-            Debug.Log("Work assigned to " + agent.GetInstanceID());
+            // Debug.Log("Work assigned to " + agent.GetInstanceID());
         } 
 
         GameManager.Instance.UpdateGameState(GameState.StartNavMeshAgents);

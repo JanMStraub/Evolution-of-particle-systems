@@ -56,7 +56,7 @@ public class NavMeshAgentController : MonoBehaviour {
     }
 
     void workRoutine() {
-        Debug.Log(_agent.GetInstanceID() + " work routine");
+        // Debug.Log(_agent.GetInstanceID() + " work routine");
         _agentRenderer.enabled = true;
         _agent.radius = 0.5f;
         _agent.isStopped = false;
@@ -64,7 +64,7 @@ public class NavMeshAgentController : MonoBehaviour {
     }
 
     void homeRoutine() {
-        Debug.Log(_agent.GetInstanceID() + " home routine");
+        // Debug.Log(_agent.GetInstanceID() + " home routine");
         _agentRenderer.enabled = true;
         _agent.radius = 0.5f;
         _agent.isStopped = false;
@@ -75,7 +75,7 @@ public class NavMeshAgentController : MonoBehaviour {
         float distance = Vector3.Distance(_agent.transform.position, destination.transform.position);
 
         if (distance < _agent.stoppingDistance) {
-            Debug.Log(_agent.GetInstanceID() + " destination reached");
+            // Debug.Log(_agent.GetInstanceID() + " destination reached");
             _agentRenderer.enabled = false;
             _agent.radius = 0.000001f; // might find a better solution
             _agent.isStopped = true;

@@ -235,7 +235,7 @@ GameObject:
   m_Name: Work2
   m_TagString: Work
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &71481730
@@ -345,7 +345,7 @@ GameObject:
   m_Name: Home2
   m_TagString: Home
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &97379610
@@ -618,7 +618,7 @@ GameObject:
   m_Name: Home2
   m_TagString: Home
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &412153698
@@ -1108,7 +1108,7 @@ GameObject:
   m_Name: Home2
   m_TagString: Home
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &549539656
@@ -1218,7 +1218,7 @@ GameObject:
   m_Name: Work2
   m_TagString: Work
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &565789869
@@ -1775,7 +1775,7 @@ GameObject:
   m_Name: Home2
   m_TagString: Home
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &786408368
@@ -2678,7 +2678,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad0166ff97e754c4cbdf8ac83c63762e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agentCount: 700
+  agentCount: 2000
+  range: 100
 --- !u!114 &1286186861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2714,7 +2715,7 @@ GameObject:
   m_Name: Home2
   m_TagString: Home
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1383174517
@@ -2978,7 +2979,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 1
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 1
   m_ObstacleAvoidanceType: 1
 --- !u!136 &1422336151
 CapsuleCollider:
@@ -3105,7 +3106,7 @@ GameObject:
   m_Name: Work2
   m_TagString: Work
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1424325359
@@ -3311,7 +3312,7 @@ GameObject:
   m_Name: Home2
   m_TagString: Home
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1516598963
@@ -3611,7 +3612,7 @@ GameObject:
   m_Name: Home2
   m_TagString: Home
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1626496146
@@ -3951,7 +3952,7 @@ GameObject:
   m_Name: Work2
   m_TagString: Work
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1805493844
@@ -4482,7 +4483,7 @@ GameObject:
   m_Name: Work2
   m_TagString: Work
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1915398614
@@ -4592,7 +4593,7 @@ GameObject:
   m_Name: Work2
   m_TagString: Work
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1941434045
@@ -5168,6 +5169,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1845038047}
     m_Modifications:
+    - target: {fileID: 3891379958873415639, guid: 2330cf2d3f7e141159e17ec8f214f5f7, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891379960281883464, guid: 2330cf2d3f7e141159e17ec8f214f5f7, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3891379960595973293, guid: 2330cf2d3f7e141159e17ec8f214f5f7, type: 3}
       propertyPath: m_RootOrder
       value: 1
