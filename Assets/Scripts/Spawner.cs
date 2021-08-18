@@ -13,7 +13,6 @@ class Spawner : MonoBehaviour {
 
     void Awake() {
         GameManager.OnGameStateChanced += GameManagerOnGameStateChanged;
-        _Agent = GameObject.FindGameObjectWithTag("Agent");
     }
 
     void OnDestroy() {
@@ -22,6 +21,7 @@ class Spawner : MonoBehaviour {
 
     private void GameManagerOnGameStateChanged (GameState state) {
          if (state == GameState.SpawnAgents) {
+            _Agent = GameObject.FindGameObjectWithTag("Agent");
             Spawn();
         }
     }

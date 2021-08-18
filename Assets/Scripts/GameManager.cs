@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
@@ -21,8 +22,14 @@ public class GameManager : MonoBehaviour {
 
         _Instance = this;
         DontDestroyOnLoad(this.gameObject);
+    }
 
+    void OnEnable() {
         UpdateGameState(GameState.SpawnAgents);
+    }
+
+    void OnDisable() {
+        // TODO: delete all agents and reset scene
     }
 
     // Runs before a scene gets loaded
@@ -37,8 +44,7 @@ public class GameManager : MonoBehaviour {
     public void UpdateGameState(GameState newState) {
         State = newState;
 
-        switch (newState)
-        {
+        switch (newState) {
             case GameState.SpawnAgents:
                 Debug.Log("SpawnAgents");
                 break;
