@@ -22,14 +22,8 @@ public class GameManager : MonoBehaviour {
 
         _Instance = this;
         DontDestroyOnLoad(this.gameObject);
-    }
 
-    void OnEnable() {
-        UpdateGameState(GameState.SpawnAgents);
-    }
-
-    void OnDisable() {
-        // TODO: delete all agents and reset scene
+        SceneManager.LoadSceneAsync((int)SceneIndexes.TITLE_SCREEN, LoadSceneMode.Additive);
     }
 
     // Runs before a scene gets loaded
@@ -39,6 +33,11 @@ public class GameManager : MonoBehaviour {
 
         GameObject main = GameObject.Instantiate(Resources.Load("Main")) as GameObject;
         GameObject.DontDestroyOnLoad(main); 
+    }
+
+    public void LoadGame() {
+        SceneManager.UnloadSceneAsync((int)SceneIndexes.TITLE_SCREEN);
+        SceneManager.LoadSceneAsync((int)SceneIndexes.TEST, LoadSceneMode.Additive);
     }
 
     public void UpdateGameState(GameState newState) {

@@ -6,9 +6,9 @@ using UnityEngine.AI;
 
 class Spawner : MonoBehaviour {
 
-    [SerializeField] int agentCount = 5;
+    public int agentCount = 5;
 
-    [SerializeField] float range = 30f;
+    public float range = 30f;
     GameObject _Agent;
 
     void Awake() {
