@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour {
 
         _Instance = this;
         DontDestroyOnLoad(this.gameObject);
-
+        
         UpdateGameState(GameState.SpawnAgents);
     }
 

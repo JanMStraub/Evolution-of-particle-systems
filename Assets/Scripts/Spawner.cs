@@ -14,6 +14,7 @@ class Spawner : MonoBehaviour {
     void Awake() {
         GameManager.OnGameStateChanced += GameManagerOnGameStateChanged;
         _Agent = GameObject.FindGameObjectWithTag("Agent");
+        Debug.Log("i am awake");
     }
 
     void OnDestroy() {
@@ -21,9 +22,12 @@ class Spawner : MonoBehaviour {
     }
 
     private void GameManagerOnGameStateChanged (GameState state) {
+        Debug.Log("i change gamestate");
+        Debug.Log(state);
          if (state == GameState.SpawnAgents) {
             Spawn();
         }
+        
     }
 
     bool RandomPoint(Vector3 center, float range, out Vector3 result) {
@@ -50,6 +54,7 @@ class Spawner : MonoBehaviour {
             if (RandomPoint(_Agent.transform.position, range, out point)) {
                 Instantiate(_Agent, point, transform.rotation);
             }
+            Debug.Log(i);
         }
         
         _Agent.SetActive(false);
