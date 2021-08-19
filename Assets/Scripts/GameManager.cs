@@ -35,11 +35,13 @@ public class GameManager : MonoBehaviour {
         GameObject.DontDestroyOnLoad(main); 
     }
 
+    /*
     public void LoadGame() {
         SceneManager.UnloadSceneAsync((int)SceneIndexes.TITLE_SCREEN);
         SceneManager.LoadSceneAsync((int)SceneIndexes.TEST, LoadSceneMode.Additive);
     }
-
+    */
+    
     public void UpdateGameState(GameState newState) {
         State = newState;
 
