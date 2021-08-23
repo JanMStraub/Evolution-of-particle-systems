@@ -9,6 +9,7 @@ class Spawner : MonoBehaviour {
     public int agentCount = 5;
 
     public float range = 30f;
+    
     GameObject _Agent;
 
     void Awake() {
