@@ -25,7 +25,8 @@ public class GameManager : MonoBehaviour {
         get {return _Instance;}
     }
 
-    private void Awake() {
+    void Awake() {
+
         if (_Instance != null && _Instance != this) {
             Destroy(this.gameObject);
             return;
@@ -40,6 +41,7 @@ public class GameManager : MonoBehaviour {
     // Runs before a scene gets loaded
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     public static void LoadMain() {
+
         Debug.Log("Loading...");
 
         GameObject main = GameObject.Instantiate(Resources.Load("Main")) as GameObject;
@@ -47,6 +49,7 @@ public class GameManager : MonoBehaviour {
     }
 
     public void LoadGame() {
+
         loadingScreen.gameObject.SetActive(true);
         
         scenesLoading.Add(SceneManager.UnloadSceneAsync((int)SceneIndexes.TITLE_SCREEN));
@@ -57,8 +60,9 @@ public class GameManager : MonoBehaviour {
         StartCoroutine(GetSceneLoadProcess());
     }
     
-    
+    // Managing GameStates 
     public void UpdateGameState(GameState newState) {
+
         State = newState;
 
         switch (newState) {
@@ -81,8 +85,9 @@ public class GameManager : MonoBehaviour {
         OnGameStateChanced?.Invoke(newState);
     }
 
-
+    // Managing LoadingScreen
     IEnumerator GetSceneLoadProcess () {
+        
         for (int i = 0; i < scenesLoading.Count; i++) {
             while (!scenesLoading[i].isDone) {
                 _totalSceneProgress = 0;
@@ -108,7 +113,6 @@ public enum SceneIndexes {
     TITLE_SCREEN = 1,
     TEST = 2
 }
-
 public enum GameState {
     SpawnAgents,
     SetAgentCommute,

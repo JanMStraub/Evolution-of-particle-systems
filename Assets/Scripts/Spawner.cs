@@ -12,8 +12,9 @@ class Spawner : MonoBehaviour {
     
     GameObject _Agent;
 
-    void Awake() {
+    void Start() {
         GameManager.OnGameStateChanced += GameManagerOnGameStateChanged;
+        Debug.Log("Awake");
     }
 
     void OnDestroy() {
@@ -21,14 +22,17 @@ class Spawner : MonoBehaviour {
     }
 
     private void GameManagerOnGameStateChanged (GameState state) {
-         if (state == GameState.SpawnAgents) {
+        if (state == GameManager.GameState.SpawnAgents) {
+             Debug.Log("test");
             _Agent = GameObject.FindGameObjectWithTag("Agent");
             Spawn();
         }
     }
 
     bool RandomPoint(Vector3 center, float range, out Vector3 result) {
+
         for (int i = 0; i < agentCount; i++) {
+
             Vector3 randomPoint = center + UnityEngine.Random.insideUnitSphere * range;
             NavMeshHit hit;
             
