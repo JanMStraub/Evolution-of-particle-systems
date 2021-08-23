@@ -9,8 +9,6 @@ public class GameManager : MonoBehaviour {
 
     private static GameManager _Instance;
 
-    private static Initialisation _GameManager;
-
     public GameObject loadingScreen;
 
     public Slider slider;
@@ -33,7 +31,6 @@ public class GameManager : MonoBehaviour {
             return;
         }
 
-        _GameManager = this;
         _Instance = this;
         DontDestroyOnLoad(this.gameObject);
 
@@ -56,7 +53,6 @@ public class GameManager : MonoBehaviour {
         scenesLoading.Add(SceneManager.LoadSceneAsync((int)SceneIndexes.TEST, LoadSceneMode.Additive));
         
         GameManager.Instance.UpdateGameState(GameState.SpawnAgents);
-        Debug.Log("GameState updated");
 
         StartCoroutine(GetSceneLoadProcess());
     }

@@ -14,12 +14,10 @@ class Spawner : MonoBehaviour {
 
     void Awake() {
         GameManager.OnGameStateChanced += GameManagerOnGameStateChanged;
-        Debug.Log("Awake");
     }
 
     void OnDestroy() {
         GameManager.OnGameStateChanced -= GameManagerOnGameStateChanged;
-        Debug.Log("Destroyed");
     }
 
     private void GameManagerOnGameStateChanged (GameState state) {
