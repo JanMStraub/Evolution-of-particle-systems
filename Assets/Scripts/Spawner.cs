@@ -22,7 +22,7 @@ class Spawner : MonoBehaviour {
     }
 
     private void GameManagerOnGameStateChanged (GameState state) {
-        if (state == GameManager.GameState.SpawnAgents) {
+        if (state == GameState.SpawnAgents) {
              Debug.Log("test");
             _Agent = GameObject.FindGameObjectWithTag("Agent");
             Spawn();
