@@ -9,14 +9,11 @@ class SpawnController : MonoBehaviour {
     public int agentCount = 5;
 
     public float range = 30f;
-
-    public Vector3 position;
     
     GameObject _Agent;
 
     void Awake() {
         GameManager.OnGameStateChanced += GameManagerOnGameStateChanged;
-        Debug.Log("Awake");
     }
 
 
@@ -25,9 +22,15 @@ class SpawnController : MonoBehaviour {
     }
 
 
+    void Start () {
+        _Agent = GameObject.FindGameObjectWithTag("Agent");
+        Spawn();
+    }
+
+
     private void GameManagerOnGameStateChanged (GameState state) {
         if (state == GameState.SpawnAgents) {
-            Spawn();
+            //Spawn();
         }
     }
 
@@ -55,8 +58,8 @@ class SpawnController : MonoBehaviour {
         
         for (int i = 0; i < agentCount; i++) {
 
-            if (RandomPoint(_Agent.AgentInstance.transform.position, range, out point)) {
-                Instantiate(_Agent.AgentInstance, point, transform.rotation);
+            if (RandomPoint(_Agent.transform.position, range, out point)) {
+                Instantiate(_Agent, point, transform.rotation);
             }
         }
         
