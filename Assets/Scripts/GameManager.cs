@@ -54,8 +54,6 @@ public class GameManager : MonoBehaviour {
         
         scenesLoading.Add(SceneManager.UnloadSceneAsync((int)SceneIndexes.TITLE_SCREEN));
         scenesLoading.Add(SceneManager.LoadSceneAsync((int)SceneIndexes.TEST, LoadSceneMode.Additive));
-        
-        GameManager.GameManagerInstance.UpdateGameState(GameState.SpawnAgents);
 
         StartCoroutine(GetSceneLoadProcess());
     }
@@ -66,9 +64,6 @@ public class GameManager : MonoBehaviour {
         State = newState;
 
         switch (newState) {
-            case GameState.SpawnAgents:
-                Debug.Log("SpawnAgents");
-                break;
             case GameState.SetAgentCommute:
                 Debug.Log("SetAgentCommute");
                 break;
