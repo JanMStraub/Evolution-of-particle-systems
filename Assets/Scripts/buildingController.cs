@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class buildingController : MonoBehaviour {
+public class BuildingController : MonoBehaviour {
 
     [SerializeField] private int _agentCounter = 0;
 

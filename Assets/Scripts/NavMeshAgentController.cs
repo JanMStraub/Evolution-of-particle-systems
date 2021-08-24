@@ -35,7 +35,7 @@ public class NavMeshAgentController : MonoBehaviour {
             Debug.LogError("The nav mesh agent component is not attached to " + gameObject.name);
         } 
         
-        GameManager.Instance.UpdateGameState(GameState.RunSimulation);
+        GameManager.GameManagerInstance.UpdateGameState(GameState.RunSimulation);
         StartCoroutine(Commute());
     }
 
