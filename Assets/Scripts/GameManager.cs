@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
-    private static GameManager _Instance;
+    private static GameManager _GameManagerInstance;
 
     public GameObject loadingScreen;
 
@@ -21,18 +21,18 @@ public class GameManager : MonoBehaviour {
 
     List<AsyncOperation> scenesLoading = new List<AsyncOperation>();
 
-    public static GameManager Instance {
-        get {return _Instance;}
+    public static GameManager GameManagerInstance {
+        get {return _GameManagerInstance;}
     }
 
     void Awake() {
 
-        if (_Instance != null && _Instance != this) {
+        if (_GameManagerInstance != null && _GameManagerInstance != this) {
             Destroy(this.gameObject);
             return;
         }
 
-        _Instance = this;
+        _GameManagerInstance = this;
         DontDestroyOnLoad(this.gameObject);
 
         SceneManager.LoadSceneAsync((int)SceneIndexes.TITLE_SCREEN, LoadSceneMode.Additive);
@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour {
         scenesLoading.Add(SceneManager.UnloadSceneAsync((int)SceneIndexes.TITLE_SCREEN));
         scenesLoading.Add(SceneManager.LoadSceneAsync((int)SceneIndexes.TEST, LoadSceneMode.Additive));
         
-        GameManager.Instance.UpdateGameState(GameState.SpawnAgents);
+        GameManager.GameManagerInstance.UpdateGameState(GameState.SpawnAgents);
 
         StartCoroutine(GetSceneLoadProcess());
     }

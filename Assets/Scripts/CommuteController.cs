@@ -55,6 +55,6 @@ class CommuteController : MonoBehaviour {
             // Debug.Log("Work assigned to " + agent.GetInstanceID());
         } 
 
-        GameManager.Instance.UpdateGameState(GameState.StartNavMeshAgents);
+        GameManager.GameManagerInstance.UpdateGameState(GameState.StartNavMeshAgents);
     }
 }

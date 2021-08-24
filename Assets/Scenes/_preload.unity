@@ -795,6 +795,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agentCount: 5
   range: 30
+  position: {x: 0, y: 0, z: 0}
 --- !u!114 &1975985380
 MonoBehaviour:
   m_ObjectHideFlags: 0

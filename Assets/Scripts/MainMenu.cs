@@ -7,7 +7,7 @@ class MainMenu : MonoBehaviour {
 
     public void StartSimulation () {
 
-        GameManager.Instance.LoadGame();
+        GameManager.GameManagerInstance.LoadGame();
     }
 
     public void QuitSimulation () {

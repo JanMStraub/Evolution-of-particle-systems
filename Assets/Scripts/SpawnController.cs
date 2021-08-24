@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-class Spawner : MonoBehaviour {
+class SpawnController : MonoBehaviour {
 
     public int agentCount = 5;
 
     public float range = 30f;
+
+    public Vector3 position;
     
     GameObject _Agent;
 
@@ -50,16 +52,15 @@ class Spawner : MonoBehaviour {
     void Spawn() {
 
         Vector3 point;
-        _Agent = GameObject.FindGameObjectWithTag("Agent");
         
         for (int i = 0; i < agentCount; i++) {
 
-            if (RandomPoint(_Agent.transform.position, range, out point)) {
-                Instantiate(_Agent, point, transform.rotation);
+            if (RandomPoint(_Agent.AgentInstance.transform.position, range, out point)) {
+                Instantiate(_Agent.AgentInstance, point, transform.rotation);
             }
         }
         
-        _Agent.SetActive(false);
-        GameManager.Instance.UpdateGameState(GameState.SetAgentCommute);
+        //_Agent.SetActive(false);
+        GameManager.GameManagerInstance.UpdateGameState(GameState.SetAgentCommute);
     }
 }
