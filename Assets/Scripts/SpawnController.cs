@@ -16,7 +16,6 @@ class SpawnController : MonoBehaviour {
     void Start () {
         _Agent = GameObject.FindGameObjectWithTag("Agent");
         Debug.Log("SpawnAgents");
-        Debug.Log("AgentCount " + agentCount);
         Spawn();
     }
 
@@ -33,7 +32,6 @@ class SpawnController : MonoBehaviour {
             Vector3 point = hit.position;
             
             Instantiate(_Agent, point, transform.rotation);
-            Debug.Log("Agent Number: " + i);
         }
         
         GameManager.GameManagerInstance.UpdateGameState(GameState.SetAgentCommute);
