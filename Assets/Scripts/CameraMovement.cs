@@ -22,13 +22,14 @@ public class CameraMovement : MonoBehaviour
         zoom_speed = 1f;
         
         min_height = 20f;
-        max_height = 300f;
+        max_height = 400f;
         
         x_max = 400f;
-        z_max=400f;
+        z_max=550f;
         
         this.transform.position = GameObject.Find("Floor").transform.position;
         this.transform.position += new Vector3(0, (min_height + max_height)/2, 0);
+        this.transform.localRotation = Quaternion.Euler(90,270,0);
         
         camera_start = this.transform.position;
     }
