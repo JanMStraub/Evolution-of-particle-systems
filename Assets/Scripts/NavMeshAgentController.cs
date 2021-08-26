@@ -12,6 +12,10 @@ public class NavMeshAgentController : MonoBehaviour {
     NavMeshAgent _agent;
     Renderer _agentRenderer;
 
+    ClockManagement cm;
+
+
+
     void Awake() {
         GameManager.OnGameStateChanced += GameManagerOnGameStateChanged;
     }
@@ -30,30 +34,55 @@ public class NavMeshAgentController : MonoBehaviour {
 
         _agent = this.GetComponent<NavMeshAgent>();
         _agentRenderer = GetComponent<Renderer>();
+        cm = GameObject.Find("Directional Light").GetComponent<ClockManagement>();
         
         if(_agent == null) {
             Debug.LogError("The nav mesh agent component is not attached to " + gameObject.name);
         } 
         
         GameManager.GameManagerInstance.UpdateGameState(GameState.RunSimulation);
-        StartCoroutine(Commute());
+        //StartCoroutine(Commute());
     }
 
+    void Update()
+    {
+        Debug.Log(cm.GetTime());
+        if((int)cm.GetTime() == 8)
+        {
+            workRoutine();
+            //while(!reachedDestination(_workDestination));
+        }
+
+        if((int)cm.GetTime() == 18)
+        {
+            homeRoutine();
+            //while(!reachedDestination(_homeDestination));
+        }
+    }
+
+    /*
     IEnumerator Commute() {
         while(true) {
             // Agent work routine
-            workRoutine();
+            if(ClockManagement.GetTime() == 8)
+            {
+                workRoutine();
+            }
 
             yield return new WaitUntil(()=>reachedDestination(_workDestination));
             yield return new WaitForSeconds(_pauseTime);
 
             // Agent home routine
-            homeRoutine();
+            if(ClockManagement.GetTime() == 18)
+            {
+                homeRoutine();
+            }
             
             yield return new WaitUntil(()=>reachedDestination(_homeDestination));
             yield return new WaitForSeconds(_pauseTime);
         }
     }
+    */
 
     void workRoutine() {
         // Debug.Log(_agent.GetInstanceID() + " work routine");
