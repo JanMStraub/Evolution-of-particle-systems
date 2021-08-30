@@ -1,20 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ClockManagement : MonoBehaviour
 {
     float time;
-    float time_speed;
-
-    Light sun_light;
+    float time_speed = 0.1f;
+    Text time_text;
 
     // Start is called before the first frame update
     void Start()
     {
-        time = 0;
+        time = 6;
         time_speed = 0.1f;
-        sun_light = this.GetComponent<Light>();
+        time_text = GameObject.Find("TimeDisplay").GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -25,22 +25,21 @@ public class ClockManagement : MonoBehaviour
             time = 0;
         }
         time += (time_speed/50); //about 50 calls per second
-
-        AdjustLight(time);
+        DisplayTime();
     }
 
-    void AdjustLight(float time)
+    void DisplayTime()
     {
-        float intensity = (time*time - 24*time + 80)/-64;
-        if(intensity > 0)
-        {
-            sun_light.intensity = intensity;
+        time_text.text = this.GetTimeString();
+    }
 
-        }
-        else
-        {
-            sun_light.intensity = 0;
-        }
+    public string GetTimeString()
+    {
+        string h_time;
+        float hour = (int)time;
+        float minute = (int)((time - hour) * 60);
+        h_time = hour + ":" + minute;
+        return h_time;
     }
 
     public float GetTime()

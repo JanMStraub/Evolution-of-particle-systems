@@ -12,6 +12,7 @@ TagManager:
   - Spawn
   - HomeDoor
   - WorkDoor
+  - FoodDoor
   layers:
   - Default
   - TransparentFX
