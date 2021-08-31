@@ -7,9 +7,7 @@ public class AgentAgendaController : MonoBehaviour {
     private GameObject _GameManager;
 
     void Start () {
-        _GameManager = GameObject.FindGameObjectWithTag("GameController");
 
-        Debug.Log(_GameManager.LectureList[0]);
     }
 
 }
