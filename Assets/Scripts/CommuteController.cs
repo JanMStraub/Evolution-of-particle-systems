@@ -4,6 +4,10 @@ using UnityEngine;
 
 class CommuteController : MonoBehaviour {    
 
+    private GameObject _GameManager;
+
+    private JSONReader.LectureList _LectureList;
+
     [SerializeField] GameObject[] _homeList;
 
     [SerializeField] GameObject[] _workList;
@@ -12,6 +16,16 @@ class CommuteController : MonoBehaviour {
 
     void Awake() {
         GameManager.OnGameStateChanced += GameManagerOnGameStateChanged;
+    }
+
+    void Start () {
+        _GameManager = GameObject.FindGameObjectWithTag("GameController");
+        JSONReader jsonreader = _GameManager.GetComponent<JSONReader>();
+        _LectureList = jsonreader.myLectureList;
+        
+        foreach (var lecture in _LectureList.lecture) {
+            
+        }
     }
 
     void OnDestroy() {
