@@ -19,8 +19,6 @@ using UnityEngine;
 
     public LectureList myLectureList = new LectureList();
 
-    void Start () {
-        myLectureList = JsonUtility.FromJson<LectureList>(textJSON.text);
-    }
+    void Awake() => myLectureList = JsonUtility.FromJson<LectureList>(textJSON.text);
 
 }

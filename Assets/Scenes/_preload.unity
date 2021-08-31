@@ -793,7 +793,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2471ab14ccc6b4d53896f1e712f7b719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textJSON: {fileID: 4900000, guid: 3ae8009ed266b4ca69bc6ff13528446f, type: 3}
+  textJSON: {fileID: 4900000, guid: 96a7d2cb5d1f44d888c48c13a84fb3ec, type: 3}
   myLectureList:
     lecture: []
 --- !u!1 &2144831350

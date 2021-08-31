@@ -27,11 +27,16 @@ class SpawnController : MonoBehaviour {
             Vector3 randomPoint = UnityEngine.Random.insideUnitSphere * range;
             NavMeshHit hit;
 
-            NavMesh.SamplePosition (randomPoint, out hit, range, 1);
+            NavMesh.SamplePosition (randomPoint,
+                                    out hit,
+                                    range,
+                                    1);
 
             Vector3 point = hit.position;
             
-            Instantiate(_Agent, point, transform.rotation);
+            Instantiate(_Agent,
+                        point,
+                        transform.rotation);
         }
         
         GameManager.GameManagerInstance.UpdateGameState(GameState.SetAgentCommute);
