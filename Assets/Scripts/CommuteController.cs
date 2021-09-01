@@ -22,10 +22,6 @@ class CommuteController : MonoBehaviour {
         _GameManager = GameObject.FindGameObjectWithTag("GameController");
         JSONReader jsonreader = _GameManager.GetComponent<JSONReader>();
         _LectureList = jsonreader.myLectureList;
-        
-        foreach (var lecture in _LectureList.lecture) {
-            
-        }
     }
 
     void OnDestroy() {
@@ -39,6 +35,10 @@ class CommuteController : MonoBehaviour {
     }
 
     void Assign() {
+
+        foreach (var lecture in _LectureList.lecture) {
+            
+        }
 
         // Get list of agents
         if (_agentList.Length == 0)
