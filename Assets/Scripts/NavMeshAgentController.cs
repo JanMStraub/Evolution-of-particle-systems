@@ -11,6 +11,7 @@ public class NavMeshAgentController : MonoBehaviour {
     [SerializeField] Transform _workDestination, _homeDestination;
     NavMeshAgent _agent;
     Renderer _agentRenderer;
+    float latest_lecture_ending;
 
     //public LectureList myLectureList = new LectureList();
 
