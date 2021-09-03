@@ -14,17 +14,6 @@ class CommuteController : MonoBehaviour {
 
     [SerializeField] GameObject[] _agentList;
 
-    /*
-    //Medizin, MatheInfo, ChemieGeo, PhsyikAstro, Bio, ComputerLinguistik, Rest
-    JSONReader.LectureList medLectures = new JSONReader.LectureList(); // Medizin = 0
-    JSONReader.LectureList matLectures = new JSONReader.LectureList(); // Mathematik_und_Informatik = 1
-    JSONReader.LectureList cheLectures = new JSONReader.LectureList(); // Chemie_und_Geowissenschaften = 2
-    JSONReader.LectureList phyLectures = new JSONReader.LectureList(); // Physik_und_Astronomie = 3
-    JSONReader.LectureList bioLectures = new JSONReader.LectureList(); // Biowissenschaften = 4
-    JSONReader.LectureList restLectures = new JSONReader.LectureList(); // Rest = 5
-    JSONReader.LectureList comLectures = new JSONReader.LectureList(); // Computerlinguistik = 6
-    */
-
     void Awake() {
         GameManager.OnGameStateChanced += GameManagerOnGameStateChanged;
     }
@@ -47,7 +36,7 @@ class CommuteController : MonoBehaviour {
 
     void Assign() {      
 
-        getFacultyFromJSON();
+        addLecturesToStudents();
 
         // Get list of agents
         if (_agentList.Length == 0)
@@ -60,14 +49,44 @@ class CommuteController : MonoBehaviour {
             // Debug.Log("Home list created");
 
         foreach (GameObject agent in _agentList) {
-            /*
+
+            int medstudents = 2905;
+            int mathstudents = 1340;
+            int chemstudents = 1509;
+            int phystudents = 1975;
+            int biostudents = 1989;
+            int clstudents = 300;
+            
             int homeNumber = Random.Range(0, _homeList.Length);
             agent.GetComponent<NavMeshAgentController>()
                  .setHomeDestination(_homeList[homeNumber]);
-            */
-            // Debug.Log("Home assigned to " + agent.GetInstanceID());
             
+            // Assign each agent a student
+            Student student = new Student(agent.GetInstanceID());
+
+            // Assign each student a faculty
+            if (medstudents > 0) {
+                student.setFaculty(0);
+                medstudents--;
+            } else if(mathstudents > 0) {
+                student.setFaculty(1);
+                mathstudents--;
+            } else if (chemstudents > 0) {
+                student.setFaculty(2);
+            } else if (phystudents > 0) {
+                student.setFaculty(3);
+            } else if (biostudents > 0) {
+                student.setFaculty(4);
+            } else {
+                student.setFaculty(6);
+            }
+                        
+            
+            agent.GetComponent<NavMeshAgentController>()._student = student;
+            studentcount++;
         }
+
+ 
 
         // Assign work to agent
         if (_workList.Length == 0)
@@ -84,13 +103,13 @@ class CommuteController : MonoBehaviour {
         GameManager.GameManagerInstance.UpdateGameState(GameState.StartNavMeshAgents);
     }
 
-    void getFacultyFromJSON () {
+    void addLecturesToStudents () {
 
         foreach (var lecture in _lectureList.lecture) {
             
             if (lecture.faculty == (int)FacultyIndexes.Medizin) {
-                Student student = new Student(1, 0);
-                student.addLecture(lecture);
+                student.lectureList.Add(lecture);
+                Debug.Log(student.lectureList[0].building);
             } else if (lecture.faculty == (int)FacultyIndexes.Mathematik_und_Informatik) {
                 
             } else if (lecture.faculty == (int)FacultyIndexes.Chemie_und_Geowissenschaften) {
@@ -107,72 +126,5 @@ class CommuteController : MonoBehaviour {
                 Debug.Log("Lecture type not found!");
             }
         }
-
-        /*
-        foreach (var lecture in _lectureList.lecture) {
-
-            if (lecture.faculty == (int)FacultyIndexes.Medizin) {
-                JSONReader.Lecture lec = new JSONReader.Lecture(lecture.faculty,
-                                          lecture.building,
-                                          lecture.number,
-                                          lecture.start,
-                                          lecture.end);
-                medLectures.add(lec);
-            } else if (lecture.faculty == (int)FacultyIndexes.Mathematik_und_Informatik) {
-                JSONReader.Lecture lec = new JSONReader.Lecture(lecture.faculty,
-                                          lecture.building,
-                                          lecture.number,
-                                          lecture.start,
-                                          lecture.end);
-                matLectures.add(lec);
-            } else if (lecture.faculty == (int)FacultyIndexes.Chemie_und_Geowissenschaften) {
-                JSONReader.Lecture lec = new JSONReader.Lecture(lecture.faculty,
-                                          lecture.building,
-                                          lecture.number,
-                                          lecture.start,
-                                          lecture.end);
-                cheLectures.add(lec);
-            } else if (lecture.faculty == (int)FacultyIndexes.Physik_und_Astronomie) {
-                JSONReader.Lecture lec = new JSONReader.Lecture(lecture.faculty,
-                                          lecture.building,
-                                          lecture.number,
-                                          lecture.start,
-                                          lecture.end);
-                phyLectures.add(lec);
-            } else if (lecture.faculty == (int)FacultyIndexes.Biowissenschaften) {
-                JSONReader.Lecture lec = new JSONReader.Lecture(lecture.faculty,
-                                          lecture.building,
-                                          lecture.number,
-                                          lecture.start,
-                                          lecture.end);
-                bioLectures.add(lec);
-            } else if (lecture.faculty == (int)FacultyIndexes.Rest) {
-                JSONReader.Lecture lec = new JSONReader.Lecture(lecture.faculty,
-                                          lecture.building,
-                                          lecture.number,
-                                          lecture.start,
-                                          lecture.end);
-                restLectures.add(lec);
-            } else if (lecture.faculty == (int)FacultyIndexes.Computerlinguistik) {
-                JSONReader.Lecture lec = new JSONReader.Lecture(lecture.faculty,
-                                          lecture.building,
-                                          lecture.number,
-                                          lecture.start,
-                                          lecture.end);
-                comLectures.add(lec);
-            } else {
-                Debug.Log("Lecture type not found!");
-            }
-        }
-        */
-        /*
-        Debug.Log(medLectures.lecture.Capacity);
-        Debug.Log(matLectures.lecture.Capacity);
-        Debug.Log(cheLectures.lecture.Capacity);
-        Debug.Log(phyLectures.lecture.Capacity);
-        Debug.Log(bioLectures.lecture.Capacity);
-        Debug.Log(comLectures.lecture.Capacity);
-        Debug.Log(restLectures.lecture.Capacity);
-        */
     }
 }

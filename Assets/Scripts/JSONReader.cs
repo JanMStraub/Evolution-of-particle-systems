@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public partial class JSONReader : MonoBehaviour {
+public class JSONReader : MonoBehaviour {
 
     public TextAsset textJSON;
 
