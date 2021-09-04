@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 162285711}
   - component: {fileID: 162285710}
   - component: {fileID: 162285709}
-  - component: {fileID: 162285708}
   m_Layer: 0
   m_Name: door  (1)
   m_TagString: WorkDoor
@@ -157,18 +156,6 @@ Transform:
   m_Father: {fileID: 1035978628}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &162285708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 162285706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e9416d986988472c87444a7678da7b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &162285709
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -277,7 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad0166ff97e754c4cbdf8ac83c63762e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agentCount: 10
+  agentCount: 10322
   range: 30
 --- !u!4 &271035690
 Transform:
@@ -523,7 +510,6 @@ GameObject:
   - component: {fileID: 824208850}
   - component: {fileID: 824208849}
   - component: {fileID: 824208848}
-  - component: {fileID: 824208847}
   m_Layer: 0
   m_Name: door  (3)
   m_TagString: HomeDoor
@@ -545,18 +531,6 @@ Transform:
   m_Father: {fileID: 780460275}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
---- !u!114 &824208847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 824208845}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e9416d986988472c87444a7678da7b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &824208848
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -632,7 +606,6 @@ GameObject:
   - component: {fileID: 923899491}
   - component: {fileID: 923899490}
   - component: {fileID: 923899489}
-  - component: {fileID: 923899488}
   m_Layer: 0
   m_Name: door  (2)
   m_TagString: HomeDoor
@@ -654,18 +627,6 @@ Transform:
   m_Father: {fileID: 780460275}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
---- !u!114 &923899488
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 923899486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e9416d986988472c87444a7678da7b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &923899489
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -905,7 +866,6 @@ GameObject:
   - component: {fileID: 1378464384}
   - component: {fileID: 1378464383}
   - component: {fileID: 1378464382}
-  - component: {fileID: 1378464381}
   m_Layer: 0
   m_Name: door  (1)
   m_TagString: HomeDoor
@@ -927,18 +887,6 @@ Transform:
   m_Father: {fileID: 780460275}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
---- !u!114 &1378464381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1378464379}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e9416d986988472c87444a7678da7b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &1378464382
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1014,7 +962,6 @@ GameObject:
   - component: {fileID: 1393399677}
   - component: {fileID: 1393399676}
   - component: {fileID: 1393399675}
-  - component: {fileID: 1393399674}
   m_Layer: 0
   m_Name: door  (4)
   m_TagString: WorkDoor
@@ -1036,18 +983,6 @@ Transform:
   m_Father: {fileID: 1035978628}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 130, z: 0}
---- !u!114 &1393399674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1393399672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e9416d986988472c87444a7678da7b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &1393399675
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1219,7 +1154,6 @@ GameObject:
   - component: {fileID: 1469051986}
   - component: {fileID: 1469051985}
   - component: {fileID: 1469051984}
-  - component: {fileID: 1469051983}
   m_Layer: 0
   m_Name: door  (2)
   m_TagString: WorkDoor
@@ -1241,18 +1175,6 @@ Transform:
   m_Father: {fileID: 1035978628}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &1469051983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1469051981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e9416d986988472c87444a7678da7b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &1469051984
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1502,7 +1424,6 @@ GameObject:
   - component: {fileID: 1655208635}
   - component: {fileID: 1655208634}
   - component: {fileID: 1655208633}
-  - component: {fileID: 1655208632}
   m_Layer: 0
   m_Name: door  (3)
   m_TagString: WorkDoor
@@ -1524,18 +1445,6 @@ Transform:
   m_Father: {fileID: 1035978628}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1655208632
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1655208630}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e9416d986988472c87444a7678da7b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &1655208633
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1822,7 +1731,6 @@ GameObject:
   - component: {fileID: 2033467303}
   - component: {fileID: 2033467302}
   - component: {fileID: 2033467301}
-  - component: {fileID: 2033467300}
   m_Layer: 0
   m_Name: 'door '
   m_TagString: WorkDoor
@@ -1844,18 +1752,6 @@ Transform:
   m_Father: {fileID: 1035978628}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2033467300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2033467298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e9416d986988472c87444a7678da7b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &2033467301
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1931,7 +1827,6 @@ GameObject:
   - component: {fileID: 2123787414}
   - component: {fileID: 2123787413}
   - component: {fileID: 2123787412}
-  - component: {fileID: 2123787411}
   m_Layer: 0
   m_Name: 'door '
   m_TagString: HomeDoor
@@ -1953,18 +1848,6 @@ Transform:
   m_Father: {fileID: 780460275}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
---- !u!114 &2123787411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2123787409}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e9416d986988472c87444a7678da7b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &2123787412
 MeshCollider:
   m_ObjectHideFlags: 0

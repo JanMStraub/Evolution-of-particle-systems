@@ -12,7 +12,7 @@ public class NavMeshAgentController : MonoBehaviour {
     NavMeshAgent _agent;
     Renderer _agentRenderer;
 
-    Student _student;
+    public Student _student;
 
     //public LectureList myLectureList = new LectureList();
 
