@@ -9,9 +9,22 @@ class SpawnController : MonoBehaviour {
     public int agentCount = 100;
 
     public float range = 30f;
+
+    private static SpawnController _SpawnControllerInstance;
+    
+    public float spawnProgress;
+
+    public bool isDone;
     
     private GameObject _Agent;
+    
+    public static SpawnController SpawnControllerInstance {
+        get {return _SpawnControllerInstance;}
+    }
 
+    void Awake () {
+        _SpawnControllerInstance = this;
+    }
 
     void Start () {
         _Agent = GameObject.FindGameObjectWithTag("Agent");
@@ -37,8 +50,12 @@ class SpawnController : MonoBehaviour {
             Instantiate(_Agent,
                         point,
                         transform.rotation);
+
+            spawnProgress = ((float)i / (float)agentCount);
         }
-        
+
+        isDone = true;
+
         GameManager.GameManagerInstance.UpdateGameState(GameState.SetAgentCommute);
     }
 }

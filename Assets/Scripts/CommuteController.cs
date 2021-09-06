@@ -3,6 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 class CommuteController : MonoBehaviour {    
+    
+    public float commuteProgress;
+
+    public bool isDone;
+
+    private static CommuteController _CommuteControllerInstance;
+
+    private int _progress = 1;
 
     private GameObject _GameManager;
 
@@ -14,8 +22,13 @@ class CommuteController : MonoBehaviour {
 
     [SerializeField] GameObject[] _agentList;
 
+    public static CommuteController CommuteControllerInstance {
+        get {return _CommuteControllerInstance;}
+    }
+
     void Awake() {
         GameManager.OnGameStateChanced += GameManagerOnGameStateChanged;
+        _CommuteControllerInstance = this;
     }
 
     void Start () {
@@ -101,6 +114,12 @@ class CommuteController : MonoBehaviour {
                  .setWorkDestination(_workList[workNumber]);
             // Debug.Log("Work assigned to " + agent.GetInstanceID());
         } 
+
+        commuteProgress = ((int)_progress / SpawnController.SpawnControllerInstance.agentCount);
+
+        _progress++;
+
+        isDone = true;
 
         GameManager.GameManagerInstance.UpdateGameState(GameState.StartNavMeshAgents);
     }
