@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -249,6 +249,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 994ea0bbb67ea44248b1400368a3e64f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  commuteProgress: 0
+  isDone: 0
   _homeList: []
   _workList: []
   _agentList: []
@@ -264,8 +266,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad0166ff97e754c4cbdf8ac83c63762e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   agentCount: 100
+=======
+  agentCount: 5000
+>>>>>>> 7346b37c03ea621b39130468773b1d05adebd4cd
   range: 30
+  spawnProgress: 0
+  isDone: 0
 --- !u!4 &271035690
 Transform:
   m_ObjectHideFlags: 0
@@ -1056,7 +1064,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1402650736}
   - component: {fileID: 1402650735}
-  - component: {fileID: 1402650734}
   - component: {fileID: 1402650733}
   m_Layer: 0
   m_Name: Main Camera
@@ -1077,14 +1084,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 479327f6e0734737aa880fa32da2a06d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!81 &1402650734
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1402650732}
-  m_Enabled: 1
 --- !u!20 &1402650735
 Camera:
   m_ObjectHideFlags: 0

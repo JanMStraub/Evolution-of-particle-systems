@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour {
     public GameState State;
     
     private float _totalSceneProgress;
+    private float _totalSpawnProgress = 0;
+    private float _totalCommuteProgress = 0;
 
     public static event Action<GameState> OnGameStateChanced;
 
@@ -56,6 +58,7 @@ public class GameManager : MonoBehaviour {
         scenesLoading.Add(SceneManager.LoadSceneAsync((int)SceneIndexes.INF, LoadSceneMode.Additive));
 
         StartCoroutine(GetSceneLoadProcess());
+        StartCoroutine(GetTotalProgress());
     }
     
     // Managing GameStates 
@@ -65,13 +68,13 @@ public class GameManager : MonoBehaviour {
 
         switch (newState) {
             case GameState.SetAgentCommute:
-                Debug.Log("SetAgentCommute");
+                // Debug.Log("SetAgentCommute");
                 break;
             case GameState.StartNavMeshAgents:
-                Debug.Log("StartNavMeshAgents");
+                // Debug.Log("StartNavMeshAgents");
                 break;
             case GameState.RunSimulation:
-                Debug.Log("RunSimulation");
+                // Debug.Log("RunSimulation");
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
@@ -93,11 +96,39 @@ public class GameManager : MonoBehaviour {
 
                 _totalSceneProgress = (_totalSceneProgress / scenesLoading.Count) * 100f;
 
-                slider.value = Mathf.RoundToInt(_totalSceneProgress);
-
                 yield return null;
             }
         }
+    }
+
+    IEnumerator GetSpawnProgress () {
+        while (SpawnController.SpawnControllerInstance == null || !SpawnController.SpawnControllerInstance.isDone) {
+            if (SpawnController.SpawnControllerInstance != null) {
+                _totalSpawnProgress = Mathf.Round(SpawnController.SpawnControllerInstance.spawnProgress * 100f);
+            }
+
+            Debug.Log("spawn" + _totalSpawnProgress);
+
+            yield return null;
+        }
+    }
+
+    IEnumerator GetTotalProgress () {
+        float totalProgress = 0;
+
+        while (CommuteController.CommuteControllerInstance == null || !CommuteController.CommuteControllerInstance.isDone) {
+            if (CommuteController.CommuteControllerInstance != null) {
+                _totalCommuteProgress = Mathf.Round(CommuteController.CommuteControllerInstance.commuteProgress * 100f);
+                Debug.Log("commute" + _totalCommuteProgress);
+            }
+
+            totalProgress = Mathf.Round((_totalSceneProgress + _totalSpawnProgress + _totalCommuteProgress) / 3f);
+            Debug.Log("total " + totalProgress);
+            slider.value = Mathf.RoundToInt(totalProgress);
+
+            yield return null;
+        }
+        
         loadingScreen.gameObject.SetActive(false);
     }
 }
