@@ -132,39 +132,45 @@ class CommuteController : MonoBehaviour {
         GameManager.GameManagerInstance.UpdateGameState(GameState.StartNavMeshAgents);
     }
 
-    void addLecturesToStudents() {
+    void addLecturesToStudents(){
+        int lectureListSize = _lectureList.Size(); //better performance
         int studentIndex = 0;
-        int[] freeSlots = new int[7]{3394, 1566, 1763, 2307, 2324, 355, 351};
-        while (_lectureList.Size() > 50) {
+        int[] freeSlots = new int[7]{1023, 844, 408, 3528, 611, 10282, 42};
+        while(lectureListSize > 25) {
             //Student student = _agentList[studentIndex].GetComponent<NavMeshAgentController>()._student;
             Student student = _studentList[studentIndex];
             bool searchOwn = (freeSlots[(int)student.getFaculty()])>0? true : false;
             Lecture lecture = FindLecture(searchOwn, student);
             if (lecture != null) {
+                Debug.Log(studentIndex);
                 student.lectureList.Add(lecture);
                 student.setTimetableEnd(lecture.GetEndInMinutes());
                 lecture.number--;
                 if (lecture.number == 0) {
                     _lectureList.lecture.Remove(lecture);
+                    lectureListSize--;
                 }
                 freeSlots[lecture.faculty]--;
             }
 
-
-            studentIndex = (studentIndex + 1) % _agentList.Length;
-            Debug.Log(_lectureList.Size());
+            studentIndex = (studentIndex + 1) % _studentList.Length;
+            //Debug.Log(_lectureList.Size());
         }
     }
 
     Lecture FindLecture(bool searchOwn, Student student) {
         Lecture lecture;
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 100; i++) { //100 tries max to find a fitting lecture
 
             lecture =_lectureList.lecture[(int)Random.Range(0,_lectureList.Size())];
             
-            if ((lecture.faculty == student.getFaculty() || !searchOwn) && 
-                (student.getTimetableEnd() > lecture.GetStartInMinutes())) {
+            if (lecture.faculty == student.getFaculty() || !searchOwn) {
+                if (student.getTimetableEnd() < lecture.GetStartInMinutes())
+                {
+                    //Debug.Log("Vorlesung zugewiesen");
                     return lecture;
+                    
+                }
             } 
         }
         return null;

@@ -27,14 +27,14 @@ public class Student {
     }
 
     public void setTimetableEnd(int newEnd){
-        /*
+        
         if(_latestLectureEnding > newEnd){
             throw new System.Exception("timetable collision");
         }
         else{
             this._latestLectureEnding = newEnd;
         }
-        */
+        
         this._latestLectureEnding = newEnd;
     }
 
