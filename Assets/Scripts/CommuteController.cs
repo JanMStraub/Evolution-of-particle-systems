@@ -22,13 +22,11 @@ class CommuteController : MonoBehaviour {
 
     [SerializeField] GameObject[] _agentList;
 
-<<<<<<< HEAD
     [SerializeField] Student[] _studentList;
-=======
+
     public static CommuteController CommuteControllerInstance {
         get {return _CommuteControllerInstance;}
     }
->>>>>>> 7346b37c03ea621b39130468773b1d05adebd4cd
 
     void Awake() {
         GameManager.OnGameStateChanced += GameManagerOnGameStateChanged;
@@ -111,11 +109,7 @@ class CommuteController : MonoBehaviour {
             _studentList[i] = student;
 
             assistIndex++;
-            Debug.Log(student.getFaculty());
         }
-
-
- 
 
         // Assign work to agent
         if (_workList.Length == 0)
@@ -138,55 +132,41 @@ class CommuteController : MonoBehaviour {
         GameManager.GameManagerInstance.UpdateGameState(GameState.StartNavMeshAgents);
     }
 
-    void addLecturesToStudents()
-    {
+    void addLecturesToStudents() {
         int studentIndex = 0;
         int[] freeSlots = new int[7]{3394, 1566, 1763, 2307, 2324, 355, 351};
-        while(_lectureList.Size() > 0)
-        {
+        while (_lectureList.Size() > 50) {
             //Student student = _agentList[studentIndex].GetComponent<NavMeshAgentController>()._student;
             Student student = _studentList[studentIndex];
             bool searchOwn = (freeSlots[(int)student.getFaculty()])>0? true : false;
             Lecture lecture = FindLecture(searchOwn, student);
-            if(lecture != null)
-            {
+            if (lecture != null) {
                 student.lectureList.Add(lecture);
                 student.setTimetableEnd(lecture.GetEndInMinutes());
                 lecture.number--;
-                if(lecture.number == 0)
-                {
+                if (lecture.number == 0) {
                     _lectureList.lecture.Remove(lecture);
                 }
                 freeSlots[lecture.faculty]--;
             }
 
 
-            studentIndex = (studentIndex+1)%_agentList.Length;
+            studentIndex = (studentIndex + 1) % _agentList.Length;
+            Debug.Log(_lectureList.Size());
         }
     }
 
-    Lecture FindLecture(bool searchOwn, Student student)
-    {
-        int tryCounter = 0;
-        bool fit = false;
-        Lecture lecture = null;
-        while(!fit)
-        {
+    Lecture FindLecture(bool searchOwn, Student student) {
+        Lecture lecture;
+        for (int i = 0; i < 100; i++) {
+
             lecture =_lectureList.lecture[(int)Random.Range(0,_lectureList.Size())];
-            if(lecture.faculty == student.getFaculty() || !searchOwn)
-            {
-                fit = true;
-            }
-            if(student.getTimetableEnd() > lecture.GetStartInMinutes())
-            {
-                fit = false;
-            }
-            if(tryCounter > 50)
-            {
-                break;
-            }
-            tryCounter++;
+            
+            if ((lecture.faculty == student.getFaculty() || !searchOwn) && 
+                (student.getTimetableEnd() > lecture.GetStartInMinutes())) {
+                    return lecture;
+            } 
         }
-        return lecture;
+        return null;
     }
 }

@@ -266,11 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad0166ff97e754c4cbdf8ac83c63762e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   agentCount: 100
-=======
-  agentCount: 5000
->>>>>>> 7346b37c03ea621b39130468773b1d05adebd4cd
   range: 30
   spawnProgress: 0
   isDone: 0
