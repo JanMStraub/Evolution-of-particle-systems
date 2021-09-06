@@ -6,7 +6,7 @@ using UnityEngine.AI;
 
 class SpawnController : MonoBehaviour {
 
-    public int agentCount = 100;
+    public int agentCount = 10;
 
     public float range = 30f;
     

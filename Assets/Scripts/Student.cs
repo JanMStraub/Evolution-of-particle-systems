@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class Student {
     private double _id;
     private int _faculty;
@@ -26,12 +27,15 @@ public class Student {
     }
 
     public void setTimetableEnd(int newEnd){
+        /*
         if(_latestLectureEnding > newEnd){
             throw new System.Exception("timetable collision");
         }
         else{
             this._latestLectureEnding = newEnd;
         }
+        */
+        this._latestLectureEnding = newEnd;
     }
 
     // TODO Student size 

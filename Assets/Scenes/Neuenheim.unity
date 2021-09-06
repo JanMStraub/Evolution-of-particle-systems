@@ -264,7 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad0166ff97e754c4cbdf8ac83c63762e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agentCount: 10322
+  agentCount: 100
   range: 30
 --- !u!4 &271035690
 Transform:

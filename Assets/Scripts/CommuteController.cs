@@ -14,6 +14,8 @@ class CommuteController : MonoBehaviour {
 
     [SerializeField] GameObject[] _agentList;
 
+    [SerializeField] Student[] _studentList;
+
     void Awake() {
         GameManager.OnGameStateChanced += GameManagerOnGameStateChanged;
     }
@@ -22,6 +24,7 @@ class CommuteController : MonoBehaviour {
         _GameManager = GameObject.FindGameObjectWithTag("GameController");
         JSONReader jsonreader = _GameManager.GetComponent<JSONReader>();
         _lectureList = jsonreader.myLectureList;
+        _studentList = new Student[10322];
     }
 
     void OnDestroy() {
@@ -31,7 +34,7 @@ class CommuteController : MonoBehaviour {
     private void GameManagerOnGameStateChanged (GameState state) {
          if (state == GameState.SetAgentCommute) {
             Assign();
-            aLtS(); //addLecturestoStudent 2.0
+            addLecturesToStudents();
         }
     }
 
@@ -47,21 +50,27 @@ class CommuteController : MonoBehaviour {
             _homeList = GameObject.FindGameObjectsWithTag("HomeDoor");
             // Debug.Log("Home list created");
 
-        foreach (GameObject agent in _agentList) {
-
-            int medstudents = 2905;
-            int mathstudents = 1340;
-            int chemstudents = 1509;
-            int phystudents = 1975;
-            int biostudents = 1989;
-            int clstudents = 300;
-            
+        foreach(GameObject agent in _agentList)
+        {
             int homeNumber = Random.Range(0, _homeList.Length);
             agent.GetComponent<NavMeshAgentController>()
                  .setHomeDestination(_homeList[homeNumber]);
+        }
+
+        int assistIndex = 0;
+
+        int medstudents = 2905;
+        int mathstudents = 1340;
+        int chemstudents = 1509;
+        int phystudents = 1975;
+        int biostudents = 1989;
+        int clstudents = 300;
+            
+
+        for(int i=0; i<_studentList.Length; i++) {
             
             // Assign each agent a student
-            Student student = new Student(agent.GetInstanceID());
+            Student student = new Student(i);
 
             // Assign each student a faculty
             if (medstudents > 0) {
@@ -83,10 +92,13 @@ class CommuteController : MonoBehaviour {
                 student.setFaculty(6);
                 clstudents--;
             }
-                        
             
-            agent.GetComponent<NavMeshAgentController>()._student = student;
+            _studentList[i] = student;
+
+            assistIndex++;
+            Debug.Log(student.getFaculty());
         }
+
 
  
 
@@ -105,40 +117,14 @@ class CommuteController : MonoBehaviour {
         GameManager.GameManagerInstance.UpdateGameState(GameState.StartNavMeshAgents);
     }
 
-    /*
-    void addLecturesToStudents () {
-
-        foreach (var lecture in _lectureList.lecture) {
-            
-            if (lecture.faculty == (int)FacultyIndexes.Medizin) {
-                student.lectureList.Add(lecture);
-                Debug.Log(student.lectureList[0].building);
-            } else if (lecture.faculty == (int)FacultyIndexes.Mathematik_und_Informatik) {
-                
-            } else if (lecture.faculty == (int)FacultyIndexes.Chemie_und_Geowissenschaften) {
-                
-            } else if (lecture.faculty == (int)FacultyIndexes.Physik_und_Astronomie) {
-                
-            } else if (lecture.faculty == (int)FacultyIndexes.Biowissenschaften) {
-                
-            } else if (lecture.faculty == (int)FacultyIndexes.Rest) {
-                
-            } else if (lecture.faculty == (int)FacultyIndexes.Computerlinguistik) {
-                
-            } else {
-                Debug.Log("Lecture type not found!");
-            }
-        }
-    }
-    */
-
-    void aLtS()
+    void addLecturesToStudents()
     {
         int studentIndex = 0;
         int[] freeSlots = new int[7]{3394, 1566, 1763, 2307, 2324, 355, 351};
         while(_lectureList.Size() > 0)
         {
-            Student student = _agentList[studentIndex].GetComponent<NavMeshAgentController>()._student;
+            //Student student = _agentList[studentIndex].GetComponent<NavMeshAgentController>()._student;
+            Student student = _studentList[studentIndex];
             bool searchOwn = (freeSlots[(int)student.getFaculty()])>0? true : false;
             Lecture lecture = FindLecture(searchOwn, student);
             if(lecture != null)
