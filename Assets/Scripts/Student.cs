@@ -5,8 +5,15 @@ using UnityEngine;
 [System.Serializable]
 public class Student {
     private double _id;
+
     private int _faculty;
+
     private int _latestLectureEnding; // in minutes
+
+    private float _size;
+
+    private float _speed;
+
     public List<Lecture> lectureList = new List<Lecture>();
 
     public Student (double id) {
@@ -26,6 +33,22 @@ public class Student {
         return _latestLectureEnding;
     }
 
+    public float getSize () {
+        return _size;
+    }
+
+    public float getSpeed () {
+        return _speed;
+    }
+
+    public void setSize (float size) {
+        _size = size;
+    }
+
+    public void setSpeed (float speed) {
+        _speed = speed;
+    } 
+
     public void setTimetableEnd(int newEnd){
         
         if(_latestLectureEnding > newEnd){
@@ -37,7 +60,4 @@ public class Student {
         
         this._latestLectureEnding = newEnd;
     }
-
-    // TODO Student size 
-    // TODO Student speed
 }

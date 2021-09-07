@@ -107,7 +107,7 @@ public class GameManager : MonoBehaviour {
                 _totalSpawnProgress = Mathf.Round(SpawnController.SpawnControllerInstance.spawnProgress * 100f);
             }
 
-            Debug.Log("spawn" + _totalSpawnProgress);
+            // Debug.Log("spawn" + _totalSpawnProgress);
 
             yield return null;
         }
@@ -119,11 +119,11 @@ public class GameManager : MonoBehaviour {
         while (CommuteController.CommuteControllerInstance == null || !CommuteController.CommuteControllerInstance.isDone) {
             if (CommuteController.CommuteControllerInstance != null) {
                 _totalCommuteProgress = Mathf.Round(CommuteController.CommuteControllerInstance.commuteProgress * 100f);
-                Debug.Log("commute" + _totalCommuteProgress);
+                // Debug.Log("commute" + _totalCommuteProgress);
             }
 
             totalProgress = Mathf.Round((_totalSceneProgress + _totalSpawnProgress + _totalCommuteProgress) / 3f);
-            Debug.Log("total " + totalProgress);
+            // Debug.Log("total " + totalProgress);
             slider.value = Mathf.RoundToInt(totalProgress);
 
             yield return null;
