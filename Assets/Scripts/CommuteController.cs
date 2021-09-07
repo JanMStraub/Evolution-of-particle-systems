@@ -37,7 +37,8 @@ class CommuteController : MonoBehaviour {
         _GameManager = GameObject.FindGameObjectWithTag("GameController");
         JSONReader jsonreader = _GameManager.GetComponent<JSONReader>();
         _lectureList = jsonreader.myLectureList;
-        _studentList = new Student[10322];
+        _studentList = StudentInitialisation.StudentInitialisationInstance.getStudentList();
+        Debug.Log(_studentList.GetLength(1));
     }
 
     void OnDestroy() {
@@ -70,47 +71,6 @@ class CommuteController : MonoBehaviour {
                  .setHomeDestination(_homeList[homeNumber]);
         }
 
-        int assistIndex = 0;
-
-        int medstudents = 2905;
-        int mathstudents = 1340;
-        int chemstudents = 1509;
-        int phystudents = 1975;
-        int biostudents = 1989;
-        int clstudents = 300;
-            
-
-        for(int i=0; i<_studentList.Length; i++) {
-            
-            // Assign each agent a student
-            Student student = new Student(i);
-
-            // Assign each student a faculty
-            if (medstudents > 0) {
-                student.setFaculty(0);
-                medstudents--;
-            } else if(mathstudents > 0) {
-                student.setFaculty(1);
-                mathstudents--;
-            } else if (chemstudents > 0) {
-                student.setFaculty(2);
-                chemstudents--;
-            } else if (phystudents > 0) {
-                student.setFaculty(3);
-                phystudents--;
-            } else if (biostudents > 0) {
-                student.setFaculty(4);
-                biostudents--;
-            } else {
-                student.setFaculty(6);
-                clstudents--;
-            }
-            
-            _studentList[i] = student;
-
-            assistIndex++;
-        }
-
         // Assign work to agent
         if (_workList.Length == 0)
             _workList = GameObject.FindGameObjectsWithTag("WorkDoor");
@@ -129,7 +89,7 @@ class CommuteController : MonoBehaviour {
 
         isDone = true;
 
-        GameManager.GameManagerInstance.UpdateGameState(GameState.StartNavMeshAgents);
+        GameManager.GameManagerInstance.UpdateGameState(GameState.RunSimulation);
     }
 
     void addLecturesToStudents(){

@@ -16,7 +16,9 @@ public class GameManager : MonoBehaviour {
     public GameState State;
     
     private float _totalSceneProgress;
+
     private float _totalSpawnProgress = 0;
+    
     private float _totalCommuteProgress = 0;
 
     public static event Action<GameState> OnGameStateChanced;
@@ -59,6 +61,8 @@ public class GameManager : MonoBehaviour {
 
         StartCoroutine(GetSceneLoadProcess());
         StartCoroutine(GetTotalProgress());
+
+        UpdateGameState(GameState.StudentInitialisation);
     }
     
     // Managing GameStates 
@@ -67,10 +71,10 @@ public class GameManager : MonoBehaviour {
         State = newState;
 
         switch (newState) {
-            case GameState.SetAgentCommute:
+            case GameState.StudentInitialisation:
                 // Debug.Log("SetAgentCommute");
                 break;
-            case GameState.StartNavMeshAgents:
+            case GameState.SetAgentCommute:
                 // Debug.Log("StartNavMeshAgents");
                 break;
             case GameState.RunSimulation:

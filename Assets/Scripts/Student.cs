@@ -4,7 +4,7 @@ using UnityEngine;
 
 [System.Serializable]
 public class Student {
-    private double _id;
+    private int _id;
 
     private int _faculty;
 
@@ -16,8 +16,10 @@ public class Student {
 
     public List<Lecture> lectureList = new List<Lecture>();
 
-    public Student (double id) {
+    public Student(int id, float size, float speed) {
         _id = id;
+        _size = size;
+        _speed = speed;
         _latestLectureEnding = 0;
     }
 
@@ -54,7 +56,7 @@ public class Student {
         if(_latestLectureEnding > newEnd){
             throw new System.Exception("timetable collision");
         }
-        else{
+        else {
             this._latestLectureEnding = newEnd;
         }
         

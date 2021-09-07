@@ -2,8 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 public enum GameState {
-    SpawnAgents,
+    StudentInitialisation,
     SetAgentCommute,
-    StartNavMeshAgents,
     RunSimulation
 }
