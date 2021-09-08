@@ -8,26 +8,18 @@ class StudentInitialisation : MonoBehaviour {
 
     public bool isDone;
 
-    public int numberOfStudents = 10322;
+    public int numberOfStudents = 10000;
 
     private static StudentInitialisation _StudentInitialisationInstance;
 
     [SerializeField] Student[] _studentList;
 
     void Awake() {
-        GameManager.OnGameStateChanced += GameManagerOnGameStateChanged;
         _StudentInitialisationInstance = this;
     }
 
-    void OnDestroy() {
-        GameManager.OnGameStateChanced -= GameManagerOnGameStateChanged;
-    }
-
-    private void GameManagerOnGameStateChanged (GameState state) {
-        if (state == GameState.StudentInitialisation) {
-            Debug.Log("initialisation test");
-            Initialize ();
-        }
+    void Start () {
+        Initialize ();
     }
 
     public static StudentInitialisation StudentInitialisationInstance {
@@ -48,8 +40,8 @@ class StudentInitialisation : MonoBehaviour {
         int mathstudents = Mathf.RoundToInt((float)numberOfStudents * 0.13f);
         int chemstudents = Mathf.RoundToInt((float)numberOfStudents * 0.15f);
         int phystudents = Mathf.RoundToInt((float)numberOfStudents * 0.19f);
-        int biostudents = Mathf.RoundToInt((float)numberOfStudents * 0.3f);
-        int clstudents = Mathf.RoundToInt((float)numberOfStudents * 0.3f);
+        int biostudents = Mathf.RoundToInt((float)numberOfStudents * 0.19f);
+        int clstudents = Mathf.RoundToInt((float)numberOfStudents * 0.6f);
 
         for (int i = 0; i < numberOfStudents; i++) {
 
@@ -82,6 +74,6 @@ class StudentInitialisation : MonoBehaviour {
             _studentList[i] = student;
         }
 
-        GameManager.GameManagerInstance.UpdateGameState(GameState.RunSimulation);
+        GameManager.GameManagerInstance.UpdateGameState(GameState.SetAgentCommute);
     }
 }

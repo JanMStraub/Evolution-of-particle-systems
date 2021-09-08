@@ -300,7 +300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   studentInitialisationProgress: 0
   isDone: 0
-  numberOfStudents: 10322
+  numberOfStudents: 10000
   _studentList: []
 --- !u!1 &458701480
 GameObject:

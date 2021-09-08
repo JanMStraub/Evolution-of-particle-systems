@@ -45,9 +45,7 @@ class CommuteController : MonoBehaviour {
 
     private void GameManagerOnGameStateChanged (GameState state) {
          if (state == GameState.SetAgentCommute) {
-            Debug.Log("commute test");
             _studentList = StudentInitialisation.StudentInitialisationInstance.getStudentList();
-            Debug.Log(_studentList.GetLength(1));
             Assign();
             addLecturesToStudents();
         }
@@ -103,7 +101,6 @@ class CommuteController : MonoBehaviour {
             bool searchOwn = (freeSlots[(int)student.getFaculty()])>0? true : false;
             Lecture lecture = FindLecture(searchOwn, student);
             if (lecture != null) {
-                Debug.Log(studentIndex);
                 student.lectureList.Add(lecture);
                 student.setTimetableEnd(lecture.GetEndInMinutes());
                 lecture.number--;
@@ -115,7 +112,6 @@ class CommuteController : MonoBehaviour {
             }
 
             studentIndex = (studentIndex + 1) % _studentList.Length;
-            //Debug.Log(_lectureList.Size());
         }
     }
 
@@ -128,9 +124,7 @@ class CommuteController : MonoBehaviour {
             if (lecture.faculty == student.getFaculty() || !searchOwn) {
                 if (student.getTimetableEnd() < lecture.GetStartInMinutes())
                 {
-                    //Debug.Log("Vorlesung zugewiesen");
                     return lecture;
-                    
                 }
             } 
         }
