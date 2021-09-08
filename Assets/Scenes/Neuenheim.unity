@@ -228,9 +228,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 271035690}
+  - component: {fileID: 271035691}
   - component: {fileID: 271035689}
   - component: {fileID: 271035688}
-  - component: {fileID: 271035691}
   m_Layer: 0
   m_Name: SimulationHandler
   m_TagString: Untagged

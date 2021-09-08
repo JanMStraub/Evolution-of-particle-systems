@@ -28,12 +28,12 @@ class SpawnController : MonoBehaviour {
 
     void Start () {
         _Agent = GameObject.FindGameObjectWithTag("Agent");
-        Debug.Log("SpawnAgents");
-        Spawn();
     }
 
 
     void Spawn() {
+
+        Debug.Log("SpawnAgents");
         
         for (int i = 1; i < agentCount; i++) {
 

@@ -37,8 +37,6 @@ class CommuteController : MonoBehaviour {
         _GameManager = GameObject.FindGameObjectWithTag("GameController");
         JSONReader jsonreader = _GameManager.GetComponent<JSONReader>();
         _lectureList = jsonreader.myLectureList;
-        _studentList = StudentInitialisation.StudentInitialisationInstance.getStudentList();
-        Debug.Log(_studentList.GetLength(1));
     }
 
     void OnDestroy() {
@@ -47,6 +45,9 @@ class CommuteController : MonoBehaviour {
 
     private void GameManagerOnGameStateChanged (GameState state) {
          if (state == GameState.SetAgentCommute) {
+            Debug.Log("commute test");
+            _studentList = StudentInitialisation.StudentInitialisationInstance.getStudentList();
+            Debug.Log(_studentList.GetLength(1));
             Assign();
             addLecturesToStudents();
         }

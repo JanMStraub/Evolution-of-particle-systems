@@ -59,10 +59,8 @@ public class GameManager : MonoBehaviour {
         scenesLoading.Add(SceneManager.UnloadSceneAsync((int)SceneIndexes.TITLE_SCREEN));
         scenesLoading.Add(SceneManager.LoadSceneAsync((int)SceneIndexes.INF, LoadSceneMode.Additive));
 
-        StartCoroutine(GetSceneLoadProcess());
-        StartCoroutine(GetTotalProgress());
-
-        UpdateGameState(GameState.StudentInitialisation);
+        loadingScreen.gameObject.SetActive(false);
+        UpdateGameState(GameState.SetAgentCommute);
     }
     
     // Managing GameStates 
@@ -72,13 +70,13 @@ public class GameManager : MonoBehaviour {
 
         switch (newState) {
             case GameState.StudentInitialisation:
-                // Debug.Log("SetAgentCommute");
+                Debug.Log("StudentInitialisation");
                 break;
             case GameState.SetAgentCommute:
-                // Debug.Log("StartNavMeshAgents");
+                Debug.Log("SetAgentCommute");
                 break;
             case GameState.RunSimulation:
-                // Debug.Log("RunSimulation");
+                Debug.Log("RunSimulation");
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);

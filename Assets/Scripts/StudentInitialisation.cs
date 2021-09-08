@@ -24,7 +24,8 @@ class StudentInitialisation : MonoBehaviour {
     }
 
     private void GameManagerOnGameStateChanged (GameState state) {
-         if (state == GameState.StudentInitialisation) {
+        if (state == GameState.StudentInitialisation) {
+            Debug.Log("initialisation test");
             Initialize ();
         }
     }
@@ -38,6 +39,8 @@ class StudentInitialisation : MonoBehaviour {
     }
 
     void Initialize () {
+
+        Debug.Log("Initialize");
 
         _studentList = new Student[numberOfStudents];
 
