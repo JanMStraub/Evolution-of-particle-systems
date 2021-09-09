@@ -6,31 +6,73 @@ using UnityEngine.AI;
 
 class SpawnController : MonoBehaviour {
 
-    public int agentCount = 10;
-
-    public float range = 30f;
+    // TODO refactor
 
     private static SpawnController _SpawnControllerInstance;
-    
-    public float spawnProgress;
 
-    public bool isDone;
+    private Student[] _studentList;
     
-    private GameObject _Agent;
+    public GameObject _Agent;
     
     public static SpawnController SpawnControllerInstance {
         get {return _SpawnControllerInstance;}
     }
 
-    void Awake () {
+    void Awake() {
+        GameManager.OnGameStateChanced += GameManagerOnGameStateChanged;
         _SpawnControllerInstance = this;
     }
 
-    void Start () {
-        _Agent = GameObject.FindGameObjectWithTag("Agent");
+
+    void OnDestroy() {
+        GameManager.OnGameStateChanced -= GameManagerOnGameStateChanged;
     }
 
+    private void GameManagerOnGameStateChanged (GameState state) {
+         if (state == GameState.RunSimulation) {
+            _studentList = StudentInitialisation.StudentInitialisationInstance.getStudentList();
+            //StartCoroutine(Spawn());
+            test();
+        }
+    }
 
+    void test () {
+        _studentList = CommuteController.CommuteControllerInstance.getStudentList();
+            int number = 0;
+
+            foreach (Student student in _studentList) {
+                if (student.lectureList.Count > 0) {
+
+                    number++;
+                }
+            }
+            Debug.Log("number of students wis a forlesung" +number);
+    }
+
+/*
+    IEnumerator Spawn () {
+        while (true) {
+            _studentList = CommuteController.CommuteControllerInstance.getStudentList();
+            int number = 0;
+
+            foreach (Student student in _studentList) {
+                if (student.lectureList.Count > 0) {
+                    int time = student.getNextLecture();
+                        // TODO if gametime - 15 == time
+                        Instantiate(_Agent, student.getSpawnPoint(), transform.rotation);
+
+
+                    Debug.Log(student.lectureList[0].building);
+                    number++;
+                }
+            }
+            Debug.Log(number);
+            yield return new WaitForSeconds(7.5f);
+        }
+    }
+
+    
+    /*
     void Spawn() {
 
         Debug.Log("SpawnAgents");
@@ -50,12 +92,9 @@ class SpawnController : MonoBehaviour {
             Instantiate(_Agent,
                         point,
                         transform.rotation);
-
-            spawnProgress = ((float)i / (float)agentCount);
         }
-
-        isDone = true;
 
         GameManager.GameManagerInstance.UpdateGameState(GameState.SetAgentCommute);
     }
+    */
 }

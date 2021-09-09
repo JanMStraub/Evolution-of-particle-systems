@@ -8,17 +8,20 @@ class StudentInitialisation : MonoBehaviour {
 
     public bool isDone;
 
-    public int numberOfStudents = 10000;
+    private int _numberOfStudents = 10000;
 
     private static StudentInitialisation _StudentInitialisationInstance;
+    
+    private GameObject[] _spawnPoints;
 
-    [SerializeField] Student[] _studentList;
+    [SerializeField] private Student[] _studentList;
 
     void Awake() {
         _StudentInitialisationInstance = this;
     }
 
     void Start () {
+        _spawnPoints = GameObject.FindGameObjectsWithTag("Spawn");
         Initialize ();
     }
 
@@ -34,21 +37,22 @@ class StudentInitialisation : MonoBehaviour {
 
         Debug.Log("Initialize");
 
-        _studentList = new Student[numberOfStudents];
+        _studentList = new Student[_numberOfStudents];
 
-        int medstudents = Mathf.RoundToInt((float)numberOfStudents * 0.28f);
-        int mathstudents = Mathf.RoundToInt((float)numberOfStudents * 0.13f);
-        int chemstudents = Mathf.RoundToInt((float)numberOfStudents * 0.15f);
-        int phystudents = Mathf.RoundToInt((float)numberOfStudents * 0.19f);
-        int biostudents = Mathf.RoundToInt((float)numberOfStudents * 0.19f);
-        int clstudents = Mathf.RoundToInt((float)numberOfStudents * 0.6f);
+        int medstudents = Mathf.RoundToInt((float)_numberOfStudents * 0.28f);
+        int mathstudents = Mathf.RoundToInt((float)_numberOfStudents * 0.13f);
+        int chemstudents = Mathf.RoundToInt((float)_numberOfStudents * 0.15f);
+        int phystudents = Mathf.RoundToInt((float)_numberOfStudents * 0.19f);
+        int biostudents = Mathf.RoundToInt((float)_numberOfStudents * 0.19f);
+        int clstudents = Mathf.RoundToInt((float)_numberOfStudents * 0.06f);
 
-        for (int i = 0; i < numberOfStudents; i++) {
+        for (int i = 0; i < _numberOfStudents; i++) {
 
             float size = Random.Range(1.5f, 2.2f);
             float speed = Random.Range(45f, 60f);
+            int spawnPoint = Random.Range(0, _spawnPoints.Length);
 
-            Student student = new Student(i, size, speed);
+            Student student = new Student(i, size, speed, _spawnPoints[spawnPoint].transform.position);
 
             // Assign each student a faculty
             if (medstudents > 0) {

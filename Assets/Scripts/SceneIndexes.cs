@@ -1,5 +1,6 @@
 public enum SceneIndexes {
     MANAGER = 0,
     TITLE_SCREEN = 1,
-    TEST = 2
+    INF = 2,
+    TEST = 3
 }
