@@ -36,6 +36,10 @@ public class Student {
         return _faculty;
     }
 
+    public int getId() {
+        return _id;
+    }
+
     public int getTimetableEnd(){
         return _latestLectureEnding;
     }

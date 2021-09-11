@@ -52,7 +52,8 @@ class CommuteController : MonoBehaviour {
         return _studentList;
     }
 
-    private void AddLecturesToStudents () {
+    /*
+    private void AddLecturesToStudents2 () {
         List<int> freePlaces = new List<int>(){1023, 844, 408, 3528, 611, 10282, 42};
 
         int emptyLectures = 0;
@@ -83,15 +84,22 @@ class CommuteController : MonoBehaviour {
 
         Debug.Log("emptyLectures: " + emptyLectures);
     }
+    */
 
-    /*
+
     private void AddLecturesToStudents(){
-        int lectureListSize = _lectureList.Size(); //better performance
         int studentIndex = 0;
-        int[] freeSlots = new int[7]{1023, 844, 408, 3528, 611, 10282, 42};
+
+        int[] freeSlots = new int[7];
+        foreach (Lecture lecture in _lectureList.lecture) { //count all available seats in all lectures, sorted to faculties
+            freeSlots[lecture.faculty] += lecture.number;
+        }
+
         int controllSlotNumber = 16736; //ist zwar falsch aber muss so
         int actualSlotNumber = 16735;
-        while(true) {
+        bool nothingChanged = false;
+
+        while(!nothingChanged) {
             //Student student = _agentList[studentIndex].GetComponent<NavMeshAgentController>()._student;
             Student student = _studentList[studentIndex];
             bool searchOwn = false;
@@ -107,7 +115,6 @@ class CommuteController : MonoBehaviour {
 
                 if (lecture.number == 0) {
                     _lectureList.lecture.Remove(lecture);
-                    lectureListSize--;
                 }
 
                 freeSlots[lecture.faculty]--;
@@ -116,41 +123,21 @@ class CommuteController : MonoBehaviour {
 
             if(studentIndex == 0) { 
                 if(controllSlotNumber == actualSlotNumber) {
-                    break; // break if all students cant get more lessons;
+                    nothingChanged = true; // break if all students cant get more lessons;
                 }
                 controllSlotNumber = actualSlotNumber;
-                Debug.Log(freeSlots[0]);
-                Debug.Log(freeSlots[1]);
-                Debug.Log(freeSlots[2]);
-                Debug.Log(freeSlots[3]);
-                Debug.Log(freeSlots[4]);
-                Debug.Log(freeSlots[5]);
-                Debug.Log(freeSlots[6]);
             }
+
 
             studentIndex = (studentIndex + 1) % _studentList.Length;
         }
+        Debug.Log("free slots left: " + actualSlotNumber);
     }
 
     private Lecture FindLecture(bool searchOwn, Student student) {
-        Lecture returnlecture = null;
-
-        for (int i = 0; i < 100; i++) { //100 tries max to find a fitting lecture
+        for (int i=0; i<100; i++) { //100 tries max to find a fitting lecture
 
             Lecture lecture =_lectureList.lecture[Random.Range(0,_lectureList.Size())];
-
-            if (searchOwn) {
-                if (lecture.faculty == student.getFaculty()) {
-                    if (student.getTimetableEnd() < lecture.GetStartInMinutes()) {
-                        returnlecture =  lecture;
-                    }
-                }
-            } else {
-                if (student.getTimetableEnd() < lecture.GetStartInMinutes()) {
-                    returnlecture = lecture;
-                } 
-            }
-
             
             if ((lecture.faculty == student.getFaculty()) || !searchOwn) {
                 if (student.getTimetableEnd() < lecture.GetStartInMinutes())
@@ -160,9 +147,9 @@ class CommuteController : MonoBehaviour {
             } 
             
         }
-        return returnlecture;
+
+        return null;
     }
     
-    */
 
 }

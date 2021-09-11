@@ -39,14 +39,21 @@ class SpawnController : MonoBehaviour {
     void test () {
         _studentList = CommuteController.CommuteControllerInstance.getStudentList();
             int number = 0;
+            int[] facultydistribution = new int[7];
 
             foreach (Student student in _studentList) {
                 if (student.lectureList.Count > 0) {
-
                     number++;
                 }
+                if(student.lectureList.Count == 0) {
+                    facultydistribution[student.getFaculty()]++;
+                }
             }
-            Debug.Log("number of students wis a forlesung" +number);
+            for(int i=0; i<7; i++) {
+                Debug.Log(facultydistribution[i]);
+            }
+            Debug.Log("number of students wis a forlesung: " +number);
+            Debug.Log("students insgesamt: " + _studentList.Length);
     }
 
 /*
