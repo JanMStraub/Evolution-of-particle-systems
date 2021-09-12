@@ -45,9 +45,12 @@ class SpawnController : MonoBehaviour {
                 if (student.lectureList.Count > 0) {
                     number++;
                 }
+
                 if(student.lectureList.Count == 0) {
                     facultydistribution[student.getFaculty()]++;
                 }
+
+                
             }
             for(int i=0; i<7; i++) {
                 Debug.Log(facultydistribution[i]);
