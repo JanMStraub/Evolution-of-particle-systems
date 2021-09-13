@@ -60,14 +60,6 @@ class CommuteController : MonoBehaviour {
             freeSlots[lecture.faculty] += lecture.number;
         }
 
-        Debug.Log(freeSlots[0]);
-        Debug.Log(freeSlots[1]);
-        Debug.Log(freeSlots[2]);
-        Debug.Log(freeSlots[3]);
-        Debug.Log(freeSlots[4]);
-        Debug.Log(freeSlots[5]);
-        Debug.Log(freeSlots[6]);
-
         int controllSlotNumber = 16736; //ist zwar falsch aber muss so
         int actualSlotNumber = 16735;
         bool nothingChanged = false;
