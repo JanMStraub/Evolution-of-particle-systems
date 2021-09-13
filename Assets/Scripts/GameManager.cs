@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour {
 
     private static GameManager _GameManagerInstance;
 
+    private List<AsyncOperation> _scenesLoading = new List<AsyncOperation>();
+
     public GameObject loadingScreen;
 
     public Slider slider;
@@ -16,12 +18,13 @@ public class GameManager : MonoBehaviour {
     public GameState State;
     
     private float _totalSceneProgress;
+
     private float _totalSpawnProgress = 0;
+    
     private float _totalCommuteProgress = 0;
 
     public static event Action<GameState> OnGameStateChanced;
-
-    List<AsyncOperation> scenesLoading = new List<AsyncOperation>();
+    
 
     public static GameManager GameManagerInstance {
         get {return _GameManagerInstance;}
@@ -54,11 +57,10 @@ public class GameManager : MonoBehaviour {
 
         loadingScreen.gameObject.SetActive(true);
         
-        scenesLoading.Add(SceneManager.UnloadSceneAsync((int)SceneIndexes.TITLE_SCREEN));
-        scenesLoading.Add(SceneManager.LoadSceneAsync((int)SceneIndexes.INF, LoadSceneMode.Additive));
+        _scenesLoading.Add(SceneManager.UnloadSceneAsync((int)SceneIndexes.TITLE_SCREEN));
+        _scenesLoading.Add(SceneManager.LoadSceneAsync((int)SceneIndexes.INF, LoadSceneMode.Additive));
 
-        StartCoroutine(GetSceneLoadProcess());
-        StartCoroutine(GetTotalProgress());
+        loadingScreen.gameObject.SetActive(false);
     }
     
     // Managing GameStates 
@@ -67,14 +69,14 @@ public class GameManager : MonoBehaviour {
         State = newState;
 
         switch (newState) {
-            case GameState.SetAgentCommute:
-                // Debug.Log("SetAgentCommute");
+            case GameState.StudentInitialisation:
+                Debug.Log("StudentInitialisation");
                 break;
-            case GameState.StartNavMeshAgents:
-                // Debug.Log("StartNavMeshAgents");
+            case GameState.SetAgentCommute:
+                Debug.Log("SetAgentCommute");
                 break;
             case GameState.RunSimulation:
-                // Debug.Log("RunSimulation");
+                Debug.Log("RunSimulation");
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
@@ -86,29 +88,27 @@ public class GameManager : MonoBehaviour {
     // Managing LoadingScreen
     IEnumerator GetSceneLoadProcess () {
         
-        for (int i = 0; i < scenesLoading.Count; i++) {
-            while (!scenesLoading[i].isDone) {
+        for (int i = 0; i < _scenesLoading.Count; i++) {
+            while (!_scenesLoading[i].isDone) {
                 _totalSceneProgress = 0;
 
-                foreach (AsyncOperation operation in scenesLoading) {
+                foreach (AsyncOperation operation in _scenesLoading) {
                     _totalSceneProgress += operation.progress;
                 }
 
-                _totalSceneProgress = (_totalSceneProgress / scenesLoading.Count) * 100f;
+                _totalSceneProgress = (_totalSceneProgress / _scenesLoading.Count) * 100f;
 
                 yield return null;
             }
         }
     }
 
+    /*
     IEnumerator GetSpawnProgress () {
         while (SpawnController.SpawnControllerInstance == null || !SpawnController.SpawnControllerInstance.isDone) {
             if (SpawnController.SpawnControllerInstance != null) {
                 _totalSpawnProgress = Mathf.Round(SpawnController.SpawnControllerInstance.spawnProgress * 100f);
             }
-
-            Debug.Log("spawn" + _totalSpawnProgress);
-
             yield return null;
         }
     }
@@ -119,11 +119,9 @@ public class GameManager : MonoBehaviour {
         while (CommuteController.CommuteControllerInstance == null || !CommuteController.CommuteControllerInstance.isDone) {
             if (CommuteController.CommuteControllerInstance != null) {
                 _totalCommuteProgress = Mathf.Round(CommuteController.CommuteControllerInstance.commuteProgress * 100f);
-                Debug.Log("commute" + _totalCommuteProgress);
             }
 
             totalProgress = Mathf.Round((_totalSceneProgress + _totalSpawnProgress + _totalCommuteProgress) / 3f);
-            Debug.Log("total " + totalProgress);
             slider.value = Mathf.RoundToInt(totalProgress);
 
             yield return null;
@@ -131,4 +129,5 @@ public class GameManager : MonoBehaviour {
         
         loadingScreen.gameObject.SetActive(false);
     }
+    */
 }

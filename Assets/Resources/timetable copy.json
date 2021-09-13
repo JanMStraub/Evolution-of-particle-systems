@@ -2,7 +2,7 @@
   "lecture": [
       {
         "faculty": 6,
-        "building": 306,
+        "building": 325,
         "number": 42,
         "start": "11:15",
         "end": "13:00"
@@ -240,42 +240,42 @@
       },
       { 
         "faculty": 2, 
-        "building": 306,
+        "building": 348,
           "number": 24,
           "start": "09:00",
           "end": "18:00"
       },
       { 
         "faculty": 2, 
-        "building": 306,
+        "building": 348,
           "number": 24,
           "start": "09:00",
           "end": "11:00"
       },
       { 
         "faculty": 2, 
-        "building": 306,
+        "building": 348,
           "number": 64,
           "start": "11:15",
           "end": "12:45"
       },
       { 
         "faculty": 2, 
-        "building": 306,
+        "building": 348,
           "number": 40,
           "start": "13:00",
           "end": "14:00"
       },
       { 
         "faculty": 2, 
-        "building": 306,
+        "building": 348,
           "number": 24,
           "start": "13:00",
           "end": "15:30"
       },
       { 
         "faculty": 2, 
-        "building": 306,
+        "building": 348,
           "number": 24,
           "start": "16:00",
           "end": "18:00"
@@ -317,70 +317,70 @@
       },
       { 
         "faculty": 0, 
-        "building": 306,
+        "building": 324,
           "number": 20,
           "start": "09:00",
           "end": "16:00"
       },
       { 
         "faculty": 0, 
-        "building": 306,
+        "building": 327,
           "number": 99,
           "start": "08:00",
           "end": "13:00"
       },
       { 
         "faculty": 0, 
-        "building": 306,
+        "building": 327,
           "number": 52,
           "start": "08:30",
           "end": "13:00"
       },
       { 
         "faculty": 0, 
-        "building": 306,
+        "building": 327,
           "number": 45,
           "start": "09:15",
           "end": "12:00"
       },
       { 
         "faculty": 0, 
-        "building": 306,
+        "building": 327,
           "number": 75,
           "start": "11:15",
           "end": "13:00"
       },
       { 
         "faculty": 0, 
-        "building": 306,
+        "building": 327,
           "number": 90,
           "start": "14:00",
           "end": "16:00"
       },
       { 
         "faculty": 0, 
-        "building": 306,
+        "building": 327,
           "number": 52,
           "start": "13:15",
           "end": "15:00"
       },
       { 
         "faculty": 0, 
-        "building": 306,
+        "building": 327,
           "number": 45,
           "start": "16:00",
           "end": "19:00"
       },
       { 
         "faculty": 0, 
-        "building": 306,
+        "building": 327,
           "number": 90,
           "start": "16:00",
           "end": "18:00"
       },
       { 
         "faculty": 0, 
-        "building": 306,
+        "building": 327,
           "number": 45,
           "start": "18:00",
           "end": "20:00"
@@ -429,63 +429,63 @@
       },
       { 
         "faculty": 5, 
-        "building": 234,
+        "building": 235,
           "number": 150,
           "start": "09:30",
           "end": "11:00"
       },
       { 
         "faculty": 5, 
-        "building": 234,
+        "building": 235,
           "number": 300,
           "start": "11:15",
           "end": "12:45"
       },
       { 
         "faculty": 5, 
-        "building": 234,
+        "building": 235,
           "number": 150,
           "start": "12:45",
           "end": "13:45"
       },
       { 
         "faculty": 5, 
-        "building": 234,
+        "building": 235,
           "number": 150,
           "start": "12:45",
           "end": "16:30"
       },
       { 
         "faculty": 5, 
-        "building": 234,
+        "building": 236,
           "number": 32,
           "start": "08:00",
           "end": "10:15"
       },
       { 
         "faculty": 5, 
-        "building": 234,
+        "building": 236,
           "number": 32,
           "start": "11:00",
           "end": "13:00"
       },
       { 
         "faculty": 5, 
-        "building": 234,
+        "building": 236,
           "number": 32,
           "start": "13:30",
           "end": "16:00"
       },
       { 
         "faculty": 5, 
-        "building": 234,
+        "building": 236,
           "number": 40,
           "start": "13:00",
           "end": "15:00"
       },
       { 
         "faculty": 5, 
-        "building": 234,
+        "building": 236,
           "number": 20,
           "start": "15:30",
           "end": "17:30"
@@ -605,7 +605,7 @@
       { 
         "faculty": 5, 
         "building": 306,
-          "number": 234,
+          "number": 236,
           "start": "10:00",
           "end": "13:00"
       },
@@ -674,77 +674,77 @@
       },
       { 
         "faculty": 5, 
-        "building": 306,
+        "building": 308,
           "number": 668,
           "start": "09:00",
           "end": "11:00"
       },
       { 
         "faculty": 5, 
-        "building": 306,
+        "building": 308,
           "number": 668,
           "start": "11:00",
           "end": "13:00"
       },
       { 
         "faculty": 5, 
-        "building": 306,
+        "building": 328,
           "number": 100,
           "start": "08:15",
           "end": "10:00"
       },
       { 
         "faculty": 5, 
-        "building": 306,
+        "building": 328,
           "number": 100,
           "start": "18:15",
           "end": "19:45"
       },
       { 
         "faculty": 5, 
-        "building": 306,
+        "building": 328,
           "number": 50,
           "start": "13:30",
           "end": "16:30"
       },
       { 
         "faculty": 5, 
-        "building": 306,
+        "building": 328,
           "number": 50,
           "start": "13:30",
           "end": "18:00"
       },
       { 
         "faculty": 5, 
-        "building": 306,
+        "building": 329,
           "number": 50,
           "start": "11:15",
           "end": "12:45"
       },
       { 
         "faculty": 5, 
-        "building": 306,
+        "building": 345,
           "number": 12,
           "start": "10:15",
           "end": "18:00"
       },
       { 
         "faculty": 5, 
-        "building": 306,
+        "building": 345,
           "number": 12,
           "start": "10:15",
           "end": "11:15"
       },
       { 
         "faculty": 5, 
-        "building": 306,
+        "building": 346,
           "number": 30,
           "start": "13:00",
           "end": "14:00"
       },
       { 
         "faculty": 5, 
-        "building": 306,
+        "building": 346,
           "number": 30,
           "start": "18:00",
           "end": "20:00"
@@ -849,28 +849,28 @@
       },
       { 
         "faculty": 5, 
-        "building": 700,
+        "building": 720,
           "number": 25,
           "start": "10:15",
           "end": "11:45"
       },
       { 
         "faculty": 5, 
-        "building": 700,
+        "building": 720,
           "number": 25,
           "start": "12:15",
           "end": "13:45"
       },
       { 
         "faculty": 5, 
-        "building": 700,
+        "building": 720,
           "number": 50,
           "start": "14:00",
           "end": "16:15"
       },
       { 
         "faculty": 5, 
-        "building": 700,
+        "building": 720,
           "number": 25,
           "start": "16:15",
           "end": "17:15"

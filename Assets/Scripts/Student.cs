@@ -2,14 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class Student {
-    private double _id;
+    private int _id;
+
     private int _faculty;
+
     private int _latestLectureEnding; // in minutes
+
+    private int _nextLecture;
+
+    private float _size;
+
+    private float _speed;
+
+    [SerializeField] private Vector3 _spawnPoint;
+
     public List<Lecture> lectureList = new List<Lecture>();
 
-    public Student (double id) {
+    public Student(int id, float size, float speed, Vector3 spawnPoint) {
         _id = id;
+        _size = size;
+        _speed = speed;
+        _spawnPoint = spawnPoint;
         _latestLectureEnding = 0;
     }
 
@@ -21,19 +36,49 @@ public class Student {
         return _faculty;
     }
 
+    public int getId() {
+        return _id;
+    }
+
     public int getTimetableEnd(){
         return _latestLectureEnding;
     }
 
+    public float getSize () {
+        return _size;
+    }
+
+    public float getSpeed () {
+        return _speed;
+    }
+
+    public Vector3 getSpawnPoint () {
+        return _spawnPoint;
+    }
+
+    public void setSize (float size) {
+        _size = size;
+    }
+
+    public void setSpeed (float speed) {
+        _speed = speed;
+    } 
+
+    public void setNextLecture (int nextLecture) {
+        _nextLecture = nextLecture;
+    }
+
+    public int getNextLecture () {
+        return _nextLecture;
+    }
+
     public void setTimetableEnd(int newEnd){
+        
         if(_latestLectureEnding > newEnd){
             throw new System.Exception("timetable collision");
         }
-        else{
+        else {
             this._latestLectureEnding = newEnd;
         }
     }
-
-    // TODO Student size 
-    // TODO Student speed
 }

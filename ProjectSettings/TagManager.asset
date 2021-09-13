@@ -12,12 +12,33 @@ TagManager:
   - Spawn
   - HomeDoor
   - WorkDoor
+<<<<<<< HEAD
   - FoodDoor
+=======
+  - 130
+  - 205
+  - ComplexController
+  - 227
+  - 229
+  - 230
+  - 234
+  - 252
+  - 267
+  - 270
+  - 306
+  - 304
+  - 350
+  - 360
+  - 410
+  - 440
+  - 510
+  - 700
+>>>>>>> feature_agent_timetable
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Door
   - Water
   - UI
   - 

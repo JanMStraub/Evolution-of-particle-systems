@@ -20,20 +20,6 @@ public class NavMeshAgentController : MonoBehaviour {
 
     //public LectureList myLectureList = new LectureList();
 
-    void Awake() {
-        GameManager.OnGameStateChanced += GameManagerOnGameStateChanged;
-    }
-
-    void OnDestroy() {
-        GameManager.OnGameStateChanced -= GameManagerOnGameStateChanged;
-    }
-
-    private void GameManagerOnGameStateChanged (GameState state) {
-        if (state == GameState.StartNavMeshAgents) {
-            Activate();
-        }
-    }
-
     void Activate() {
 
         _agent = this.GetComponent<NavMeshAgent>();
