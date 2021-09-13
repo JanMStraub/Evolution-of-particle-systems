@@ -52,41 +52,6 @@ class CommuteController : MonoBehaviour {
         return _studentList;
     }
 
-    /*
-    private void AddLecturesToStudents2 () {
-        List<int> freePlaces = new List<int>(){1023, 844, 408, 3528, 611, 10282, 42};
-
-        int emptyLectures = 0;
-        for(int i = 1; i < 5; i++) {
-            foreach (Lecture lecture in _lectureList.lecture) {
-                foreach (Student student in _studentList) {
-                    if ((student.getTimetableEnd() < lecture.GetStartInMinutes()) && (student.lectureList.Count < i)) {
-                        if ((lecture.faculty == student.getFaculty()) && (lecture.number > 0) && (freePlaces[student.getFaculty()] > 0)) {
-                            student.lectureList.Add(lecture);
-                            student.setTimetableEnd(lecture.GetEndInMinutes());
-                            lecture.number--;
-                            freePlaces[lecture.faculty]--;
-                            if (lecture.number == 0)
-                                emptyLectures++;
-                        } else if ((lecture.number > 0)) {
-                            student.lectureList.Add(lecture);
-                            student.setTimetableEnd(lecture.GetEndInMinutes());
-                            lecture.number--;
-                            freePlaces[lecture.faculty]--;
-                            if (lecture.number == 0) {
-                                emptyLectures++;
-                            }
-                        } 
-                    } 
-                }
-            }
-        }
-
-        Debug.Log("emptyLectures: " + emptyLectures);
-    }
-    */
-
-
     private void AddLecturesToStudents(){
         int studentIndex = 0;
 
@@ -94,6 +59,14 @@ class CommuteController : MonoBehaviour {
         foreach (Lecture lecture in _lectureList.lecture) { //count all available seats in all lectures, sorted to faculties
             freeSlots[lecture.faculty] += lecture.number;
         }
+
+        Debug.Log(freeSlots[0]);
+        Debug.Log(freeSlots[1]);
+        Debug.Log(freeSlots[2]);
+        Debug.Log(freeSlots[3]);
+        Debug.Log(freeSlots[4]);
+        Debug.Log(freeSlots[5]);
+        Debug.Log(freeSlots[6]);
 
         int controllSlotNumber = 16736; //ist zwar falsch aber muss so
         int actualSlotNumber = 16735;
