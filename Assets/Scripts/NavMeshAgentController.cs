@@ -16,6 +16,9 @@ public class NavMeshAgentController : MonoBehaviour {
     float time_speed;
 
 
+    public Student _student;
+
+    //public LectureList myLectureList = new LectureList();
 
     void Awake() {
         GameManager.OnGameStateChanced += GameManagerOnGameStateChanged;

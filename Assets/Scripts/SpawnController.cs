@@ -6,12 +6,25 @@ using UnityEngine.AI;
 
 class SpawnController : MonoBehaviour {
 
-    public int agentCount = 10;
+    public int agentCount = 100;
 
     public float range = 30f;
+
+    private static SpawnController _SpawnControllerInstance;
+    
+    public float spawnProgress;
+
+    public bool isDone;
     
     private GameObject _Agent;
+    
+    public static SpawnController SpawnControllerInstance {
+        get {return _SpawnControllerInstance;}
+    }
 
+    void Awake () {
+        _SpawnControllerInstance = this;
+    }
 
     void Start () {
         _Agent = GameObject.FindGameObjectWithTag("Agent");
@@ -27,13 +40,22 @@ class SpawnController : MonoBehaviour {
             Vector3 randomPoint = UnityEngine.Random.insideUnitSphere * range;
             NavMeshHit hit;
 
-            NavMesh.SamplePosition (randomPoint, out hit, range, 1);
+            NavMesh.SamplePosition (randomPoint,
+                                    out hit,
+                                    range,
+                                    1);
 
             Vector3 point = hit.position;
             
-            Instantiate(_Agent, point, transform.rotation);
+            Instantiate(_Agent,
+                        point,
+                        transform.rotation);
+
+            spawnProgress = ((float)i / (float)agentCount);
         }
-        
+
+        isDone = true;
+
         GameManager.GameManagerInstance.UpdateGameState(GameState.SetAgentCommute);
     }
 }

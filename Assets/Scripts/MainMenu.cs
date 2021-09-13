@@ -5,13 +5,7 @@ using UnityEngine.SceneManagement;
 
 class MainMenu : MonoBehaviour {
 
-    public void StartSimulation () {
+    public void StartSimulation() => GameManager.GameManagerInstance.LoadGame();
 
-        GameManager.GameManagerInstance.LoadGame();
-    }
-
-    public void QuitSimulation () {
-        
-        Application.Quit();
-    }
+    public void QuitSimulation() => Application.Quit();
 }
