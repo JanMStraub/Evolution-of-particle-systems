@@ -28,7 +28,7 @@ class StudentInitialisation : MonoBehaviour {
     public static StudentInitialisation StudentInitialisationInstance {
         get {return _StudentInitialisationInstance;}
     }
-    // test
+
     public Student[] getStudentList () {
         return _studentList;
     }
