@@ -6,21 +6,21 @@ using UnityEngine.UI;
 public class ClockManagement : MonoBehaviour
 {
     float time;
-    float time_speed = 0.1f;
+    float time_speed = 1f;
     Text time_text;
 
     // Start is called before the first frame update
     void Start()
     {
-        time = 6;
-        time_speed = 0.1f;
+        time = 360;
+        time_speed = 1f;
         time_text = GameObject.Find("TimeDisplay").GetComponent<Text>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(time >= 24)
+        if(time >= 1440)
         {
             time = 0;
         }
@@ -36,8 +36,8 @@ public class ClockManagement : MonoBehaviour
     public string GetTimeString()
     {
         string h_time;
-        float hour = (int)time;
-        float minute = (int)((time - hour) * 60);
+        float hour = (int)(time/60f);
+        float minute = (int)(time - (hour*60f));
         h_time = hour + ":" + minute;
         return h_time;
     }
