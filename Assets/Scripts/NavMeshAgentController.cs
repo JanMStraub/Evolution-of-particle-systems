@@ -6,7 +6,7 @@ using System;
 
 public class NavMeshAgentController : MonoBehaviour {
 
-    [SerializeField] int _pauseTime = 5;
+    // [SerializeField] int _pauseTime = 5;
 
     [SerializeField] Transform _workDestination, _homeDestination, _lunchDestination;
     NavMeshAgent _agent;

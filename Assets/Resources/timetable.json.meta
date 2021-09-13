@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Resources/timetable.json.meta
 guid: 96a7d2cb5d1f44d888c48c13a84fb3ec
+=======
+guid: a85a0540306584656a7f388c9a82f873
+>>>>>>> feature_compute_shader_simulation:Assets/Resources/BillingMode.json.meta
 TextScriptImporter:
   externalObjects: {}
   userData: 

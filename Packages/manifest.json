@@ -2,7 +2,10 @@
   "dependencies": {
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.2d.tilemap": "1.0.0",
+<<<<<<< HEAD
     "com.unity.addressables": "1.16.19",
+=======
+>>>>>>> feature_compute_shader_simulation
     "com.unity.analytics": "3.5.3",
     "com.unity.collab-proxy": "1.7.1",
     "com.unity.ide.rider": "2.0.7",
