@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.38073987, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311915, g: 0.3807396, b: 0.35872662, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -410,6 +410,41 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2028df3e1b5cc457aa479b4d03a617ad, type: 3}
+--- !u!1 &652864659 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2701912064039980848, guid: 2028df3e1b5cc457aa479b4d03a617ad, type: 3}
+  m_PrefabInstance: {fileID: 652864658}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &652864660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652864659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2471ab14ccc6b4d53896f1e712f7b719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textJSON: {fileID: 4900000, guid: 96a7d2cb5d1f44d888c48c13a84fb3ec, type: 3}
+  myLectureList:
+    lecture: []
+--- !u!114 &652864661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652864659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 267579d3637514b15879434b9c4cada6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 64931880}
+  state: 0
+  loadingScreen: {fileID: 115728088}
 --- !u!1 &768448939
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,41 +921,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1975985377 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2701912064039980848, guid: 2028df3e1b5cc457aa479b4d03a617ad, type: 3}
-  m_PrefabInstance: {fileID: 652864658}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1975985378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1975985377}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 267579d3637514b15879434b9c4cada6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loadingScreen: {fileID: 115728088}
-  slider: {fileID: 64931880}
-  State: 0
---- !u!114 &1975985379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1975985377}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2471ab14ccc6b4d53896f1e712f7b719, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textJSON: {fileID: 4900000, guid: 96a7d2cb5d1f44d888c48c13a84fb3ec, type: 3}
-  myLectureList:
-    lecture: []
 --- !u!1 &2144831350
 GameObject:
   m_ObjectHideFlags: 0

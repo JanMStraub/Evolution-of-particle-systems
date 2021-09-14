@@ -24,8 +24,10 @@ public class ClockManagement : MonoBehaviour {
 
 
     public void StartTime() {
-        _currentTime = 0;
+        _currentTime = 450;
         _timeSpeed = 1f;
+        //_timeText = GameObject.Find("TimeDisplay").GetComponent<TextMeshPro>();
+
     }
 
 
@@ -37,16 +39,16 @@ public class ClockManagement : MonoBehaviour {
         DisplayTime();
     }
 
-
+    
     void DisplayTime() {
-        timeTextGameObject.text = this.GetTimeString();
+        _timeText.text = this.GetTimeString();
     }
-
+    
 
     public string GetTimeString() {
         string h_time;
-        float hour = (int)_currentTime;
-        float minute = (int)((_currentTime - hour) * 60);
+        float hour = (int)(_currentTime/60f);
+        float minute = (int)(_currentTime - (hour*60f));
         h_time = hour + ":" + minute;
         return h_time;
     }

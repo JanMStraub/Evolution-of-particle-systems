@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 30736531}
   - component: {fileID: 30736533}
   - component: {fileID: 30736532}
+  - component: {fileID: 30736534}
   m_Layer: 3
   m_Name: door (48)
   m_TagString: 306
@@ -163,7 +164,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 30736530}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -177,6 +178,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 30736530}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &30736534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30736530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &34781281
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,6 +201,7 @@ GameObject:
   - component: {fileID: 34781282}
   - component: {fileID: 34781284}
   - component: {fileID: 34781283}
+  - component: {fileID: 34781285}
   m_Layer: 3
   m_Name: door (17)
   m_TagString: 230
@@ -217,7 +231,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 34781281}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -231,6 +245,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 34781281}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &34781285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34781281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &77430974
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,6 +268,7 @@ GameObject:
   - component: {fileID: 77430975}
   - component: {fileID: 77430977}
   - component: {fileID: 77430976}
+  - component: {fileID: 77430978}
   m_Layer: 3
   m_Name: door (19)
   m_TagString: 234
@@ -271,7 +298,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 77430974}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -285,6 +312,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 77430974}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &77430978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 77430974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &79517316
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,6 +335,7 @@ GameObject:
   - component: {fileID: 79517317}
   - component: {fileID: 79517319}
   - component: {fileID: 79517318}
+  - component: {fileID: 79517320}
   m_Layer: 3
   m_Name: door (4)
   m_TagString: 205
@@ -325,7 +365,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 79517316}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -339,6 +379,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 79517316}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &79517320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79517316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &84665736
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,6 +402,7 @@ GameObject:
   - component: {fileID: 84665737}
   - component: {fileID: 84665739}
   - component: {fileID: 84665738}
+  - component: {fileID: 84665740}
   m_Layer: 3
   m_Name: door (56)
   m_TagString: 306
@@ -379,7 +432,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 84665736}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -393,6 +446,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 84665736}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &84665740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84665736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &147111246
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,6 +469,7 @@ GameObject:
   - component: {fileID: 147111247}
   - component: {fileID: 147111249}
   - component: {fileID: 147111248}
+  - component: {fileID: 147111250}
   m_Layer: 3
   m_Name: door (24)
   m_TagString: 252
@@ -433,7 +499,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 147111246}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -447,6 +513,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 147111246}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &147111250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147111246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &151839653
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,6 +536,7 @@ GameObject:
   - component: {fileID: 151839654}
   - component: {fileID: 151839656}
   - component: {fileID: 151839655}
+  - component: {fileID: 151839657}
   m_Layer: 3
   m_Name: door (71)
   m_TagString: 350
@@ -487,7 +566,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 151839653}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -501,6 +580,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 151839653}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &151839657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151839653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &194919365
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,6 +603,7 @@ GameObject:
   - component: {fileID: 194919366}
   - component: {fileID: 194919368}
   - component: {fileID: 194919367}
+  - component: {fileID: 194919369}
   m_Layer: 3
   m_Name: door (18)
   m_TagString: 230
@@ -541,7 +633,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 194919365}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -555,6 +647,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 194919365}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &194919369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194919365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &208851635
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,6 +670,7 @@ GameObject:
   - component: {fileID: 208851636}
   - component: {fileID: 208851638}
   - component: {fileID: 208851637}
+  - component: {fileID: 208851639}
   m_Layer: 3
   m_Name: door (27)
   m_TagString: 267
@@ -595,7 +700,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 208851635}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -609,6 +714,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 208851635}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &208851639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208851635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &238901172
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,6 +737,7 @@ GameObject:
   - component: {fileID: 238901173}
   - component: {fileID: 238901175}
   - component: {fileID: 238901174}
+  - component: {fileID: 238901176}
   m_Layer: 3
   m_Name: door (72)
   m_TagString: 360
@@ -649,7 +767,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 238901172}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -663,6 +781,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 238901172}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &238901176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 238901172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &253554981
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,6 +804,7 @@ GameObject:
   - component: {fileID: 253554982}
   - component: {fileID: 253554984}
   - component: {fileID: 253554983}
+  - component: {fileID: 253554985}
   m_Layer: 3
   m_Name: door (33)
   m_TagString: 306
@@ -703,7 +834,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 253554981}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -717,6 +848,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 253554981}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &253554985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253554981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &265271909
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,6 +871,7 @@ GameObject:
   - component: {fileID: 265271910}
   - component: {fileID: 265271912}
   - component: {fileID: 265271911}
+  - component: {fileID: 265271913}
   m_Layer: 3
   m_Name: door (64)
   m_TagString: 304
@@ -757,7 +901,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 265271909}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -771,6 +915,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 265271909}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &265271913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265271909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &271035687
 GameObject:
   m_ObjectHideFlags: 0
@@ -817,8 +973,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _doors: []
-  _Agent: {fileID: 458701480}
-  doors_parent: {fileID: 1959119915}
+  agent: {fileID: 458701480}
+  doorsParent: {fileID: 1959119915}
 --- !u!4 &271035690
 Transform:
   m_ObjectHideFlags: 0
@@ -860,6 +1016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06e52c1ca9283d4ddb5e77063780f6a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeTextGameObject: {fileID: 0}
 --- !u!1 &305371481
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,6 +1028,7 @@ GameObject:
   - component: {fileID: 305371482}
   - component: {fileID: 305371484}
   - component: {fileID: 305371483}
+  - component: {fileID: 305371485}
   m_Layer: 3
   m_Name: door (74)
   m_TagString: 410
@@ -900,7 +1058,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 305371481}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -914,6 +1072,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 305371481}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &305371485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305371481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &306921220
 GameObject:
   m_ObjectHideFlags: 0
@@ -925,6 +1095,7 @@ GameObject:
   - component: {fileID: 306921221}
   - component: {fileID: 306921223}
   - component: {fileID: 306921222}
+  - component: {fileID: 306921224}
   m_Layer: 3
   m_Name: door (5)
   m_TagString: 205
@@ -954,7 +1125,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 306921220}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -968,6 +1139,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 306921220}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &306921224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306921220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &315509853
 GameObject:
   m_ObjectHideFlags: 0
@@ -979,6 +1162,7 @@ GameObject:
   - component: {fileID: 315509854}
   - component: {fileID: 315509856}
   - component: {fileID: 315509855}
+  - component: {fileID: 315509857}
   m_Layer: 3
   m_Name: door (13)
   m_TagString: 227
@@ -1008,7 +1192,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 315509853}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -1022,6 +1206,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 315509853}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &315509857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315509853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &332769198
 GameObject:
   m_ObjectHideFlags: 0
@@ -1033,6 +1229,7 @@ GameObject:
   - component: {fileID: 332769199}
   - component: {fileID: 332769201}
   - component: {fileID: 332769200}
+  - component: {fileID: 332769202}
   m_Layer: 3
   m_Name: door (22)
   m_TagString: 234
@@ -1062,7 +1259,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 332769198}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -1076,6 +1273,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 332769198}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &332769202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332769198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &346840534
 GameObject:
   m_ObjectHideFlags: 0
@@ -1087,6 +1296,7 @@ GameObject:
   - component: {fileID: 346840535}
   - component: {fileID: 346840537}
   - component: {fileID: 346840536}
+  - component: {fileID: 346840538}
   m_Layer: 3
   m_Name: door (3)
   m_TagString: 205
@@ -1116,7 +1326,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 346840534}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -1130,6 +1340,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 346840534}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &346840538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346840534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &367731952
 GameObject:
   m_ObjectHideFlags: 0
@@ -1141,6 +1363,7 @@ GameObject:
   - component: {fileID: 367731953}
   - component: {fileID: 367731955}
   - component: {fileID: 367731954}
+  - component: {fileID: 367731956}
   m_Layer: 3
   m_Name: door (46)
   m_TagString: 306
@@ -1170,7 +1393,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 367731952}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -1184,6 +1407,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 367731952}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &367731956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367731952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &372588681
 GameObject:
   m_ObjectHideFlags: 0
@@ -1195,6 +1430,7 @@ GameObject:
   - component: {fileID: 372588682}
   - component: {fileID: 372588684}
   - component: {fileID: 372588683}
+  - component: {fileID: 372588685}
   m_Layer: 3
   m_Name: door (59)
   m_TagString: 306
@@ -1224,7 +1460,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 372588681}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -1238,6 +1474,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 372588681}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &372588685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372588681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &376284144
 GameObject:
   m_ObjectHideFlags: 0
@@ -1249,6 +1497,7 @@ GameObject:
   - component: {fileID: 376284145}
   - component: {fileID: 376284147}
   - component: {fileID: 376284146}
+  - component: {fileID: 376284148}
   m_Layer: 3
   m_Name: door (7)
   m_TagString: 227
@@ -1278,7 +1527,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 376284144}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -1292,6 +1541,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 376284144}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &376284148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376284144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &391091733
 GameObject:
   m_ObjectHideFlags: 0
@@ -1303,6 +1564,7 @@ GameObject:
   - component: {fileID: 391091734}
   - component: {fileID: 391091736}
   - component: {fileID: 391091735}
+  - component: {fileID: 391091737}
   m_Layer: 3
   m_Name: door (31)
   m_TagString: 270
@@ -1332,7 +1594,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 391091733}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -1346,6 +1608,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 391091733}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &391091737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391091733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &440746043
 GameObject:
   m_ObjectHideFlags: 0
@@ -1357,6 +1631,7 @@ GameObject:
   - component: {fileID: 440746044}
   - component: {fileID: 440746046}
   - component: {fileID: 440746045}
+  - component: {fileID: 440746047}
   m_Layer: 3
   m_Name: door (41)
   m_TagString: 306
@@ -1386,7 +1661,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 440746043}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -1400,6 +1675,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 440746043}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &440746047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440746043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &458701480
 GameObject:
   m_ObjectHideFlags: 0
@@ -1414,6 +1701,7 @@ GameObject:
   - component: {fileID: 458701485}
   - component: {fileID: 458701484}
   - component: {fileID: 458701483}
+  - component: {fileID: 458701482}
   m_Layer: 0
   m_Name: Agent
   m_TagString: Agent
@@ -1435,6 +1723,19 @@ Transform:
   m_Father: {fileID: 1758385679}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &458701482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458701480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79acbecb624d847beb427e5905524612, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _agent: {fileID: 458701483}
 --- !u!195 &458701483
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1446,9 +1747,9 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 50
-  m_Acceleration: 8
+  m_Acceleration: 100
   avoidancePriority: 50
-  m_AngularSpeed: 180
+  m_AngularSpeed: 3000
   m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -1456,7 +1757,7 @@ NavMeshAgent:
   m_Height: 2
   m_BaseOffset: 1
   m_WalkableMask: 1
-  m_ObstacleAvoidanceType: 1
+  m_ObstacleAvoidanceType: 4
 --- !u!54 &458701484
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1547,6 +1848,7 @@ GameObject:
   - component: {fileID: 460916074}
   - component: {fileID: 460916076}
   - component: {fileID: 460916075}
+  - component: {fileID: 460916077}
   m_Layer: 3
   m_Name: door (51)
   m_TagString: 306
@@ -1576,7 +1878,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 460916073}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -1590,6 +1892,152 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 460916073}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &460916077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460916073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &472142411
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 472142412}
+  - component: {fileID: 472142414}
+  - component: {fileID: 472142413}
+  m_Layer: 5
+  m_Name: TimeDisplay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &472142412
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472142411}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1942466703}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 200, y: -40}
+  m_SizeDelta: {x: 400, y: 80}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &472142413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472142411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &472142414
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472142411}
+  m_CullTransparentMesh: 1
 --- !u!1 &506261251
 GameObject:
   m_ObjectHideFlags: 0
@@ -1601,6 +2049,7 @@ GameObject:
   - component: {fileID: 506261252}
   - component: {fileID: 506261254}
   - component: {fileID: 506261253}
+  - component: {fileID: 506261255}
   m_Layer: 3
   m_Name: door (15)
   m_TagString: 227
@@ -1630,7 +2079,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 506261251}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -1644,6 +2093,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 506261251}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &506261255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506261251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &521543247
 GameObject:
   m_ObjectHideFlags: 0
@@ -1655,6 +2116,7 @@ GameObject:
   - component: {fileID: 521543248}
   - component: {fileID: 521543250}
   - component: {fileID: 521543249}
+  - component: {fileID: 521543251}
   m_Layer: 3
   m_Name: door (20)
   m_TagString: 234
@@ -1684,7 +2146,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 521543247}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -1698,6 +2160,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 521543247}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &521543251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521543247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &525776569
 GameObject:
   m_ObjectHideFlags: 0
@@ -1709,6 +2183,7 @@ GameObject:
   - component: {fileID: 525776570}
   - component: {fileID: 525776572}
   - component: {fileID: 525776571}
+  - component: {fileID: 525776573}
   m_Layer: 3
   m_Name: door (76)
   m_TagString: 410
@@ -1738,7 +2213,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 525776569}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -1752,6 +2227,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 525776569}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &525776573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525776569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &539510103
 GameObject:
   m_ObjectHideFlags: 0
@@ -1763,6 +2250,7 @@ GameObject:
   - component: {fileID: 539510104}
   - component: {fileID: 539510106}
   - component: {fileID: 539510105}
+  - component: {fileID: 539510107}
   m_Layer: 3
   m_Name: door (54)
   m_TagString: 306
@@ -1792,7 +2280,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 539510103}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -1806,6 +2294,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 539510103}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &539510107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539510103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &552093608
 GameObject:
   m_ObjectHideFlags: 0
@@ -1817,6 +2317,7 @@ GameObject:
   - component: {fileID: 552093609}
   - component: {fileID: 552093611}
   - component: {fileID: 552093610}
+  - component: {fileID: 552093612}
   m_Layer: 3
   m_Name: door (42)
   m_TagString: 306
@@ -1846,7 +2347,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 552093608}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -1860,6 +2361,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 552093608}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &552093612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552093608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &558472524
 GameObject:
   m_ObjectHideFlags: 0
@@ -1871,6 +2384,7 @@ GameObject:
   - component: {fileID: 558472525}
   - component: {fileID: 558472527}
   - component: {fileID: 558472526}
+  - component: {fileID: 558472528}
   m_Layer: 0
   m_Name: door (1)
   m_TagString: 130
@@ -1900,7 +2414,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 558472524}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -1914,6 +2428,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 558472524}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &558472528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558472524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &593015524
 GameObject:
   m_ObjectHideFlags: 0
@@ -1957,6 +2483,7 @@ GameObject:
   - component: {fileID: 660942836}
   - component: {fileID: 660942838}
   - component: {fileID: 660942837}
+  - component: {fileID: 660942839}
   m_Layer: 3
   m_Name: door (79)
   m_TagString: 510
@@ -1986,7 +2513,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 660942835}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -2000,6 +2527,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 660942835}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &660942839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660942835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &680612656
 GameObject:
   m_ObjectHideFlags: 0
@@ -2011,6 +2550,7 @@ GameObject:
   - component: {fileID: 680612657}
   - component: {fileID: 680612659}
   - component: {fileID: 680612658}
+  - component: {fileID: 680612660}
   m_Layer: 3
   m_Name: door (65)
   m_TagString: 304
@@ -2040,7 +2580,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 680612656}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -2054,6 +2594,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 680612656}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &680612660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680612656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &692531074
 GameObject:
   m_ObjectHideFlags: 0
@@ -2065,6 +2617,7 @@ GameObject:
   - component: {fileID: 692531075}
   - component: {fileID: 692531077}
   - component: {fileID: 692531076}
+  - component: {fileID: 692531078}
   m_Layer: 3
   m_Name: door (67)
   m_TagString: 304
@@ -2094,7 +2647,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 692531074}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -2108,6 +2661,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 692531074}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &692531078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692531074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &723089007
 GameObject:
   m_ObjectHideFlags: 0
@@ -2119,6 +2684,7 @@ GameObject:
   - component: {fileID: 723089008}
   - component: {fileID: 723089010}
   - component: {fileID: 723089009}
+  - component: {fileID: 723089011}
   m_Layer: 3
   m_Name: door (61)
   m_TagString: 304
@@ -2148,7 +2714,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 723089007}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -2162,6 +2728,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 723089007}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &723089011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723089007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &733261645
 GameObject:
   m_ObjectHideFlags: 0
@@ -2173,6 +2751,7 @@ GameObject:
   - component: {fileID: 733261646}
   - component: {fileID: 733261648}
   - component: {fileID: 733261647}
+  - component: {fileID: 733261649}
   m_Layer: 3
   m_Name: door (38)
   m_TagString: 306
@@ -2202,7 +2781,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 733261645}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -2216,6 +2795,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 733261645}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &733261649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733261645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &757823232
 GameObject:
   m_ObjectHideFlags: 0
@@ -2227,6 +2818,7 @@ GameObject:
   - component: {fileID: 757823233}
   - component: {fileID: 757823235}
   - component: {fileID: 757823234}
+  - component: {fileID: 757823236}
   m_Layer: 3
   m_Name: door (60)
   m_TagString: 306
@@ -2256,7 +2848,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 757823232}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -2270,6 +2862,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 757823232}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &757823236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757823232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &763724450
 GameObject:
   m_ObjectHideFlags: 0
@@ -2281,6 +2885,7 @@ GameObject:
   - component: {fileID: 763724451}
   - component: {fileID: 763724453}
   - component: {fileID: 763724452}
+  - component: {fileID: 763724454}
   m_Layer: 3
   m_Name: door (21)
   m_TagString: 234
@@ -2310,7 +2915,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 763724450}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -2324,6 +2929,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 763724450}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &763724454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763724450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &778889065
 GameObject:
   m_ObjectHideFlags: 0
@@ -2335,6 +2952,7 @@ GameObject:
   - component: {fileID: 778889066}
   - component: {fileID: 778889068}
   - component: {fileID: 778889067}
+  - component: {fileID: 778889069}
   m_Layer: 3
   m_Name: door (25)
   m_TagString: 267
@@ -2364,7 +2982,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 778889065}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -2378,6 +2996,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 778889065}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &778889069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778889065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &788556317
 GameObject:
   m_ObjectHideFlags: 0
@@ -2389,6 +3019,7 @@ GameObject:
   - component: {fileID: 788556318}
   - component: {fileID: 788556320}
   - component: {fileID: 788556319}
+  - component: {fileID: 788556321}
   m_Layer: 0
   m_Name: door (2)
   m_TagString: 130
@@ -2418,7 +3049,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 788556317}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -2432,6 +3063,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 788556317}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &788556321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788556317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &859164388
 GameObject:
   m_ObjectHideFlags: 0
@@ -2443,6 +3086,7 @@ GameObject:
   - component: {fileID: 859164389}
   - component: {fileID: 859164391}
   - component: {fileID: 859164390}
+  - component: {fileID: 859164392}
   m_Layer: 3
   m_Name: door (9)
   m_TagString: 227
@@ -2472,7 +3116,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 859164388}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -2486,6 +3130,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 859164388}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &859164392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859164388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &866760125
 GameObject:
   m_ObjectHideFlags: 0
@@ -2497,6 +3153,7 @@ GameObject:
   - component: {fileID: 866760126}
   - component: {fileID: 866760128}
   - component: {fileID: 866760127}
+  - component: {fileID: 866760129}
   m_Layer: 3
   m_Name: door (10)
   m_TagString: 227
@@ -2526,7 +3183,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 866760125}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -2540,6 +3197,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 866760125}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &866760129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866760125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &883029338
 GameObject:
   m_ObjectHideFlags: 0
@@ -2551,6 +3220,7 @@ GameObject:
   - component: {fileID: 883029339}
   - component: {fileID: 883029341}
   - component: {fileID: 883029340}
+  - component: {fileID: 883029342}
   m_Layer: 3
   m_Name: door (45)
   m_TagString: 306
@@ -2580,7 +3250,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 883029338}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -2594,6 +3264,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 883029338}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &883029342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883029338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &886042042
 GameObject:
   m_ObjectHideFlags: 0
@@ -2605,6 +3287,7 @@ GameObject:
   - component: {fileID: 886042043}
   - component: {fileID: 886042045}
   - component: {fileID: 886042044}
+  - component: {fileID: 886042046}
   m_Layer: 3
   m_Name: door (75)
   m_TagString: 410
@@ -2634,7 +3317,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 886042042}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -2648,6 +3331,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 886042042}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &886042046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886042042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &909415419
 GameObject:
   m_ObjectHideFlags: 0
@@ -2659,6 +3354,7 @@ GameObject:
   - component: {fileID: 909415420}
   - component: {fileID: 909415422}
   - component: {fileID: 909415421}
+  - component: {fileID: 909415423}
   m_Layer: 3
   m_Name: door (80)
   m_TagString: 700
@@ -2688,7 +3384,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 909415419}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -2702,6 +3398,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 909415419}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &909415423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909415419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &917177880
 GameObject:
   m_ObjectHideFlags: 0
@@ -2713,6 +3421,7 @@ GameObject:
   - component: {fileID: 917177881}
   - component: {fileID: 917177883}
   - component: {fileID: 917177882}
+  - component: {fileID: 917177884}
   m_Layer: 3
   m_Name: door (14)
   m_TagString: 227
@@ -2742,7 +3451,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 917177880}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -2756,6 +3465,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 917177880}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &917177884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917177880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &954238302
 GameObject:
   m_ObjectHideFlags: 0
@@ -2799,6 +3520,7 @@ GameObject:
   - component: {fileID: 963344941}
   - component: {fileID: 963344943}
   - component: {fileID: 963344942}
+  - component: {fileID: 963344944}
   m_Layer: 3
   m_Name: door (68)
   m_TagString: 304
@@ -2828,7 +3550,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963344940}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -2842,6 +3564,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963344940}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &963344944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963344940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &973635192
 GameObject:
   m_ObjectHideFlags: 0
@@ -2853,6 +3587,7 @@ GameObject:
   - component: {fileID: 973635193}
   - component: {fileID: 973635195}
   - component: {fileID: 973635194}
+  - component: {fileID: 973635196}
   m_Layer: 3
   m_Name: door (70)
   m_TagString: 350
@@ -2882,7 +3617,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 973635192}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -2896,6 +3631,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 973635192}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &973635196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973635192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &977975192
 GameObject:
   m_ObjectHideFlags: 0
@@ -2907,6 +3654,7 @@ GameObject:
   - component: {fileID: 977975193}
   - component: {fileID: 977975195}
   - component: {fileID: 977975194}
+  - component: {fileID: 977975196}
   m_Layer: 3
   m_Name: door (6)
   m_TagString: 227
@@ -2936,7 +3684,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 977975192}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -2950,6 +3698,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 977975192}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &977975196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977975192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1039440001
 GameObject:
   m_ObjectHideFlags: 0
@@ -2961,6 +3721,7 @@ GameObject:
   - component: {fileID: 1039440002}
   - component: {fileID: 1039440004}
   - component: {fileID: 1039440003}
+  - component: {fileID: 1039440005}
   m_Layer: 3
   m_Name: door (37)
   m_TagString: 306
@@ -2990,7 +3751,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1039440001}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -3004,6 +3765,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1039440001}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1039440005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039440001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1084541295
 GameObject:
   m_ObjectHideFlags: 0
@@ -3015,6 +3788,7 @@ GameObject:
   - component: {fileID: 1084541296}
   - component: {fileID: 1084541298}
   - component: {fileID: 1084541297}
+  - component: {fileID: 1084541299}
   m_Layer: 3
   m_Name: door (8)
   m_TagString: 227
@@ -3044,7 +3818,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1084541295}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -3058,6 +3832,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1084541295}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1084541299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084541295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1101075129
 GameObject:
   m_ObjectHideFlags: 0
@@ -3069,6 +3855,7 @@ GameObject:
   - component: {fileID: 1101075130}
   - component: {fileID: 1101075132}
   - component: {fileID: 1101075131}
+  - component: {fileID: 1101075133}
   m_Layer: 3
   m_Name: door (28)
   m_TagString: 270
@@ -3098,7 +3885,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1101075129}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -3112,6 +3899,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1101075129}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1101075133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101075129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1119901543
 GameObject:
   m_ObjectHideFlags: 0
@@ -3123,6 +3922,7 @@ GameObject:
   - component: {fileID: 1119901544}
   - component: {fileID: 1119901546}
   - component: {fileID: 1119901545}
+  - component: {fileID: 1119901547}
   m_Layer: 3
   m_Name: door (66)
   m_TagString: 304
@@ -3152,7 +3952,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1119901543}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -3166,6 +3966,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1119901543}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1119901547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119901543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1123060279
 GameObject:
   m_ObjectHideFlags: 0
@@ -3177,6 +3989,7 @@ GameObject:
   - component: {fileID: 1123060280}
   - component: {fileID: 1123060282}
   - component: {fileID: 1123060281}
+  - component: {fileID: 1123060283}
   m_Layer: 3
   m_Name: door (77)
   m_TagString: 440
@@ -3206,7 +4019,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1123060279}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -3220,6 +4033,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1123060279}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1123060283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123060279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1202832070
 GameObject:
   m_ObjectHideFlags: 0
@@ -3231,6 +4056,7 @@ GameObject:
   - component: {fileID: 1202832071}
   - component: {fileID: 1202832073}
   - component: {fileID: 1202832072}
+  - component: {fileID: 1202832074}
   m_Layer: 3
   m_Name: door (63)
   m_TagString: 304
@@ -3260,7 +4086,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1202832070}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -3274,6 +4100,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1202832070}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1202832074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202832070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1238367826
 GameObject:
   m_ObjectHideFlags: 0
@@ -3285,6 +4123,7 @@ GameObject:
   - component: {fileID: 1238367827}
   - component: {fileID: 1238367829}
   - component: {fileID: 1238367828}
+  - component: {fileID: 1238367830}
   m_Layer: 3
   m_Name: door (26)
   m_TagString: 267
@@ -3314,7 +4153,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1238367826}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -3328,6 +4167,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1238367826}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1238367830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238367826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1288015925
 GameObject:
   m_ObjectHideFlags: 0
@@ -3435,6 +4286,7 @@ GameObject:
   - component: {fileID: 1299943817}
   - component: {fileID: 1299943819}
   - component: {fileID: 1299943818}
+  - component: {fileID: 1299943820}
   m_Layer: 3
   m_Name: door (53)
   m_TagString: 306
@@ -3464,7 +4316,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1299943816}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -3478,6 +4330,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1299943816}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1299943820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299943816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1306271286
 GameObject:
   m_ObjectHideFlags: 0
@@ -3489,6 +4353,7 @@ GameObject:
   - component: {fileID: 1306271287}
   - component: {fileID: 1306271289}
   - component: {fileID: 1306271288}
+  - component: {fileID: 1306271290}
   m_Layer: 3
   m_Name: door (32)
   m_TagString: 270
@@ -3518,7 +4383,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1306271286}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -3532,6 +4397,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1306271286}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1306271290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1306271286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1350562623
 GameObject:
   m_ObjectHideFlags: 0
@@ -3543,6 +4420,7 @@ GameObject:
   - component: {fileID: 1350562624}
   - component: {fileID: 1350562626}
   - component: {fileID: 1350562625}
+  - component: {fileID: 1350562627}
   m_Layer: 3
   m_Name: door (55)
   m_TagString: 306
@@ -3572,7 +4450,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1350562623}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -3586,6 +4464,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1350562623}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1350562627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350562623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1402650732
 GameObject:
   m_ObjectHideFlags: 0
@@ -3684,6 +4574,7 @@ GameObject:
   - component: {fileID: 1431435108}
   - component: {fileID: 1431435110}
   - component: {fileID: 1431435109}
+  - component: {fileID: 1431435111}
   m_Layer: 3
   m_Name: door (35)
   m_TagString: 306
@@ -3713,7 +4604,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1431435107}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -3727,6 +4618,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1431435107}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1431435111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431435107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1435402749
 GameObject:
   m_ObjectHideFlags: 0
@@ -3738,6 +4641,7 @@ GameObject:
   - component: {fileID: 1435402750}
   - component: {fileID: 1435402752}
   - component: {fileID: 1435402751}
+  - component: {fileID: 1435402753}
   m_Layer: 3
   m_Name: door (78)
   m_TagString: 440
@@ -3767,7 +4671,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1435402749}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -3781,6 +4685,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1435402749}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1435402753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435402749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1469838401
 GameObject:
   m_ObjectHideFlags: 0
@@ -3873,6 +4789,7 @@ GameObject:
   - component: {fileID: 1518054731}
   - component: {fileID: 1518054733}
   - component: {fileID: 1518054732}
+  - component: {fileID: 1518054734}
   m_Layer: 3
   m_Name: door (47)
   m_TagString: 306
@@ -3902,7 +4819,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1518054730}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -3916,6 +4833,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1518054730}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1518054734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518054730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1522216592
 GameObject:
   m_ObjectHideFlags: 0
@@ -4020,6 +4949,7 @@ GameObject:
   - component: {fileID: 1529732131}
   - component: {fileID: 1529732133}
   - component: {fileID: 1529732132}
+  - component: {fileID: 1529732134}
   m_Layer: 3
   m_Name: door (34)
   m_TagString: 306
@@ -4049,7 +4979,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1529732130}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -4063,6 +4993,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1529732130}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1529732134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529732130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1544266976
 GameObject:
   m_ObjectHideFlags: 0
@@ -4074,6 +5016,7 @@ GameObject:
   - component: {fileID: 1544266977}
   - component: {fileID: 1544266979}
   - component: {fileID: 1544266978}
+  - component: {fileID: 1544266980}
   m_Layer: 3
   m_Name: door (57)
   m_TagString: 306
@@ -4103,7 +5046,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1544266976}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -4117,6 +5060,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1544266976}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1544266980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544266976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1572231539
 GameObject:
   m_ObjectHideFlags: 0
@@ -4158,6 +5113,7 @@ GameObject:
   - component: {fileID: 1583790730}
   - component: {fileID: 1583790732}
   - component: {fileID: 1583790731}
+  - component: {fileID: 1583790733}
   m_Layer: 3
   m_Name: door (49)
   m_TagString: 306
@@ -4187,7 +5143,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1583790729}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -4201,6 +5157,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1583790729}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1583790733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583790729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1594289144
 GameObject:
   m_ObjectHideFlags: 0
@@ -4212,6 +5180,7 @@ GameObject:
   - component: {fileID: 1594289145}
   - component: {fileID: 1594289147}
   - component: {fileID: 1594289146}
+  - component: {fileID: 1594289148}
   m_Layer: 3
   m_Name: door (44)
   m_TagString: 306
@@ -4241,7 +5210,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1594289144}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -4255,6 +5224,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1594289144}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1594289148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594289144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1602037321
 GameObject:
   m_ObjectHideFlags: 0
@@ -4266,6 +5247,7 @@ GameObject:
   - component: {fileID: 1602037322}
   - component: {fileID: 1602037324}
   - component: {fileID: 1602037323}
+  - component: {fileID: 1602037325}
   m_Layer: 3
   m_Name: door (62)
   m_TagString: 304
@@ -4295,7 +5277,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1602037321}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -4309,6 +5291,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1602037321}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1602037325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602037321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1627928130
 GameObject:
   m_ObjectHideFlags: 0
@@ -4350,6 +5344,7 @@ GameObject:
   - component: {fileID: 1664513108}
   - component: {fileID: 1664513110}
   - component: {fileID: 1664513109}
+  - component: {fileID: 1664513111}
   m_Layer: 3
   m_Name: door (12)
   m_TagString: 227
@@ -4379,7 +5374,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1664513107}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -4393,6 +5388,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1664513107}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1664513111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664513107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1757712167
 GameObject:
   m_ObjectHideFlags: 0
@@ -4404,6 +5411,7 @@ GameObject:
   - component: {fileID: 1757712168}
   - component: {fileID: 1757712170}
   - component: {fileID: 1757712169}
+  - component: {fileID: 1757712171}
   m_Layer: 3
   m_Name: door (73)
   m_TagString: 360
@@ -4433,7 +5441,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1757712167}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -4447,6 +5455,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1757712167}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1757712171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757712167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1758385678
 GameObject:
   m_ObjectHideFlags: 0
@@ -4494,6 +5514,7 @@ GameObject:
   - component: {fileID: 1758670345}
   - component: {fileID: 1758670347}
   - component: {fileID: 1758670346}
+  - component: {fileID: 1758670348}
   m_Layer: 3
   m_Name: door (29)
   m_TagString: 270
@@ -4523,7 +5544,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1758670344}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -4537,6 +5558,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1758670344}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1758670348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758670344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1772187680
 GameObject:
   m_ObjectHideFlags: 0
@@ -4548,6 +5581,7 @@ GameObject:
   - component: {fileID: 1772187681}
   - component: {fileID: 1772187683}
   - component: {fileID: 1772187682}
+  - component: {fileID: 1772187684}
   m_Layer: 3
   m_Name: door (58)
   m_TagString: 306
@@ -4577,7 +5611,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1772187680}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -4591,6 +5625,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1772187680}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1772187684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772187680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1781810623
 GameObject:
   m_ObjectHideFlags: 0
@@ -4602,6 +5648,7 @@ GameObject:
   - component: {fileID: 1781810624}
   - component: {fileID: 1781810626}
   - component: {fileID: 1781810625}
+  - component: {fileID: 1781810627}
   m_Layer: 3
   m_Name: door (30)
   m_TagString: 270
@@ -4631,7 +5678,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1781810623}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -4645,6 +5692,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1781810623}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1781810627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781810623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1793161242
 GameObject:
   m_ObjectHideFlags: 0
@@ -4737,6 +5796,7 @@ GameObject:
   - component: {fileID: 1878415396}
   - component: {fileID: 1878415398}
   - component: {fileID: 1878415397}
+  - component: {fileID: 1878415399}
   m_Layer: 3
   m_Name: door (43)
   m_TagString: 306
@@ -4766,7 +5826,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1878415395}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -4780,6 +5840,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1878415395}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1878415399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878415395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1892189269
 GameObject:
   m_ObjectHideFlags: 0
@@ -4791,6 +5863,7 @@ GameObject:
   - component: {fileID: 1892189270}
   - component: {fileID: 1892189272}
   - component: {fileID: 1892189271}
+  - component: {fileID: 1892189273}
   m_Layer: 3
   m_Name: door (36)
   m_TagString: 306
@@ -4820,7 +5893,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1892189269}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -4834,6 +5907,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1892189269}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1892189273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892189269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1897875818
 GameObject:
   m_ObjectHideFlags: 0
@@ -4845,6 +5930,7 @@ GameObject:
   - component: {fileID: 1897875819}
   - component: {fileID: 1897875821}
   - component: {fileID: 1897875820}
+  - component: {fileID: 1897875822}
   m_Layer: 3
   m_Name: door (16)
   m_TagString: 229
@@ -4874,7 +5960,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1897875818}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -4888,6 +5974,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1897875818}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1897875822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897875818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1914582231
 GameObject:
   m_ObjectHideFlags: 0
@@ -4928,6 +6026,26 @@ PrefabInstance:
     - target: {fileID: 177638, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
       propertyPath: m_Name
       value: '[Graphy]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496292, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
+      propertyPath: m_graphyMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496292, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
+      propertyPath: m_audioModuleState
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496292, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
+      propertyPath: m_fpsGraphResolution
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496292, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
+      propertyPath: m_ramGraphResolution
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496292, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
+      propertyPath: m_advancedModuleState
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 22451668, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
       propertyPath: m_Pivot.x
@@ -5015,6 +6133,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
+--- !u!224 &1942466703 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 22451668, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
+  m_PrefabInstance: {fileID: 1942466702}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1959119915
 GameObject:
   m_ObjectHideFlags: 0
@@ -5136,6 +6259,7 @@ GameObject:
   - component: {fileID: 2001853052}
   - component: {fileID: 2001853054}
   - component: {fileID: 2001853053}
+  - component: {fileID: 2001853055}
   m_Layer: 3
   m_Name: door (39)
   m_TagString: 306
@@ -5165,7 +6289,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2001853051}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -5179,6 +6303,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2001853051}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2001853055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001853051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2012958005
 GameObject:
   m_ObjectHideFlags: 0
@@ -5190,6 +6326,7 @@ GameObject:
   - component: {fileID: 2012958006}
   - component: {fileID: 2012958008}
   - component: {fileID: 2012958007}
+  - component: {fileID: 2012958009}
   m_Layer: 3
   m_Name: door (11)
   m_TagString: 227
@@ -5219,7 +6356,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2012958005}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -5233,6 +6370,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2012958005}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2012958009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012958005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2034861183
 GameObject:
   m_ObjectHideFlags: 0
@@ -5244,6 +6393,7 @@ GameObject:
   - component: {fileID: 2034861184}
   - component: {fileID: 2034861186}
   - component: {fileID: 2034861185}
+  - component: {fileID: 2034861187}
   m_Layer: 3
   m_Name: door (40)
   m_TagString: 306
@@ -5273,7 +6423,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2034861183}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -5287,6 +6437,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2034861183}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2034861187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034861183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2069604434
 GameObject:
   m_ObjectHideFlags: 0
@@ -5298,6 +6460,7 @@ GameObject:
   - component: {fileID: 2069604435}
   - component: {fileID: 2069604437}
   - component: {fileID: 2069604436}
+  - component: {fileID: 2069604438}
   m_Layer: 3
   m_Name: door (52)
   m_TagString: 306
@@ -5327,7 +6490,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2069604434}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -5341,6 +6504,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2069604434}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2069604438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069604434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2116874598
 GameObject:
   m_ObjectHideFlags: 0
@@ -5352,6 +6527,7 @@ GameObject:
   - component: {fileID: 2116874599}
   - component: {fileID: 2116874601}
   - component: {fileID: 2116874600}
+  - component: {fileID: 2116874602}
   m_Layer: 3
   m_Name: door (69)
   m_TagString: 350
@@ -5381,7 +6557,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2116874598}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -5395,6 +6571,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2116874598}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2116874602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2116874598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2123894043
 GameObject:
   m_ObjectHideFlags: 0
@@ -5406,6 +6594,7 @@ GameObject:
   - component: {fileID: 2123894044}
   - component: {fileID: 2123894046}
   - component: {fileID: 2123894045}
+  - component: {fileID: 2123894047}
   m_Layer: 3
   m_Name: door (50)
   m_TagString: 306
@@ -5435,7 +6624,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2123894043}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -5449,6 +6638,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2123894043}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2123894047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123894043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2132115215
 GameObject:
   m_ObjectHideFlags: 0
@@ -5460,6 +6661,7 @@ GameObject:
   - component: {fileID: 2132115216}
   - component: {fileID: 2132115218}
   - component: {fileID: 2132115217}
+  - component: {fileID: 2132115219}
   m_Layer: 3
   m_Name: door (23)
   m_TagString: 252
@@ -5489,7 +6691,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2132115215}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -5503,3 +6705,15 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2132115215}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2132115219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132115215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990b341f94ae439faf893398cc96330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
