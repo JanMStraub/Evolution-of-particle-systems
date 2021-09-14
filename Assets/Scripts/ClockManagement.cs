@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ClockManagement : MonoBehaviour {
 
     private static ClockManagement _clockManagmentInstance;
     private float _currentTime;
     private float _timeSpeed = 1f;
-    private Text _timeText;
 
-    public GameObject timeTextGameObject;
+    public TMP_Text timeText;
 
 
     public static ClockManagement ClockManagementInstance {
@@ -26,7 +26,6 @@ public class ClockManagement : MonoBehaviour {
     public void StartTime() {
         _currentTime = 450;
         _timeSpeed = 1f;
-        //_timeText = GameObject.Find("TimeDisplay").GetComponent<TextMeshPro>();
 
     }
 
@@ -41,7 +40,7 @@ public class ClockManagement : MonoBehaviour {
 
     
     void DisplayTime() {
-        _timeText.text = this.GetTimeString();
+        timeText.text = this.GetTimeString();
     }
     
 
