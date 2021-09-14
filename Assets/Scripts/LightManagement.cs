@@ -8,24 +8,17 @@ public class LightManagement : MonoBehaviour
 
     float time;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    void Start () {
+        time = ClockManagement.ClockManagementInstance.GetTime();
         sun_light = this.GetComponent<Light>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        time = GameObject.Find("SimulationHandler").GetComponent<ClockManagement>().GetTime();
+    void Update () {
         float intensity = (time*time - 24*time + 80)/-64;
-        if(intensity > 0)
-        {
+        if (intensity > 0) {
             sun_light.intensity = intensity;
 
-        }
-        else
-        {
+        } else {
             sun_light.intensity = 0;
         }
     }

@@ -16,6 +16,10 @@ public class Student {
 
     private float _speed;
 
+    private int _lectureIndex = 0;
+
+    private List<GameObject> _doorsWithinCurrentComplex = new List<GameObject>();
+
     [SerializeField] private Vector3 _spawnPoint;
 
     public List<Lecture> lectureList = new List<Lecture>();
@@ -64,12 +68,30 @@ public class Student {
         _speed = speed;
     } 
 
-    public void setNextLecture (int nextLecture) {
-        _nextLecture = nextLecture;
+    public void setNextLecture () {
+        _lectureIndex++;
     }
 
-    public int getNextLecture () {
-        return _nextLecture;
+    public int getLectureIndex () {
+        return _lectureIndex;
+    }
+
+    public Lecture getCurrentLecture () {
+        return lectureList[_lectureIndex];
+    }
+
+    public Lecture getNextLecture () {
+        if(_lectureIndex < lectureList.Count)
+            return lectureList[_lectureIndex];
+        return null;
+    }
+
+    public List<GameObject> getDoorsWithinCurrentComplex () {
+        return _doorsWithinCurrentComplex;
+    }
+
+    public void setDoorsWithinCurrentComplex (GameObject door) {
+        _doorsWithinCurrentComplex.Add(door);
     }
 
     public void setTimetableEnd(int newEnd){

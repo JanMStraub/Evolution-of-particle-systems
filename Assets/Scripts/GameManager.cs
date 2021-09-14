@@ -19,9 +19,9 @@ public class GameManager : MonoBehaviour {
     
     private float _totalSceneProgress;
 
-    private float _totalSpawnProgress = 0;
+    // private float _totalSpawnProgress = 0;
     
-    private float _totalCommuteProgress = 0;
+    // private float _totalCommuteProgress = 0;
 
     public static event Action<GameState> OnGameStateChanced;
     

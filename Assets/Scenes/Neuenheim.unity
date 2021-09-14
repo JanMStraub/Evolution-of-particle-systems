@@ -816,7 +816,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad0166ff97e754c4cbdf8ac83c63762e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Agent: {fileID: 0}
+  _doors: []
+  _Agent: {fileID: 458701480}
 --- !u!4 &271035690
 Transform:
   m_ObjectHideFlags: 0
@@ -855,10 +856,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 271035687}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63ed6819bf9114bccbd0e12d39d05d13, type: 3}
+  m_Script: {fileID: 11500000, guid: 06e52c1ca9283d4ddb5e77063780f6a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _doors: []
 --- !u!1 &305371481
 GameObject:
   m_ObjectHideFlags: 0

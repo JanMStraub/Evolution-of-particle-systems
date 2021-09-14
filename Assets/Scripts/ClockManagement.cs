@@ -3,13 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ClockManagement : MonoBehaviour
-{
+public class ClockManagement : MonoBehaviour {
+    private static ClockManagement _ClockManagmentInstance;
     float time;
     float time_speed = 1f;
     Text time_text;
 
-    // Start is called before the first frame update
+    public static ClockManagement ClockManagementInstance {
+        get {return _ClockManagmentInstance;}
+    }
+
+    void Awake () {
+        _ClockManagmentInstance = this;
+    }
+
     void Start()
     {
         time = 0;
@@ -17,7 +24,6 @@ public class ClockManagement : MonoBehaviour
         time_text = GameObject.Find("TimeDisplay").GetComponent<Text>();
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         if(time >= 1440)
