@@ -2,24 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightManagement : MonoBehaviour
-{
-    Light sun_light;
+public class LightManagement : MonoBehaviour {
 
-    float time;
+    private Light _sunLight;
+    float _time;
 
-    void Start () {
-        time = ClockManagement.ClockManagementInstance.GetTime();
-        sun_light = this.GetComponent<Light>();
+
+    void Start() {
+        _time = ClockManagement.ClockManagementInstance.GetTime();
+        _sunLight = this.GetComponent<Light>();
     }
 
-    void Update () {
-        float intensity = (time*time - 24*time + 80)/-64;
-        if (intensity > 0) {
-            sun_light.intensity = intensity;
 
+    void Update() {
+        float intensity = (_time*_time - 24*_time + 80)/-64;
+        
+        if (intensity > 0) {
+            _sunLight.intensity = intensity;
         } else {
-            sun_light.intensity = 0;
+            _sunLight.intensity = 0;
         }
     }
 }

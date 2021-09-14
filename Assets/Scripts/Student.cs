@@ -4,25 +4,20 @@ using UnityEngine;
 
 [System.Serializable]
 public class Student {
+
     private int _id;
-
     private int _faculty;
-
     private int _latestLectureEnding; // in minutes
-
     private int _nextLecture;
-
     private float _size;
-
     private float _speed;
-
     private int _lectureIndex = 0;
-
     private List<GameObject> _doorsWithinCurrentComplex = new List<GameObject>();
 
     [SerializeField] private Vector3 _spawnPoint;
 
     public List<Lecture> lectureList = new List<Lecture>();
+
 
     public Student(int id, float size, float speed, Vector3 spawnPoint) {
         _id = id;
@@ -32,69 +27,18 @@ public class Student {
         _latestLectureEnding = 0;
     }
 
-    public void setFaculty (int faculty) {
+
+    public void SetFaculty(int faculty) {
         _faculty = faculty;
     }
 
-    public int getFaculty(){
-        return _faculty;
-    }
 
-    public int getId() {
-        return _id;
-    }
-
-    public int getTimetableEnd(){
-        return _latestLectureEnding;
-    }
-
-    public float getSize () {
-        return _size;
-    }
-
-    public float getSpeed () {
-        return _speed;
-    }
-
-    public Vector3 getSpawnPoint () {
-        return _spawnPoint;
-    }
-
-    public void setSize (float size) {
-        _size = size;
-    }
-
-    public void setSpeed (float speed) {
-        _speed = speed;
-    } 
-
-    public void setNextLecture () {
-        _lectureIndex++;
-    }
-
-    public int getLectureIndex () {
-        return _lectureIndex;
-    }
-
-    public Lecture getCurrentLecture () {
-        return lectureList[_lectureIndex];
-    }
-
-    public Lecture getNextLecture () {
-        if(_lectureIndex < lectureList.Count)
-            return lectureList[_lectureIndex];
-        return null;
-    }
-
-    public List<GameObject> getDoorsWithinCurrentComplex () {
-        return _doorsWithinCurrentComplex;
-    }
-
-    public void setDoorsWithinCurrentComplex (GameObject door) {
+    public void SetDoorsWithinCurrentComplex(GameObject door) {
         _doorsWithinCurrentComplex.Add(door);
     }
 
-    public void setTimetableEnd(int newEnd){
+
+    public void SetTimetableEnd(int newEnd){
         
         if(_latestLectureEnding > newEnd){
             throw new System.Exception("timetable collision");
@@ -102,5 +46,72 @@ public class Student {
         else {
             this._latestLectureEnding = newEnd;
         }
+    }
+
+
+    public void SetSize(float size) {
+        _size = size;
+    }
+
+
+    public void SetSpeed(float speed) {
+        _speed = speed;
+    } 
+
+
+    public void SetNextLecture() {
+        _lectureIndex++;
+    }
+
+
+    public int GetFaculty(){
+        return _faculty;
+    }
+
+
+    public int GetId() {
+        return _id;
+    }
+
+
+    public int GetTimetableEnd(){
+        return _latestLectureEnding;
+    }
+
+
+    public float GetSize() {
+        return _size;
+    }
+
+
+    public float GetSpeed() {
+        return _speed;
+    }
+
+
+    public Vector3 GetSpawnPoint() {
+        return _spawnPoint;
+    }
+
+
+    public int GetLectureIndex() {
+        return _lectureIndex;
+    }
+
+
+    public Lecture GetCurrentLecture() {
+        return lectureList[_lectureIndex];
+    }
+
+
+    public Lecture GetNextLecture() {
+        if(_lectureIndex < lectureList.Count)
+            return lectureList[_lectureIndex];
+        return null;
+    }
+
+
+    public List<GameObject> GetDoorsWithinCurrentComplex() {
+        return _doorsWithinCurrentComplex;
     }
 }

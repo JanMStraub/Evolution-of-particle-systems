@@ -5,52 +5,54 @@ using UnityEngine;
 class CommuteController : MonoBehaviour {    
     
     // public float commuteProgress;
-
     // public bool isDone;
 
-    private static CommuteController _CommuteControllerInstance;
-
-    // private int _progress = 1;
-
-    private GameObject _GameManager;
-
+    private GameObject _gameManager;
     private LectureList _lectureList;
+    private Student[] _studentList;
+    private static CommuteController _commuteControllerInstance;
+    // private int _progress = 1;
 
     [SerializeField] GameObject[] _agentList;
 
-    private Student[] _studentList;
 
     public static CommuteController CommuteControllerInstance {
-        get {return _CommuteControllerInstance;}
+        get {return _commuteControllerInstance;}
     }
 
-    void Awake() {
-        GameManager.OnGameStateChanced += GameManagerOnGameStateChanged;
-        _CommuteControllerInstance = this;
+
+    private void Awake() {
+        GameManager.onGameStateChanced += GameManagerOnGameStateChanged;
+        _commuteControllerInstance = this;
     }
 
-    void Start () {
-        _GameManager = GameObject.FindGameObjectWithTag("GameController");
-        JSONReader jsonreader = _GameManager.GetComponent<JSONReader>();
-        _lectureList = jsonreader.myLectureList;
+
+    private void Start() {
+        _gameManager = GameObject.FindGameObjectWithTag("GameController");
+        JSONReader jsonReader = _gameManager.GetComponent<JSONReader>();
+        _lectureList = jsonReader.myLectureList;
     }
 
-    void OnDestroy() {
-        GameManager.OnGameStateChanced -= GameManagerOnGameStateChanged;
+
+    private void OnDestroy() {
+        GameManager.onGameStateChanced -= GameManagerOnGameStateChanged;
     }
 
-    private void GameManagerOnGameStateChanged (GameState state) {
+
+    private void GameManagerOnGameStateChanged(GameState state) {
          if (state == GameState.SetAgentCommute) {
-            _studentList = StudentInitialisation.StudentInitialisationInstance.getStudentList();
+            _studentList = StudentInitialisation.StudentInitialisationInstance.GetStudentList();
             
             AddLecturesToStudents();
             GameManager.GameManagerInstance.UpdateGameState(GameState.RunSimulation);
         }
     }
 
-    public Student[] getStudentList() {
+
+    public Student[] GetStudentList() {
         return _studentList;
     }
+
 
     private void AddLecturesToStudents(){
         int studentIndex = 0;
@@ -68,14 +70,15 @@ class CommuteController : MonoBehaviour {
             //Student student = _agentList[studentIndex].GetComponent<NavMeshAgentController>()._student;
             Student student = _studentList[studentIndex];
             bool searchOwn = false;
-            if (freeSlots[(int)student.getFaculty()] > 0) {
+            if (freeSlots[(int)student.GetFaculty()] > 0) {
                 searchOwn = true;
             }
+
             Lecture lecture = FindLecture(searchOwn, student);
 
             if (lecture != null) {
                 student.lectureList.Add(lecture);
-                student.setTimetableEnd(lecture.GetEndInMinutes());
+                student.SetTimetableEnd(lecture.GetEndInMinutes());
                 lecture.number--;
 
                 if (lecture.number == 0) {
@@ -92,29 +95,24 @@ class CommuteController : MonoBehaviour {
                 }
                 controllSlotNumber = actualSlotNumber;
             }
-
-
             studentIndex = (studentIndex + 1) % _studentList.Length;
         }
         Debug.Log("free slots left: " + actualSlotNumber);
     }
+
 
     private Lecture FindLecture(bool searchOwn, Student student) {
         for (int i=0; i<100; i++) { //100 tries max to find a fitting lecture
 
             Lecture lecture =_lectureList.lecture[Random.Range(0,_lectureList.Size())];
             
-            if ((lecture.faculty == student.getFaculty()) || !searchOwn) {
-                if (student.getTimetableEnd() < lecture.GetStartInMinutes())
+            if ((lecture.faculty == student.GetFaculty()) || !searchOwn) {
+                if (student.GetTimetableEnd() < lecture.GetStartInMinutes())
                 {
                     return lecture;
                 }
             } 
-            
         }
-
         return null;
     }
-    
-
 }

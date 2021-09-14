@@ -818,6 +818,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _doors: []
   _Agent: {fileID: 458701480}
+  doors_parent: {fileID: 1959119915}
 --- !u!4 &271035690
 Transform:
   m_ObjectHideFlags: 0

@@ -5,46 +5,48 @@ using UnityEngine;
 class StudentInitialisation : MonoBehaviour {
 
     public float studentInitialisationProgress;
-
     public bool isDone;
-
-    private int _numberOfStudents = 10000;
-
-    private static StudentInitialisation _StudentInitialisationInstance;
-    
-    private GameObject[] _spawnPoints;
 
     [SerializeField] private Student[] _studentList;
 
-    void Awake() {
-        _StudentInitialisationInstance = this;
+    private int _numberOfStudents = 10000;
+    private static StudentInitialisation _studentInitialisationInstance;
+    private GameObject[] _spawnPoints;
+
+
+    private void Awake() {
+        _studentInitialisationInstance = this;
     }
 
-    void Start () {
+
+    private void Start() {
         _spawnPoints = GameObject.FindGameObjectsWithTag("Spawn");
-        Initialize ();
+        Initialize();
     }
+
 
     public static StudentInitialisation StudentInitialisationInstance {
-        get {return _StudentInitialisationInstance;}
+        get {return _studentInitialisationInstance;}
     }
 
-    public Student[] getStudentList () {
+
+    public Student[] GetStudentList() {
         return _studentList;
     }
 
-    void Initialize () {
+
+    private void Initialize() {
 
         Debug.Log("Initialize");
 
         _studentList = new Student[_numberOfStudents];
 
-        int medstudents = Mathf.RoundToInt((float)_numberOfStudents * 0.28f);
-        int mathstudents = Mathf.RoundToInt((float)_numberOfStudents * 0.13f);
-        int chemstudents = Mathf.RoundToInt((float)_numberOfStudents * 0.15f);
-        int phystudents = Mathf.RoundToInt((float)_numberOfStudents * 0.19f);
-        int biostudents = Mathf.RoundToInt((float)_numberOfStudents * 0.19f);
-        int clstudents = Mathf.RoundToInt((float)_numberOfStudents * 0.06f);
+        int medStudents = Mathf.RoundToInt((float)_numberOfStudents * 0.28f);
+        int mathStudents = Mathf.RoundToInt((float)_numberOfStudents * 0.13f);
+        int chemStudents = Mathf.RoundToInt((float)_numberOfStudents * 0.15f);
+        int phyStudents = Mathf.RoundToInt((float)_numberOfStudents * 0.19f);
+        int bioStudents = Mathf.RoundToInt((float)_numberOfStudents * 0.19f);
+        int clsStudents = Mathf.RoundToInt((float)_numberOfStudents * 0.06f);
 
         for (int i = 0; i < _numberOfStudents; i++) {
 
@@ -55,29 +57,28 @@ class StudentInitialisation : MonoBehaviour {
             Student student = new Student(i, size, speed, _spawnPoints[spawnPoint].transform.position);
 
             // Assign each student a faculty
-            if (medstudents > 0) {
-                student.setFaculty(0);
-                medstudents--;
-            } else if(mathstudents > 0) {
-                student.setFaculty(1);
-                mathstudents--;
-            } else if (chemstudents > 0) {
-                student.setFaculty(2);
-                chemstudents--;
-            } else if (phystudents > 0) {
-                student.setFaculty(3);
-                phystudents--;
-            } else if (biostudents > 0) {
-                student.setFaculty(4);
-                biostudents--;
+            if (medStudents > 0) {
+                student.SetFaculty(0);
+                medStudents--;
+            } else if(mathStudents > 0) {
+                student.SetFaculty(1);
+                mathStudents--;
+            } else if (chemStudents > 0) {
+                student.SetFaculty(2);
+                chemStudents--;
+            } else if (phyStudents > 0) {
+                student.SetFaculty(3);
+                phyStudents--;
+            } else if (bioStudents > 0) {
+                student.SetFaculty(4);
+                bioStudents--;
             } else {
-                student.setFaculty(6);
-                clstudents--;
+                student.SetFaculty(6);
+                clsStudents--;
             }
 
             _studentList[i] = student;
         }
-
         GameManager.GameManagerInstance.UpdateGameState(GameState.SetAgentCommute);
     }
 }

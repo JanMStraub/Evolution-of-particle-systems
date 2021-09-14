@@ -7,41 +7,36 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
-    private static GameManager _GameManagerInstance;
-
-    private List<AsyncOperation> _scenesLoading = new List<AsyncOperation>();
-
+    public Slider slider;
+    public GameState state;
+    public static event Action<GameState> onGameStateChanced;
     public GameObject loadingScreen;
 
-    public Slider slider;
-
-    public GameState State;
-    
+    private static GameManager _gameManagerInstance;
+    private List<AsyncOperation> _scenesLoading = new List<AsyncOperation>();
     private float _totalSceneProgress;
-
     // private float _totalSpawnProgress = 0;
-    
     // private float _totalCommuteProgress = 0;
-
-    public static event Action<GameState> OnGameStateChanced;
     
 
     public static GameManager GameManagerInstance {
-        get {return _GameManagerInstance;}
+        get {return _gameManagerInstance;}
     }
 
-    void Awake() {
 
-        if (_GameManagerInstance != null && _GameManagerInstance != this) {
+    private void Awake() {
+
+        if (_gameManagerInstance != null && _gameManagerInstance != this) {
             Destroy(this.gameObject);
             return;
         }
 
-        _GameManagerInstance = this;
+        _gameManagerInstance = this;
         DontDestroyOnLoad(this.gameObject);
 
         SceneManager.LoadSceneAsync((int)SceneIndexes.TITLE_SCREEN, LoadSceneMode.Additive);
     }
+
 
     // Runs before a scene gets loaded
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
@@ -53,6 +48,7 @@ public class GameManager : MonoBehaviour {
         GameObject.DontDestroyOnLoad(main); 
     }
 
+
     public void LoadGame() {
 
         loadingScreen.gameObject.SetActive(true);
@@ -63,10 +59,11 @@ public class GameManager : MonoBehaviour {
         loadingScreen.gameObject.SetActive(false);
     }
     
+
     // Managing GameStates 
     public void UpdateGameState(GameState newState) {
 
-        State = newState;
+        state = newState;
 
         switch (newState) {
             case GameState.StudentInitialisation:
@@ -82,11 +79,12 @@ public class GameManager : MonoBehaviour {
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
         }
 
-        OnGameStateChanced?.Invoke(newState);
+        onGameStateChanced?.Invoke(newState);
     }
 
+
     // Managing LoadingScreen
-    IEnumerator GetSceneLoadProcess () {
+    IEnumerator GetSceneLoadProcess() {
         
         for (int i = 0; i < _scenesLoading.Count; i++) {
             while (!_scenesLoading[i].isDone) {
@@ -103,8 +101,9 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+
     /*
-    IEnumerator GetSpawnProgress () {
+    IEnumerator GetSpawnProgress() {
         while (SpawnController.SpawnControllerInstance == null || !SpawnController.SpawnControllerInstance.isDone) {
             if (SpawnController.SpawnControllerInstance != null) {
                 _totalSpawnProgress = Mathf.Round(SpawnController.SpawnControllerInstance.spawnProgress * 100f);
@@ -113,7 +112,8 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    IEnumerator GetTotalProgress () {
+
+    IEnumerator GetTotalProgress() {
         float totalProgress = 0;
 
         while (CommuteController.CommuteControllerInstance == null || !CommuteController.CommuteControllerInstance.isDone) {
