@@ -1016,6 +1016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06e52c1ca9283d4ddb5e77063780f6a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _timeSpeed: 1
   timeText: {fileID: 472142413}
 --- !u!1 &305371481
 GameObject:
@@ -1747,7 +1748,7 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 50
-  m_Acceleration: 100
+  m_Acceleration: 35
   avoidancePriority: 50
   m_AngularSpeed: 3000
   m_StoppingDistance: 1
@@ -1757,7 +1758,7 @@ NavMeshAgent:
   m_Height: 2
   m_BaseOffset: 1
   m_WalkableMask: 1
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 1
 --- !u!54 &458701484
 Rigidbody:
   m_ObjectHideFlags: 0

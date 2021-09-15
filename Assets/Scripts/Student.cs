@@ -105,9 +105,14 @@ public class Student {
 
 
     public Lecture GetNextLecture() {
-        if(_lectureIndex < lectureList.Count)
+        if(_lectureIndex + 1 < lectureList.Count) {
+            return lectureList[_lectureIndex + 1];
+        } else if(_lectureIndex < lectureList.Count) {
             return lectureList[_lectureIndex];
-        return null;
+        } else {
+            Debug.Log("this is silly");
+            return null;
+        }
     }
 
 
@@ -115,7 +120,7 @@ public class Student {
         return _doorsWithinCurrentComplex;
     }
 
-    public void EmptyCurrentLectureList () {
+    public void EmptyCurrentLectureDoorList () {
         _doorsWithinCurrentComplex.Clear();
     }
 }
