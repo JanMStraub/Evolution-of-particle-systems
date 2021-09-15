@@ -114,4 +114,8 @@ public class Student {
     public List<GameObject> GetDoorsWithinCurrentComplex() {
         return _doorsWithinCurrentComplex;
     }
+
+    public void EmptyCurrentLectureList () {
+        _doorsWithinCurrentComplex.Clear();
+    }
 }

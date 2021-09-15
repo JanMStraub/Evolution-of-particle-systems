@@ -8,7 +8,7 @@ public class ClockManagement : MonoBehaviour {
 
     private static ClockManagement _clockManagmentInstance;
     private float _currentTime;
-    private float _timeSpeed = 1f;
+    public float _timeSpeed = 1f;
 
     public TMP_Text timeText;
 
