@@ -20,6 +20,34 @@ public class Lecture {
         string[] splitted = start.Split(':');
         return (int.Parse(splitted[0])*60 + (int.Parse(splitted[1])));
     }
+
+    public void SetStartFromMinutes(int minutes) {
+        string startString = "";
+        if((int)(minutes/60f) < 10) {
+            startString += "0";
+        }
+        startString += (int)(minutes/60f);
+        startString += ":";
+        if((int)(minutes%60f) < 10) {
+            startString += "0";
+        }
+        startString += (int)(minutes%60f);
+        this.start = startString;
+    }
+
+    public void SetEndFromMinutes(int minutes) {
+        string endString = "";
+        if((int)(minutes/60f) < 10) {
+            endString += "0";
+        }
+        endString += (int)(minutes/60f);
+        endString += ":";
+        if((int)(minutes%60f) < 10) {
+            endString += "0";
+        }
+        endString += (int)(minutes%60f);
+        this.end = endString;
+    }
 }
 
 [System.Serializable]

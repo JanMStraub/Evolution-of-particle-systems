@@ -5,5 +5,6 @@ public enum FacultyIndexes {
     Physik_und_Astronomie = 3,
     Biowissenschaften = 4,
     Rest = 5,
-    Computerlinguistik = 6
+    Computerlinguistik = 6,
+    Lunch = 42
 }

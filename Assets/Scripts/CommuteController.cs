@@ -44,6 +44,7 @@ class CommuteController : MonoBehaviour {
             _studentList = StudentInitialisation.StudentInitialisationInstance.getStudentList();
             
             AddLecturesToStudents();
+            AddLunch();
             GameManager.GameManagerInstance.UpdateGameState(GameState.RunSimulation);
         }
     }
@@ -116,5 +117,51 @@ class CommuteController : MonoBehaviour {
         return null;
     }
     
+    private void AddLunch() {
 
+        foreach(Student student in _studentList) {
+            Lecture lunch = new Lecture();
+            lunch.faculty = 42;
+            lunch.number = 10001;
+            lunch.start = "11:00"; //660
+            lunch.end = "14:00"; //840
+
+            bool noLunch = false;
+
+            foreach (Lecture lecture in student.lectureList) {
+                if(lecture.GetStartInMinutes() < 660 && lecture.GetEndInMinutes() > 840) { //lecture in lunchtime, bad luck...
+                    noLunch = true;
+                    break;
+                }
+                if(lecture.GetEndInMinutes() + 15 > lunch.GetStartInMinutes() && lecture.GetEndInMinutes() < 840) {
+                    lunch.SetStartFromMinutes(lecture.GetEndInMinutes() + 15); //if lecture reaches in lunchbreak
+                }
+                if(lecture.GetStartInMinutes() - 15 < lunch.GetEndInMinutes() && lecture.GetStartInMinutes() > 660) {
+                    lunch.SetEndFromMinutes(lecture.GetStartInMinutes()); //if lecture starts in lunchbreak
+                }
+            }
+
+            /*
+            if(noLunch) {
+                continue;
+            }
+            */
+            
+            int lunchDuration = lunch.GetEndInMinutes() - lunch.GetStartInMinutes();
+            if(lunchDuration >= 45 && !noLunch) {
+                lunch.building = 304;
+                bool notInserted = true;
+                int scheduleLength = student.lectureList.Count;
+                for(int i = 0; i < scheduleLength; i++) {
+                    if(student.lectureList[i].GetStartInMinutes() > lunch.GetStartInMinutes()) {
+                        student.lectureList.Insert(i, lunch);
+                        notInserted = false;
+                    }
+                }
+                if(notInserted) {
+                    student.lectureList.Add(lunch);
+                }
+            }
+        }
+    }
 }
