@@ -13,6 +13,8 @@ public class Student {
     private float _speed;
     private int _lectureIndex = 0;
     private List<GameObject> _doorsWithinCurrentComplex = new List<GameObject>();
+    private bool _currentlyEnRoute = false;
+    private bool _dayFinished = false;
 
     [SerializeField] private Vector3 _spawnPoint;
 
@@ -61,6 +63,16 @@ public class Student {
 
     public void SetNextLecture() {
         _lectureIndex++;
+    }
+
+
+    public void SetCurrentlyEnRoute(bool currentlyEnRoute) {
+        _currentlyEnRoute = currentlyEnRoute;
+    }
+
+
+    public void SetDayFinished() {
+        _dayFinished = true;
     }
 
 
@@ -116,9 +128,20 @@ public class Student {
     }
 
 
+    public bool GetCurrentlyEnRoute() {
+        return _currentlyEnRoute;
+    }
+
+
+    public bool GetDayFinished() {
+        return _dayFinished;
+    }
+
+
     public List<GameObject> GetDoorsWithinCurrentComplex() {
         return _doorsWithinCurrentComplex;
     }
+
 
     public void EmptyCurrentLectureDoorList () {
         _doorsWithinCurrentComplex.Clear();

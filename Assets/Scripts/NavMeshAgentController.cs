@@ -6,12 +6,20 @@ using System;
 
 public class NavMeshAgentController : MonoBehaviour {
 
-    public NavMeshAgent _agent;
+    private int _studentId;
+
+    public NavMeshAgent agent;
 
 
-    public void Activate(Vector3 destination) {
-        _agent = this.GetComponent<NavMeshAgent>();
-        
-        _agent.SetDestination(destination);
+    public void Activate(Vector3 destination, Student student) {
+        _studentId = student.GetId();
+        agent = this.GetComponent<NavMeshAgent>();
+        // agent.height(student.GetSize);
+        // agent.speed(student.GetSpeed);
+        agent.SetDestination(destination);
+    }
+
+    public int GetStudentId() {
+        return _studentId;
     }
 }

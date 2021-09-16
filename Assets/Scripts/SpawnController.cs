@@ -61,14 +61,20 @@ class SpawnController : MonoBehaviour {
 
         while (studentsFinished < studentListSize) {
             _studentList = CommuteController.CommuteControllerInstance.GetStudentList();
+            int gameTime = (int) ClockManagement.ClockManagementInstance.GetTime();
             GameObject instantiatedAgent = null;
 
             foreach (Student student in _studentList) {
-                if (student.lectureList.Count > 0) {
-                    int nextLectureBegin = student.GetCurrentLecture().GetStartInMinutes();
-                    int gameTime = (int) ClockManagement.ClockManagementInstance.GetTime();
+                if ((student.lectureList.Count > 0) 
+                && (student.GetCurrentlyEnRoute() == false) 
+                && (student.GetDayFinished() == false)) {
 
-                    if ((student.GetLectureIndex() == 0) && (gameTime >= nextLectureBegin - 15)) { // First lecture of the day
+                    int nextLectureBegin = student.GetCurrentLecture().GetStartInMinutes();
+
+                    if ((student.GetLectureIndex() == 0) 
+                    && (gameTime >= nextLectureBegin - 15)) { // First lecture of the day
+
+                        Debug.Log(student.GetId() + " starts the day");
                     
                         Vector3 spawnPoint = UnityEngine.Random.insideUnitSphere * 30f + student.GetSpawnPoint();
 
@@ -85,31 +91,42 @@ class SpawnController : MonoBehaviour {
                         }
 
                         instantiatedAgent = (GameObject)Instantiate(agent, pointOnNavMesh, transform.rotation);
-                        instantiatedAgent.GetComponent<NavMeshAgentController>().Activate(FindClosestDoor(student)[1]);
+                        instantiatedAgent.GetComponent<NavMeshAgentController>().Activate(FindClosestDoor(student)[1], student);
+                        student.SetCurrentlyEnRoute(true);
                         student.SetNextLecture();
 
-                    } else if ((student.GetLectureIndex() >= student.lectureList.Count) && (student.GetCurrentLecture().GetEndInMinutes() <= gameTime)) { // All lectures finished
+                    } else if ((student.GetLectureIndex() >= student.lectureList.Count) 
+                            && (student.GetCurrentLecture().GetEndInMinutes() <= gameTime)) { // All lectures finished
+
                         Debug.Log(student.GetId() + " finished his lectures"); 
                         instantiatedAgent = (GameObject)Instantiate(agent, FindClosestDoor(student)[0], transform.rotation);
-                        instantiatedAgent.GetComponent<NavMeshAgentController>().Activate(FindClosestDoor(student)[1]);
+                        instantiatedAgent.GetComponent<NavMeshAgentController>().Activate(FindClosestDoor(student)[1], student);
+                        student.SetCurrentlyEnRoute(true);
                         student.SetNextLecture();
+                        student.SetDayFinished();
                         studentsFinished++;
-                    } else if (student.GetCurrentLecture().building == student.GetNextLecture().building) { // Next lecture is in the same complex
-                        continue;
+
+                    } else if(gameTime >= nextLectureBegin - 15) { // Spawn agent commute to next lecture
+                        student.EmptyCurrentLectureDoorList();
+                        Debug.Log(student.GetId() + " finished his first Lecture");
+                        foreach (GameObject door in _doors) {
+                            if (int.Parse(door.tag) == student.GetCurrentLecture().building) {
+                                student.SetDoorsWithinCurrentComplex(door);
+                            }
+                        } 
+
+                        instantiatedAgent = (GameObject)Instantiate(agent, FindClosestDoor(student)[0], transform.rotation);
+                        instantiatedAgent.GetComponent<NavMeshAgentController>().Activate(FindClosestDoor(student)[1], student); 
+                        student.SetCurrentlyEnRoute(true);
+                        student.SetNextLecture();
+
+                    } else if ((student.GetCurrentLecture().building == student.GetNextLecture().building) 
+                            && (student.GetLectureIndex() > 0)) { // Next lecture is in the same complex
+                        
+                        Debug.Log(student.GetId() + "´s next lecture is in the same complex");
                     } else {
-                        if (gameTime >= nextLectureBegin - 15) {// Spawn agent commute to next lecture
-                            student.EmptyCurrentLectureDoorList();
-
-                            foreach (GameObject door in _doors) {
-                                if (int.Parse(door.tag) == student.GetCurrentLecture().building) {
-                                    student.SetDoorsWithinCurrentComplex(door);
-                                }
-                            } 
-
-                            instantiatedAgent = (GameObject)Instantiate(agent, FindClosestDoor(student)[0], transform.rotation);
-                            instantiatedAgent.GetComponent<NavMeshAgentController>().Activate(FindClosestDoor(student)[1]); 
-                            student.SetNextLecture();
-                        }
+                        // Debug.Log("Event not accounted for");
+                        continue;
                     }
                 }
             }
@@ -118,7 +135,7 @@ class SpawnController : MonoBehaviour {
         }
     }
 
-
+    // TODO: Randomize door selection
     private Vector3[] FindClosestDoor(Student student) {
         
         List<GameObject> doorsWithinNextComplex = new List<GameObject>();
@@ -131,7 +148,9 @@ class SpawnController : MonoBehaviour {
             }
         }
 
-        if (doorsWithinNextComplex.Count != 0 && student.GetDoorsWithinCurrentComplex().Count != 0) {
+        if (doorsWithinNextComplex.Count != 0 
+        && student.GetDoorsWithinCurrentComplex().Count != 0) {
+
             foreach (GameObject currentDoor in student.GetDoorsWithinCurrentComplex()) {
                 foreach (GameObject nextDoor in doorsWithinNextComplex) {
                     float currentDistance = Vector3.Distance(currentDoor.transform.position, nextDoor.transform.position);
@@ -141,7 +160,7 @@ class SpawnController : MonoBehaviour {
                     }
                 }
             }
-        } else if (student.GetLectureIndex() == 0) { //early in the morning
+        } else if (student.GetLectureIndex() == 0) { // First lecture of the day
             closestDoors[0] = student.GetSpawnPoint();
 
             foreach (GameObject nextDoor in doorsWithinNextComplex) {
@@ -150,7 +169,7 @@ class SpawnController : MonoBehaviour {
                         closestDoors[1] = nextDoor.transform.position;
                     }
             }
-        } else if (student.GetLectureIndex() > student.lectureList.Count) { //day over, going home
+        } else if (student.GetLectureIndex() >= student.lectureList.Count) { // All lectures finished
             closestDoors[1] = student.GetSpawnPoint();
 
             foreach (GameObject currentDoor in student.GetDoorsWithinCurrentComplex()) {
@@ -159,7 +178,7 @@ class SpawnController : MonoBehaviour {
                         closestDoors[0] = currentDoor.transform.position;
                     }
             }
-        }  else {
+        } else {
             throw new System.Exception("illegal position");
         }
         return closestDoors;
