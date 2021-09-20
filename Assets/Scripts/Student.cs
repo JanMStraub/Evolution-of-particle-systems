@@ -111,8 +111,12 @@ public class Student {
     }
 
 
+    // Exception ?
     public Lecture GetCurrentLecture() {
-        return lectureList[_lectureIndex];
+        if (lectureList.Count != 0)
+            return lectureList[_lectureIndex];
+        else
+            throw new System.Exception("hab ich dich du Schlingel");
     }
 
 

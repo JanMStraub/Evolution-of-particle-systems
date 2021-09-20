@@ -57,17 +57,19 @@ class SpawnController : MonoBehaviour {
 
     IEnumerator Spawn() {
         int studentsFinished = 0;
+        _studentList = CommuteController.CommuteControllerInstance.GetStudentList();
         int studentListSize = _studentList.Length;
 
         while (studentsFinished < studentListSize) {
-            _studentList = CommuteController.CommuteControllerInstance.GetStudentList();
             int gameTime = (int) ClockManagement.ClockManagementInstance.GetTime();
             GameObject instantiatedAgent = null;
 
             foreach (Student student in _studentList) {
+                // Exception ?
                 if ((student.lectureList.Count > 0) 
                 && (student.GetCurrentlyEnRoute() == false) 
-                && (student.GetDayFinished() == false)) {
+                && (student.GetDayFinished() == false)
+                && (student.GetCurrentLecture().GetEndInMinutes() > gameTime)) {
 
                     int nextLectureBegin = student.GetCurrentLecture().GetStartInMinutes();
 
@@ -106,7 +108,7 @@ class SpawnController : MonoBehaviour {
                         student.SetDayFinished();
                         studentsFinished++;
 
-                    } else if(gameTime >= nextLectureBegin - 15) { // Spawn agent commute to next lecture
+                    } else if (gameTime >= nextLectureBegin - 15) { // Spawn agent commute to next lecture
                         student.EmptyCurrentLectureDoorList();
                         Debug.Log(student.GetId() + " finished his first Lecture");
                         foreach (GameObject door in _doors) {
@@ -122,13 +124,14 @@ class SpawnController : MonoBehaviour {
 
                     } else if ((student.GetCurrentLecture().building == student.GetNextLecture().building) 
                             && (student.GetLectureIndex() > 0)) { // Next lecture is in the same complex
-                        
+                        student.SetNextLecture();
                         Debug.Log(student.GetId() + "´s next lecture is in the same complex");
                     } else {
                         // Debug.Log("Event not accounted for");
                         continue;
                     }
-                }
+                } else
+                throw new System.Exception("hab ich dich du Schlingel");
             }
             Debug.Log("Students finished: " + studentsFinished);
             yield return new WaitForSeconds(7.5f);
