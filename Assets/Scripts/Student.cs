@@ -16,6 +16,8 @@ public class Student {
     private bool _currentlyEnRoute = false;
     private bool _dayFinished = false;
 
+    private int _nextAppointment;
+
     [SerializeField] private Vector3 _spawnPoint;
 
     public List<Lecture> lectureList = new List<Lecture>();
@@ -27,6 +29,7 @@ public class Student {
         _speed = speed;
         _spawnPoint = spawnPoint;
         _latestLectureEnding = 0;
+
     }
 
 
@@ -149,5 +152,44 @@ public class Student {
 
     public void EmptyCurrentLectureDoorList () {
         _doorsWithinCurrentComplex.Clear();
+    }
+
+
+    public string[] RoutePoints() {
+        string actualPosition = "";
+        string nextPosition = "";
+        if(_lectureIndex == 0) { //first lecture, start from spawnpoint
+            actualPosition = "Spawn";
+            nextPosition = "" + lectureList[_lectureIndex].building;
+        } else if(_lectureIndex == lectureList.Count) { //last lecture, go back to spawnpoint
+            actualPosition = "" + lectureList[_lectureIndex-1].building;
+            nextPosition = "Spawn";
+            _lectureIndex = - 2; //day over
+        } else {
+            actualPosition = "" + lectureList[_lectureIndex-1].building;
+            nextPosition = "" + lectureList[_lectureIndex].building;
+        }
+
+        _lectureIndex++;
+
+        if(_lectureIndex >= lectureList.Count) {
+            _nextAppointment = lectureList[_lectureIndex-1].GetEndInMinutes() + 5; //the bell does not dismiss you, i do
+        } else if(_lectureIndex > 0) {
+            _nextAppointment = lectureList[_lectureIndex].GetStartInMinutes() - 15; //but sit on your place when lecture starts
+        }
+
+        return new string[]{actualPosition, nextPosition};
+    }
+
+    public int check(int time) {
+        if(_lectureIndex < 0) {
+            return 2; //day over, no more checks necessary
+        }
+
+        if(time > _nextAppointment) {
+            return 1; //have to go anywhere
+        }
+
+        return 0; //still doing something
     }
 }

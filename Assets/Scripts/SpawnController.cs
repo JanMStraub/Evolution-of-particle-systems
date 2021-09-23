@@ -39,7 +39,7 @@ class SpawnController : MonoBehaviour {
                 _doors.Add(door.gameObject);
             }
             ClockManagement.ClockManagementInstance.StartTime();
-            StartCoroutine(Spawn());
+            StartCoroutine(Spawn2());
         }
     }
         /*
@@ -136,6 +136,39 @@ class SpawnController : MonoBehaviour {
             Debug.Log("Students finished: " + studentsFinished);
             yield return new WaitForSeconds(7.5f);
         }
+    }
+
+    private IEnumerator Spawn2() {
+        _studentList = CommuteController.CommuteControllerInstance.GetStudentList();
+        int studentListSize = _studentList.Length;
+
+        while (true) {
+            int studentsFinished = 0;
+
+            int gameTime = (int) ClockManagement.ClockManagementInstance.GetTime();
+            GameObject instantiatedAgent = null;
+
+            foreach (Student student in _studentList) {
+                if(student.check(gameTime) == 1) {
+                    string[] routePoints = student.RoutePoints();
+                    instantiatedAgent = (GameObject)Instantiate(agent, FindDoor(routePoints[0]), transform.rotation);
+                    instantiatedAgent.GetComponent<NavMeshAgent>().SetDestination(FindDoor(routePoints[1]));
+                } else if(student.check(gameTime) == 2) {
+                    studentsFinished++;
+                }
+            }
+            if(studentsFinished > 100) {
+                break;
+            }
+            yield return new WaitForSeconds(5f);
+        }
+
+    }
+
+    private Vector3 FindDoor(string tag) {
+        GameObject[] doors = GameObject.FindGameObjectsWithTag(tag);
+        float randomPosition = UnityEngine.Random.Range(0,doors.Length-1); //System.Collections.Random.Range(0f, doors.Length -1f);
+        return doors[(int)randomPosition].transform.position;
     }
 
     // TODO: Randomize door selection
