@@ -182,8 +182,13 @@ public class Student {
     }
 
     public int check(int time) {
+
         if(_lectureIndex < 0) {
             return 2; //day over, no more checks necessary
+        }
+
+        if(_nextAppointment == 0) {
+            _nextAppointment = lectureList[0].GetStartInMinutes();
         }
 
         if(time > _nextAppointment) {
