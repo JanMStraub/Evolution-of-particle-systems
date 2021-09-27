@@ -148,10 +148,19 @@ class SpawnController : MonoBehaviour {
             int gameTime = (int) ClockManagement.ClockManagementInstance.GetTime();
             GameObject instantiatedAgent = null;
 
+            Debug.Log("start new round at " + gameTime);
+
             foreach (Student student in _studentList) {
                 if(student.check(gameTime) == 1) {
+                    Debug.Log(gameTime);
                     string[] routePoints = student.RoutePoints();
-                    instantiatedAgent = (GameObject)Instantiate(agent, FindDoor(routePoints[0]), transform.rotation);
+
+                    Vector3 spawnPoint = UnityEngine.Random.insideUnitSphere * 30f + FindDoor(routePoints[0]);
+                    NavMeshHit hit;
+                    NavMesh.SamplePosition (spawnPoint, out hit, 30f, 1);
+                    spawnPoint = hit.position;
+
+                    instantiatedAgent = (GameObject)Instantiate(agent, spawnPoint, transform.rotation);
                     instantiatedAgent.GetComponent<NavMeshAgent>().SetDestination(FindDoor(routePoints[1]));
                 } else if(student.check(gameTime) == 2) {
                     studentsFinished++;
@@ -160,7 +169,7 @@ class SpawnController : MonoBehaviour {
             if(studentsFinished > 100) {
                 break;
             }
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(3f);
         }
 
     }

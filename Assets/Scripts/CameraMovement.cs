@@ -13,7 +13,7 @@ public class CameraMovement : MonoBehaviour {
 
 
     private void Start() {
-        _moveSpeed = 1f;
+        _moveSpeed = 3f;
         _zoomSpeed = 1f;
         
         _minHeight = 20f;

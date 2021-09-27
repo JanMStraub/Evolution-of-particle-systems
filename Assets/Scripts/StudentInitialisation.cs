@@ -9,7 +9,7 @@ class StudentInitialisation : MonoBehaviour {
 
     [SerializeField] private Student[] _studentList;
 
-    private int _numberOfStudents = 1000;
+    private int _numberOfStudents = 512;
     private static StudentInitialisation _studentInitialisationInstance;
     private GameObject[] _spawnPoints;
 

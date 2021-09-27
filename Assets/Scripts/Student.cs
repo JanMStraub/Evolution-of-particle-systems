@@ -16,7 +16,7 @@ public class Student {
     private bool _currentlyEnRoute = false;
     private bool _dayFinished = false;
 
-    private int _nextAppointment;
+    public int _nextAppointment;
 
     [SerializeField] private Vector3 _spawnPoint;
 
