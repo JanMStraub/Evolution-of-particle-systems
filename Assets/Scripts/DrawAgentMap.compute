@@ -1,0 +1,47 @@
+#pragma kernel DrawAgentMap
+
+RWTexture2D<float4> surface;
+ 
+float Line( float2 p, float2 a, float2 b ) {
+    float2 pa = p-a, ba = b-a;
+    float h = saturate( dot(pa,ba)/dot(ba,ba) );
+    float2 d = pa - ba * h;
+    return dot(d,d);
+}
+ 
+
+ 
+[numthreads(8,8,1)]
+void DrawAgentMap (uint2 id : SV_DispatchThreadID) {
+    float2 uv = float2 ((float)id.x/2048, (float)id.y/2048);
+    float k = Line(uv,float2(0.0,0.0),float2(1.0,1.0));  
+    float thickness = 0.00001;
+    surface[id.xy] = lerp( float4(1,1,1,1), float4(0,0,0,1), smoothstep(0.0, thickness, k) );
+}
+
+/*
+struct Agent {
+	float2 position;
+	float angle;
+	float4 mask;
+};
+
+RWStructuredBuffer<Agent> _agents;
+uint numAgents;
+
+RWTexture2D<float4> TargetTexture;
+
+[numthreads(8,8,1)]
+void DrawAgentMap (uint3 id : SV_DispatchThreadID) {
+	if (id.x >= numAgents) {
+		return;
+	}
+
+
+	Agent agent = _agents[id.x];
+	// Draw to trail map
+	int cellX = (int)agent.position.x;
+	int cellY = (int)agent.position.y;
+	TargetTexture[int2(cellX, cellY)] = 1;
+}
+*/

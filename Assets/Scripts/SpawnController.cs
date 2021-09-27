@@ -28,6 +28,7 @@ class SpawnController : MonoBehaviour {
         GameManager.OnGameStateChanced -= GameManagerOnGameStateChanged;
     }
 
+
     private void GameManagerOnGameStateChanged (GameState state) {
          if (state == GameState.RunSimulation) {
             _studentList = StudentInitialisation.StudentInitialisationInstance.getStudentList();

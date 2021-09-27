@@ -784,6 +784,7 @@ GameObject:
   - component: {fileID: 271035689}
   - component: {fileID: 271035688}
   - component: {fileID: 271035692}
+  - component: {fileID: 271035693}
   m_Layer: 0
   m_Name: SimulationHandler
   m_TagString: Untagged
@@ -859,6 +860,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _doors: []
+--- !u!114 &271035693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271035687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc34ca47ce95e461084f726a45eaf114, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _drawAgentMap: {fileID: 7200000, guid: 5ecfd7390f16e456692695337a4b3f21, type: 3}
 --- !u!1 &305371481
 GameObject:
   m_ObjectHideFlags: 0
