@@ -186,6 +186,10 @@ public class Student {
             return 2; //day over, no more checks necessary
         }
 
+        if(_nextAppointment == 0) {
+            _nextAppointment = lectureList[0].GetStartInMinutes()-15;
+        }
+
         if(time > _nextAppointment) {
             return 1; //have to go anywhere
         }

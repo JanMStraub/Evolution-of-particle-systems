@@ -9,6 +9,8 @@ class SpawnController : MonoBehaviour {
     private static SpawnController _spawnControllerInstance;
     private Student[] _studentList;
 
+    private ClockManagement cM;
+
     [SerializeField] List<GameObject> _doors = new List<GameObject>();
 
     public GameObject agent;
@@ -39,6 +41,8 @@ class SpawnController : MonoBehaviour {
                 _doors.Add(door.gameObject);
             }
             ClockManagement.ClockManagementInstance.StartTime();
+            cM = GameObject.Find("SimulationHandler").GetComponent<ClockManagement>();
+
             StartCoroutine(Spawn2());
         }
     }
@@ -54,7 +58,7 @@ class SpawnController : MonoBehaviour {
 
         */
 
-
+    /*
     IEnumerator Spawn() {
         int studentsFinished = 0;
         _studentList = CommuteController.CommuteControllerInstance.GetStudentList();
@@ -137,6 +141,7 @@ class SpawnController : MonoBehaviour {
             yield return new WaitForSeconds(7.5f);
         }
     }
+    */
 
     private IEnumerator Spawn2() {
         _studentList = CommuteController.CommuteControllerInstance.GetStudentList();
@@ -148,11 +153,8 @@ class SpawnController : MonoBehaviour {
             int gameTime = (int) ClockManagement.ClockManagementInstance.GetTime();
             GameObject instantiatedAgent = null;
 
-            Debug.Log("start new round at " + gameTime);
-
             foreach (Student student in _studentList) {
                 if(student.check(gameTime) == 1) {
-                    Debug.Log(gameTime);
                     string[] routePoints = student.RoutePoints();
 
                     Vector3 spawnPoint = UnityEngine.Random.insideUnitSphere * 30f + FindDoor(routePoints[0]);
@@ -161,7 +163,10 @@ class SpawnController : MonoBehaviour {
                     spawnPoint = hit.position;
 
                     instantiatedAgent = (GameObject)Instantiate(agent, spawnPoint, transform.rotation);
-                    instantiatedAgent.GetComponent<NavMeshAgent>().SetDestination(FindDoor(routePoints[1]));
+                    instantiatedAgent.GetComponent<NavMeshAgentController>().Activate(FindDoor(routePoints[1]));
+                    if (!instantiatedAgent.GetComponent<NavMeshAgent>().isActiveAndEnabled) {
+                        Debug.Log("Penis");
+                    }
                 } else if(student.check(gameTime) == 2) {
                     studentsFinished++;
                 }
@@ -169,6 +174,7 @@ class SpawnController : MonoBehaviour {
             if(studentsFinished > 100) {
                 break;
             }
+            cM.SetGo();
             yield return new WaitForSeconds(3f);
         }
 
@@ -176,7 +182,7 @@ class SpawnController : MonoBehaviour {
 
     private Vector3 FindDoor(string tag) {
         GameObject[] doors = GameObject.FindGameObjectsWithTag(tag);
-        float randomPosition = UnityEngine.Random.Range(0,doors.Length-1); //System.Collections.Random.Range(0f, doors.Length -1f);
+        float randomPosition = UnityEngine.Random.Range(0,doors.Length); //System.Collections.Random.Range(0f, doors.Length -1f);
         return doors[(int)randomPosition].transform.position;
     }
 

@@ -8,7 +8,8 @@ public class ClockManagement : MonoBehaviour {
 
     private static ClockManagement _clockManagmentInstance;
     private float _currentTime;
-    public float _timeSpeed = 1f;
+    private float _timeSpeed;
+    private float _oldTimeSpeed;
 
     public TMP_Text timeText;
 
@@ -24,9 +25,9 @@ public class ClockManagement : MonoBehaviour {
 
 
     public void StartTime() {
-        _currentTime = 450;
-        _timeSpeed = 1f;
-
+        _currentTime = 460;
+        _timeSpeed = 0.8f;
+        _oldTimeSpeed = _timeSpeed;
     }
 
 
@@ -60,5 +61,13 @@ public class ClockManagement : MonoBehaviour {
 
     public float GetTimeSpeed() {
         return _timeSpeed;
+    }
+
+    public void SetPause() {
+        _timeSpeed = 0;
+    }
+
+    public void SetGo() {
+        _timeSpeed = _oldTimeSpeed;
     }
 }
