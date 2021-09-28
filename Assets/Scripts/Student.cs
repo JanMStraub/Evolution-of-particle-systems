@@ -182,6 +182,7 @@ public class Student {
     }
 
     public int check(int time) {
+
         if(_lectureIndex < 0) {
             return 2; //day over, no more checks necessary
         }
