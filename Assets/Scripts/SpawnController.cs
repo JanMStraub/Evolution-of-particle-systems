@@ -54,7 +54,7 @@ class SpawnController : MonoBehaviour {
 
         */
 
-
+    /*
     IEnumerator Spawn() {
         int studentsFinished = 0;
         _studentList = CommuteController.CommuteControllerInstance.GetStudentList();
@@ -137,6 +137,7 @@ class SpawnController : MonoBehaviour {
             yield return new WaitForSeconds(7.5f);
         }
     }
+    */
 
     private IEnumerator Spawn2() {
         _studentList = CommuteController.CommuteControllerInstance.GetStudentList();
@@ -161,7 +162,7 @@ class SpawnController : MonoBehaviour {
                     spawnPoint = hit.position;
 
                     instantiatedAgent = (GameObject)Instantiate(agent, spawnPoint, transform.rotation);
-                    instantiatedAgent.GetComponent<NavMeshAgent>().SetDestination(FindDoor(routePoints[1]));
+                    instantiatedAgent.GetComponent<NavMeshAgentController>().Activate(FindDoor(routePoints[1]), spawnPoint);
                 } else if(student.check(gameTime) == 2) {
                     studentsFinished++;
                 }
