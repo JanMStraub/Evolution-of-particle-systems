@@ -14,6 +14,7 @@ public class NavMeshAgentController : MonoBehaviour {
 
     public NavMeshAgent agent;
     public LineRenderer line;
+    public static Vector3[] path = new Vector3[0];
 
 
     public void Activate(Vector3 destination, Vector3 currentPosition) {
@@ -21,10 +22,6 @@ public class NavMeshAgentController : MonoBehaviour {
         line = this.GetComponent<LineRenderer>();
 
         agent.SetDestination(destination); 
-
-        _path = agent.path;
-
-        line.SetPositions(_path.corners);
     }
 
     void Start() {
@@ -50,9 +47,14 @@ public class NavMeshAgentController : MonoBehaviour {
         } else {
             agent.speed = _agentSpeed;
         }
-    }
 
-    public int GetStudentId() {
-        return _studentId;
+        path = agent.path.corners;
+
+        if (path != null && path.Length > 1) {
+            line.positionCount = path.Length;
+            for (int i = 0; i < path.Length; i++) {
+                line.SetPosition(i, path[i]);
+            }
+        }
     }
 }
