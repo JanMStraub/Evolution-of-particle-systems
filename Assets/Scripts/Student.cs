@@ -188,7 +188,7 @@ public class Student {
         }
 
         if(_nextAppointment == 0) {
-            _nextAppointment = lectureList[0].GetStartInMinutes();
+            _nextAppointment = lectureList[0].GetStartInMinutes()-15;
         }
 
         if(time > _nextAppointment) {
