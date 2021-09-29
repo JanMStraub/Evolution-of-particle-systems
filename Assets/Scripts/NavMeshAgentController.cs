@@ -4,22 +4,22 @@ using UnityEngine;
 using UnityEngine.AI;
 using System;
 
-public class NavMeshAgentController : MonoBehaviour {
+public class NavMeshAgentController : MonoBehaviour{
 
-    private int _studentId;
+    private NavMeshPath _path;
 
     public NavMeshAgent agent;
+    public LineRenderer line;
 
 
-    public void Activate(Vector3 destination, Student student) {
-        _studentId = student.GetId();
+    public void Activate(Vector3 destination, Vector3 currentPosition) {
         agent = this.GetComponent<NavMeshAgent>();
-        // agent.height(student.GetSize);
-        // agent.speed(student.GetSpeed);
-        agent.SetDestination(destination);
-    }
+        line = this.GetComponent<LineRenderer>();
 
-    public int GetStudentId() {
-        return _studentId;
+        agent.SetDestination(destination); 
+
+        _path = agent.path;
+
+        line.SetPositions(_path.corners);
     }
 }
