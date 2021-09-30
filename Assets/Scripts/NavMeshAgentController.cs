@@ -11,7 +11,7 @@ public class NavMeshAgentController : MonoBehaviour {
     private bool _isOnList = false;
     private ClockManagement clockManagement;
 
-    public NavMeshAgent agent;
+    public NavMeshAgent agent; 
     public LineRenderer line;
     public static Vector3[] path = new Vector3[0];
 
