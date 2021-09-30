@@ -10,6 +10,7 @@ public class ClockManagement : MonoBehaviour {
     private float _currentTime;
     private float _timeSpeed;
     private float _oldTimeSpeed;
+    private List<int> _currentlyCalculatingPathList = new List<int>(); 
 
     public TMP_Text timeText;
 
@@ -63,11 +64,25 @@ public class ClockManagement : MonoBehaviour {
         return _timeSpeed;
     }
 
+
     public void SetPause() {
         _timeSpeed = 0;
     }
 
+
     public void SetGo() {
         _timeSpeed = _oldTimeSpeed;
+    }
+
+    public void AddCurrentlyCalculatingPathList(int id) {
+        _currentlyCalculatingPathList.Add(id);
+    }
+
+    public void RemoveCurrentlyCalculatingPathList(int id) {
+        _currentlyCalculatingPathList.Remove(id);
+    }
+
+    public int GetCurrentlyCalculationPathList() {
+        return _currentlyCalculatingPathList.Count;
     }
 }

@@ -10,14 +10,14 @@ public class CameraMovement : MonoBehaviour {
     private float _xMax;
     private float _zMax;
     private Vector3 _cameraStart;
-
+    
 
     private void Start() {
         _moveSpeed = 3f;
         _zoomSpeed = 1f;
         
         _minHeight = 20f;
-        _maxHeight = 400f;
+        _maxHeight = 700f;
         
         _xMax = 400f;
         _zMax=550f;

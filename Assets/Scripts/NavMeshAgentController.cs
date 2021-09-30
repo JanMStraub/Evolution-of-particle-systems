@@ -7,10 +7,9 @@ using System;
 public class NavMeshAgentController : MonoBehaviour {
 
     private NavMeshPath _path;
-
     private float _agentSpeed;
-
-    private ClockManagement cM;
+    private bool _isOnList = false;
+    private ClockManagement clockManagement;
 
     public NavMeshAgent agent;
     public LineRenderer line;
@@ -26,7 +25,7 @@ public class NavMeshAgentController : MonoBehaviour {
 
     void Start() {
         agent = this.GetComponent<NavMeshAgent>();
-        cM = GameObject.Find("SimulationHandler").GetComponent<ClockManagement>();
+        clockManagement = GameObject.Find("SimulationHandler").GetComponent<ClockManagement>();
         _agentSpeed = agent.speed;
     }
 
@@ -35,14 +34,20 @@ public class NavMeshAgentController : MonoBehaviour {
 
         if(agent.pathPending) {
             color = Color.red;
-            cM.SetPause();
+            if (_isOnList == false) {
+                clockManagement.AddCurrentlyCalculatingPathList(agent.GetInstanceID());
+                _isOnList = true;
+            }
+            clockManagement.SetPause();
         } else {
             color = Color.green;
+            clockManagement.RemoveCurrentlyCalculatingPathList(agent.GetInstanceID());
+            _isOnList = false;
         }
 
         GetComponent<Renderer>().material.color = color;
 
-        if(cM.GetTimeSpeed() == 0) {
+        if(clockManagement.GetTimeSpeed() == 0) {
             agent.speed = 0;
         } else {
             agent.speed = _agentSpeed;

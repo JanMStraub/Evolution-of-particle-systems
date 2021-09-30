@@ -9,7 +9,7 @@ class SpawnController : MonoBehaviour {
     private static SpawnController _spawnControllerInstance;
     private Student[] _studentList;
 
-    private ClockManagement cM;
+    private ClockManagement _clockManagement;
 
     [SerializeField] List<GameObject> _doors = new List<GameObject>();
 
@@ -40,8 +40,9 @@ class SpawnController : MonoBehaviour {
             foreach (Transform door in doorsParent.transform) {
                 _doors.Add(door.gameObject);
             }
+
             ClockManagement.ClockManagementInstance.StartTime();
-            cM = GameObject.Find("SimulationHandler").GetComponent<ClockManagement>();
+            _clockManagement = GameObject.Find("SimulationHandler").GetComponent<ClockManagement>();
 
             StartCoroutine(Spawn2());
         }
@@ -157,9 +158,9 @@ class SpawnController : MonoBehaviour {
                 if(student.check(gameTime) == 1) {
                     string[] routePoints = student.RoutePoints();
 
-                    Vector3 spawnPoint = UnityEngine.Random.insideUnitSphere * 30f + FindDoor(routePoints[0]);
+                    Vector3 spawnPoint = UnityEngine.Random.insideUnitSphere * 50f + FindDoor(routePoints[0]);
                     NavMeshHit hit;
-                    NavMesh.SamplePosition (spawnPoint, out hit, 30f, 1);
+                    NavMesh.SamplePosition (spawnPoint, out hit, 50f, 1);
                     spawnPoint = hit.position;
 
                     instantiatedAgent = (GameObject)Instantiate(agent, spawnPoint, transform.rotation);
@@ -171,7 +172,8 @@ class SpawnController : MonoBehaviour {
             if(studentsFinished > 100) {
                 break;
             }
-            cM.SetGo();
+            _clockManagement.SetGo();
+            Debug.Log(_clockManagement.GetCurrentlyCalculationPathList());
             yield return new WaitForSeconds(3f);
         }
 
