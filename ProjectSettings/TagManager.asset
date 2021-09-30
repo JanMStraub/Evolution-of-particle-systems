@@ -3,12 +3,33 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - 306
+  - 230
+  - 234
+  - 205
+  - 252
+  - 350
+  - 267
+  - 360
+  - 304
+  - 410
+  - 227
+  - 270
+  - Agent
+  - 130
+  - 510
+  - 700
+  - 440
+  - Spawn
+  - 229
+  - ComplexController
+  - 501
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Building
   - Water
   - UI
   - 
