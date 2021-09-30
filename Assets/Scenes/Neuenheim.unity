@@ -1036,7 +1036,6 @@ GameObject:
   - component: {fileID: 271035689}
   - component: {fileID: 271035688}
   - component: {fileID: 271035692}
-  - component: {fileID: 271035693}
   m_Layer: 0
   m_Name: SimulationHandler
   m_TagString: Untagged
