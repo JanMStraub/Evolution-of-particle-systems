@@ -8,8 +8,8 @@ class SpawnController : MonoBehaviour {
 
     private static SpawnController _spawnControllerInstance;
     private Student[] _studentList;
-
-    private ClockManagement _clockManagement;
+    private ClockManagement _cM;
+    private NavMeshPath[,] _pathList;
 
     [SerializeField] List<GameObject> _doors = new List<GameObject>();
 
@@ -39,10 +39,17 @@ class SpawnController : MonoBehaviour {
 
             foreach (Transform door in doorsParent.transform) {
                 _doors.Add(door.gameObject);
+                door.GetComponent<DestroyAgentOnTriggerEnter>().enabled = false;
             }
 
+            CalcPaths();
+
             ClockManagement.ClockManagementInstance.StartTime();
-            _clockManagement = GameObject.Find("SimulationHandler").GetComponent<ClockManagement>();
+            _cM = GameObject.Find("SimulationHandler").GetComponent<ClockManagement>();
+
+            foreach (GameObject door in _doors) {
+                door.GetComponent<DestroyAgentOnTriggerEnter>().enabled = true;
+            }
 
             StartCoroutine(Spawn2());
         }
@@ -158,13 +165,17 @@ class SpawnController : MonoBehaviour {
                 if(student.check(gameTime) == 1) {
                     string[] routePoints = student.RoutePoints();
 
-                    Vector3 spawnPoint = UnityEngine.Random.insideUnitSphere * 50f + FindDoor(routePoints[0]);
+                    Vector3 spawnPoint = UnityEngine.Random.insideUnitSphere * 30f + FindDoor(routePoints[0]).transform.position;
                     NavMeshHit hit;
-                    NavMesh.SamplePosition (spawnPoint, out hit, 50f, 1);
+                    NavMesh.SamplePosition (spawnPoint, out hit, 30f, 1);
                     spawnPoint = hit.position;
 
                     instantiatedAgent = (GameObject)Instantiate(agent, spawnPoint, transform.rotation);
-                    instantiatedAgent.GetComponent<NavMeshAgentController>().Activate(FindDoor(routePoints[1]), spawnPoint);
+                    //instantiatedAgent.GetComponent<NavMeshAgentController>().Activate(FindDoor(routePoints[1]), spawnPoint);
+                    NavMeshPath path = _pathList[NameToIndex(FindDoor(routePoints[0]).name), NameToIndex(FindDoor(routePoints[1]).name)];
+                    
+                    instantiatedAgent.GetComponent<NavMeshAgent>().SetPath(path);
+    
                 } else if(student.check(gameTime) == 2) {
                     studentsFinished++;
                 }
@@ -172,17 +183,16 @@ class SpawnController : MonoBehaviour {
             if(studentsFinished > 100) {
                 break;
             }
-            _clockManagement.SetGo();
-            Debug.Log(_clockManagement.GetCurrentlyCalculationPathList());
+            _cM.SetGo();
             yield return new WaitForSeconds(3f);
         }
 
     }
 
-    private Vector3 FindDoor(string tag) {
+    private GameObject FindDoor(string tag) {
         GameObject[] doors = GameObject.FindGameObjectsWithTag(tag);
         float randomPosition = UnityEngine.Random.Range(0,doors.Length); //System.Collections.Random.Range(0f, doors.Length -1f);
-        return doors[(int)randomPosition].transform.position;
+        return doors[(int)randomPosition];
     }
 
     // TODO: Randomize door selection
@@ -233,4 +243,36 @@ class SpawnController : MonoBehaviour {
         }
         return closestDoors;
     }
+
+    private void CalcPaths() {
+        _pathList = new NavMeshPath[_doors.Count,_doors.Count];
+        foreach(GameObject startDoor in _doors) {
+            foreach(GameObject finishDoor in _doors) {
+                if(startDoor.tag == finishDoor.tag) { //doors at same house
+                    continue;
+                }
+                agent.transform.position = startDoor.transform.position;
+                NavMeshPath path = new NavMeshPath();
+                agent.GetComponent<NavMeshAgent>().CalculatePath(finishDoor.transform.position, path);
+                //remove first corner of the path
+                if(path.corners.Length > 1) {
+                    agent.transform.position = path.corners[1];
+                    agent.GetComponent<NavMeshAgent>().CalculatePath(finishDoor.transform.position, path);
+                }
+
+                if(path == null) {
+                    Debug.Log(startDoor.name + "  " + finishDoor.name);
+                }
+
+                _pathList[NameToIndex(startDoor.name), NameToIndex(finishDoor.name)] = path;
+            }
+        }
+    }
+
+    private int NameToIndex(string name) { //Get number of the door out of its name
+        string number = name.Split(' ')[1];
+        number = number.Substring(1, number.Length - 2);
+        return int.Parse(number);
+    }
+
 }
