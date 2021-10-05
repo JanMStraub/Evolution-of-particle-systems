@@ -3,9 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Jobs;
 using Unity.Burst;
+using Unity.Mathematics;
+using Unity.Collections;
 using UnityEngine;
 using UnityEngine.AI;
-using Unity.Collections;
 using UnityEngine.Experimental.AI;
 
 public class NavMeshAgentController : MonoBehaviour {
@@ -30,6 +31,32 @@ public class NavMeshAgentController : MonoBehaviour {
             NavMesh.CalculatePath(agent.transform.position, _destination, NavMesh.AllAreas, _path);
             agent.GetComponent<NavMeshAgent>().SetPath(_path);
         }
+
+        NavMeshQuery navMeshQuery = new NavMeshQuery(NavMeshWorld.GetDefaultWorld(), Allocator.TempJob, 100);
+        NativeArray<float3> spawnArray = new NativeArray<float3>(SpawnController.SpawnControllerInstance.AgentList.Count, Allocator.TempJob);
+        NativeArray<float3> destinationArray = new NativeArray<float3>(SpawnController.SpawnControllerInstance.AgentList.Count, Allocator.TempJob);
+
+        for (int i = 0; i < SpawnController.SpawnControllerInstance.AgentList.Count; i++) {
+            spawnArray[i] = SpawnController.SpawnControllerInstance.AgentList[i].transform.position;
+            destinationArray[i] = _destination;
+        }
+
+        PathCalculationJob pathCalculationJob = new PathCalculationJob {
+            spawnArray = spawnArray,
+            destinationArray = destinationArray,
+            navMeshQuery = navMeshQuery,
+        };
+        
+        JobHandle jobHandle = pathCalculationJob.Schedule(SpawnController.SpawnControllerInstance.AgentList.Count, 100);
+        jobHandle.Complete();
+
+        for (int i = 0; i < SpawnController.SpawnControllerInstance.AgentList.Count; i++) {
+            SpawnController.SpawnControllerInstance.AgentList[i].transform.position = spawnArray[i];
+            _destination = destinationArray[i];
+        }
+
+        spawnArray.Dispose();
+        destinationArray.Dispose();
 
         // JobHandle jobHandle = SetDestinationAndCalculatePathJob(agent, _destination);
         // jobHandle.Complete();
@@ -108,7 +135,7 @@ public struct PathCalculationJob : IJobParallelFor {
 
     [ReadOnly] public NativeArray<float3> spawnArray;
     [ReadOnly] public NativeArray<float3> destinationArray;
-    [ReadOnly] public NavMeshQuery navMeshQuery = new NavMeshQuery(NavMeshWorld.GetDefaultWorld(), Allocator.Persistent, 100);
+    [ReadOnly] public NavMeshQuery navMeshQuery;
 
     public void Execute(int index) {            
         // agent.GetComponent<NavMeshAgent>().SetDestination(destinationArray[index]);
