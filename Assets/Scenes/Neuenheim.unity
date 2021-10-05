@@ -2179,8 +2179,8 @@ GameObject:
   - component: {fileID: 458701487}
   - component: {fileID: 458701486}
   - component: {fileID: 458701484}
-  - component: {fileID: 458701483}
   - component: {fileID: 458701482}
+  - component: {fileID: 458701483}
   m_Layer: 0
   m_Name: Agent
   m_TagString: Agent

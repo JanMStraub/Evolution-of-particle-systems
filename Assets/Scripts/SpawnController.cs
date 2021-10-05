@@ -15,6 +15,7 @@ class SpawnController : MonoBehaviour {
 
     public GameObject agent;
     public GameObject doorsParent;
+    public List<GameObject> AgentList;
     
 
     public static SpawnController SpawnControllerInstance {
@@ -76,7 +77,9 @@ class SpawnController : MonoBehaviour {
                     spawnPoint = hit.position;
 
                     instantiatedAgent = (GameObject)Instantiate(agent, spawnPoint, transform.rotation);
-                    instantiatedAgent.GetComponent<NavMeshAgentController>().Activate(FindDoor(routePoints[1]), spawnPoint);
+                    instantiatedAgent.GetComponent<NavMeshAgentController>().Activate(FindDoor(routePoints[1]));
+                    AgentList.Add(instantiatedAgent);
+
                 } else if(student.check(gameTime) == 2) {
                     studentsFinished++;
                 }
@@ -84,6 +87,7 @@ class SpawnController : MonoBehaviour {
             if(studentsFinished > 100) {
                 break;
             }
+            AgentList.Clear();
             _clockManagement.SetGo();
             Debug.Log(_clockManagement.GetCurrentlyCalculationPathList());
             yield return new WaitForSeconds(3f);
