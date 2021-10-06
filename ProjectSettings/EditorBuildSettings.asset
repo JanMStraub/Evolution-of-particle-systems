@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Neuenheim.unity
     guid: 0c10ab790486894d9852352734e85cfd
   - enabled: 0
-    path: Assets/Scenes/TestScene.unity
+    path: Assets/Plugins/ModularLowpolyStreetsFree/Scenes/Demo.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}
