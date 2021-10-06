@@ -40,7 +40,6 @@ class SpawnController : MonoBehaviour {
 
             foreach (Transform door in doorsParent.transform) {
                 _doors.Add(door.gameObject);
-                door.GetComponent<DestroyAgentOnTriggerEnter>().enabled = false;
             }
 
             CalcPaths();
@@ -48,13 +47,8 @@ class SpawnController : MonoBehaviour {
             ClockManagement.ClockManagementInstance.StartTime();
             _cM = GameObject.Find("SimulationHandler").GetComponent<ClockManagement>();
 
-            /*
-            foreach (GameObject door in _doors) {
-                door.GetComponent<DestroyAgentOnTriggerEnter>().enabled = true;
-            }
-
-            StartCoroutine(Spawn2());
-            */
+            //StartCoroutine(Spawn2());
+            
         }
     }
         /*
@@ -267,7 +261,6 @@ class SpawnController : MonoBehaviour {
 
                 GameObject instantiatedAgent = (GameObject)Instantiate(agent, startDoor.transform.position, transform.rotation);
                 instantiatedAgent.GetComponent<NavMeshAgent>().SetPath(path);
-                instantiatedAgent.GetComponent<NavMeshAgent>().isStopped = true;
 
                 _pathList[NameToIndex(startDoor.name), NameToIndex(finishDoor.name)] = path;
             }

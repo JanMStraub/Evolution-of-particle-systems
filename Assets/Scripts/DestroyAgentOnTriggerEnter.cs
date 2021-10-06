@@ -18,7 +18,7 @@ public class DestroyAgentOnTriggerEnter : MonoBehaviour {
                 }
             }
             */
-            Destroy(collider.gameObject);
+            //Destroy(collider.gameObject);
         }
     }
 }
