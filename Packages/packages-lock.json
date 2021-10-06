@@ -22,8 +22,13 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.burst": {
+<<<<<<< HEAD
       "version": "1.5.4",
       "depth": 2,
+=======
+      "version": "1.4.11",
+      "depth": 0,
+>>>>>>> feature_aStar_pathfinding
       "source": "registry",
       "dependencies": {
         "com.unity.mathematics": "1.2.1"
@@ -73,14 +78,26 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.vscode": {
-      "version": "1.2.3",
+      "version": "1.2.4",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+<<<<<<< HEAD
     "com.unity.jobs": {
       "version": "0.11.0-preview.6",
+=======
+    "com.unity.mathematics": {
+      "version": "1.2.1",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.ml-agents": {
+      "version": "1.0.8",
+>>>>>>> feature_aStar_pathfinding
       "depth": 0,
       "source": "registry",
       "dependencies": {
