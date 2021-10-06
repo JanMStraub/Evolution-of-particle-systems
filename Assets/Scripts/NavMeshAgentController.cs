@@ -15,12 +15,15 @@ public class NavMeshAgentController : MonoBehaviour {
     public LineRenderer line;
     public static Vector3[] path = new Vector3[0];
 
+    public Vector3 destination;
 
-    public void Activate(Vector3 destination, Vector3 currentPosition) {
+
+    public void Activate(NavMeshPath inPath) {
         agent = this.GetComponent<NavMeshAgent>();
         line = this.GetComponent<LineRenderer>();
 
-        agent.SetDestination(destination); 
+        agent.SetPath(inPath);
+        //agent.SetDestination(destination); 
     }
 
     void Start() {
@@ -54,6 +57,7 @@ public class NavMeshAgentController : MonoBehaviour {
         }
 
         path = agent.path.corners;
+
 
         if (path != null && path.Length > 1) {
             line.positionCount = path.Length;
