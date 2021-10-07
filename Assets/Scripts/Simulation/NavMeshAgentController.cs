@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.Jobs;
 using Unity.Burst;
 using Unity.Collections;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.AI;
 using Pathfinding;
@@ -28,25 +29,27 @@ public class NavMeshAgentController : MonoBehaviour {
         if (AstarPath.active == null) return;
 
         foreach (GameObject agent in SpawnController.SpawnControllerInstance.AgentList) {
-            var p = ABPath.Construct(agent.transform.position, _destination, OnPathComplete);
+            var p = ABPath.Construct(agent.transform.position, _destination);
+            
             AstarPath.StartPath (p);
             
         }
-        /*
-        NavMeshQuery navMeshQuery = new NavMeshQuery(NavMeshWorld.GetDefaultWorld(), Allocator.TempJob, 100);
+        
         NativeArray<float3> spawnArray = new NativeArray<float3>(SpawnController.SpawnControllerInstance.AgentList.Count, Allocator.TempJob);
         NativeArray<float3> destinationArray = new NativeArray<float3>(SpawnController.SpawnControllerInstance.AgentList.Count, Allocator.TempJob);
 
         for (int i = 0; i < SpawnController.SpawnControllerInstance.AgentList.Count; i++) {
-            spawnArray[i] = SpawnController.SpawnControllerInstance.AgentList[i].transform.position;
-            destinationArray[i] = _destination;
+            float3 begin = new float3 (SpawnController.SpawnControllerInstance.AgentList[i].transform.position.x, SpawnController.SpawnControllerInstance.AgentList[i].transform.position.y, SpawnController.SpawnControllerInstance.AgentList[i].transform.position.z);
+            float3 end = new float3 (_destination.x, _destination.y, _destination.z);
+            
+            spawnArray[i] = begin;
+            destinationArray[i] = end;
         }  
 
-        /*
+        
         PathCalculationJob pathCalculationJob = new PathCalculationJob {
             spawnArray = spawnArray,
             destinationArray = destinationArray,
-            navMeshQuery = navMeshQuery,
         };
         
         JobHandle jobHandle = pathCalculationJob.Schedule(SpawnController.SpawnControllerInstance.AgentList.Count, 100);
@@ -59,7 +62,7 @@ public class NavMeshAgentController : MonoBehaviour {
 
         spawnArray.Dispose();
         destinationArray.Dispose();
-        */
+        
         // JobHandle jobHandle = SetDestinationAndCalculatePathJob(agent, _destination);
         // jobHandle.Complete();
         // agent.SetDestination(_destination); 
@@ -108,40 +111,17 @@ public class NavMeshAgentController : MonoBehaviour {
             }
         }
     }
-/*
-    private JobHandle SetDestinationAndCalculatePathJob(NavMeshAgent agent, Vector3 destination) {
-        PathCalculationJob job = new PathCalculationJob (agent, destination);
-        return job.Schedule();
-    }
 }
 
-[BurstCompile]
-public struct PathCalculationJob : IJob {
-
-    public NativeList<NavMeshAgent> Agent = new NativeList<NavMeshAgent>(1, Allocator.TempJob);
-    public NativeList<Vector3> Destination = new NativeList<Vector3>(1, Allocator.TempJob);
-
-    public PathCalculationJob(NavMeshAgent agent, Vector3 destination) {
-        this.Agent.Add(agent);
-        this.Destination.Add(destination);
-    }
-
-    public void Execute() {            
-        Agent[0].SetDestination(Destination[0]); 
-    }
-*/
-}
-/*
 
 public struct PathCalculationJob : IJobParallelFor {
-    /*
+    
     [ReadOnly] public NativeArray<float3> spawnArray;
     [ReadOnly] public NativeArray<float3> destinationArray;
-    [ReadOnly] public NavMeshQuery navMeshQuery;
     
     public void Execute(int index) {            
         // agent.GetComponent<NavMeshAgent>().SetDestination(destinationArray[index]);
-        navMeshQuery.BeginFindPath(spawnArray[index], destinationArray[index]);
+        var p = ABPath.Construct(spawnArray[index], destinationArray[index]);
+        AstarPath.StartPath (p);
     }
-}
-*/    
+} 
