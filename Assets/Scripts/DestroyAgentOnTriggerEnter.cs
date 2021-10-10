@@ -9,6 +9,7 @@ public class DestroyAgentOnTriggerEnter : MonoBehaviour {
 
     void OnTriggerEnter(Collider collider){
         //_studentId = collider.gameObject.GetComponent<NavMeshAgentController>().GetStudentId();
+        // Destroy(collider.gameObject);
 
         if (collider.tag == "Agent") {
             /*
@@ -18,7 +19,6 @@ public class DestroyAgentOnTriggerEnter : MonoBehaviour {
                 }
             }
             */
-            //Destroy(collider.gameObject);
         }
     }
 }
