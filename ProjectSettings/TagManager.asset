@@ -25,11 +25,15 @@ TagManager:
   - 229
   - ComplexController
   - 501
+  - Home
+  - HomeDoor
+  - Work
+  - WorkDoor
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Building
+  - Unwalkable
   - Water
   - UI
   - 
