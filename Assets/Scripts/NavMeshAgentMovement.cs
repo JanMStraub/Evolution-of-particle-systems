@@ -15,8 +15,8 @@ public class NavMeshAgentMovement : MonoBehaviour
     void Start()
     {
         _transform = this.GetComponent<Transform>();
-        _movementSpeed = 0.4f;
-        _angularSpeed  = 0.02f;
+        _movementSpeed = 1f;
+        _angularSpeed  = 0.1f;
     }
 
     void Update()

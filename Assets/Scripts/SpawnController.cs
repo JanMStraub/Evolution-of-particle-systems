@@ -164,6 +164,10 @@ class SpawnController : MonoBehaviour {
                 if(student.check(gameTime) == 1) {
                     string[] routePoints = student.RoutePoints();
 
+                    if(routePoints[0] == routePoints[1]) {
+                        continue;
+                    }
+
                     GameObject startDoor = FindDoor(routePoints[0]);
                     GameObject endDoor = FindDoor(routePoints[1]);
 
@@ -203,9 +207,11 @@ class SpawnController : MonoBehaviour {
                     studentsFinished++;
                 }
             }
+            /*
             if(studentsFinished > 100) {
                 break;
             }
+            */
             _cM.SetGo();
             yield return new WaitForSeconds(3f);
         }
@@ -291,13 +297,14 @@ class SpawnController : MonoBehaviour {
 
 
                 
-                
+                /*
                 if(startDoor.name == "SpawnPoint (84)" || startDoor.name == "SpawnPoint (83)" || startDoor.name == "SpawnPoint (82)" || startDoor.name == "SpawnPoint (81)" || startDoor.name == "SpawnPoint (80)") {
                     for(int i=0; i<3; i++) {
                         GameObject instantiatedAgent = (GameObject)Instantiate(agent, startDoor.transform.position, transform.rotation);
                         instantiatedAgent.GetComponent<NavMeshAgentMovement>().SetPath(path.corners);
                     }
                 }
+                */
 
                 if(path == null) {
                     throw new System.Exception("path is null");
