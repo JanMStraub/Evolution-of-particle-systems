@@ -54,6 +54,7 @@ public class NavMeshAgentMovement : MonoBehaviour
 
     private bool DestinationReached() {
         if(_pathIndex == _path.Length) {
+            Destroy(gameObject);
             return true;
         } else {
             return false;

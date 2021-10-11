@@ -164,14 +164,17 @@ class SpawnController : MonoBehaviour {
                 if(student.check(gameTime) == 1) {
                     string[] routePoints = student.RoutePoints();
 
-                    Vector3 spawnPoint = UnityEngine.Random.insideUnitSphere * 30f + FindDoor(routePoints[0]).transform.position;
+                    GameObject startDoor = FindDoor(routePoints[0]);
+                    GameObject endDoor = FindDoor(routePoints[1]);
+
+                    Vector3 spawnPoint = UnityEngine.Random.insideUnitSphere * 30f + startDoor.transform.position;
                     NavMeshHit hit;
                     NavMesh.SamplePosition (spawnPoint, out hit, 30f, 1);
                     spawnPoint = hit.position;
 
                     instantiatedAgent = (GameObject)Instantiate(agent, spawnPoint, transform.rotation);
-                    int startIndex = NameToIndex(FindDoor(routePoints[0]).name);
-                    int endIndex = NameToIndex(FindDoor(routePoints[1]).name);
+                    int startIndex = NameToIndex(startDoor.name);
+                    int endIndex = NameToIndex(endDoor.name);
                     //instantiatedAgent.GetComponent<NavMeshAgentController>().Activate(FindDoor(routePoints[1]).transform.position);
                     NavMeshPath path = _pathList[startIndex, endIndex];
                     if(path == null) {
