@@ -8,7 +8,6 @@ class SpawnController : MonoBehaviour {
 
     private static SpawnController _spawnControllerInstance;
     private Student[] _studentList;
-
     private ClockManagement _clockManagement;
 
     [SerializeField] List<GameObject> _doors = new List<GameObject>();
@@ -81,9 +80,7 @@ class SpawnController : MonoBehaviour {
                     studentsFinished++;
                 }
             }
-            if(studentsFinished > 100) {
-                break;
-            }
+
             _clockManagement.SetGo();
             Debug.Log(_clockManagement.GetCurrentlyCalculationPathList());
             yield return new WaitForSeconds(3f);
@@ -95,8 +92,5 @@ class SpawnController : MonoBehaviour {
         GameObject[] doors = GameObject.FindGameObjectsWithTag(tag);
         float randomPosition = UnityEngine.Random.Range(0,doors.Length); //System.Collections.Random.Range(0f, doors.Length -1f);
         return doors[(int)randomPosition].transform.position;
-    }
-
-    // TODO: Randomize door selection
-    
+    }    
 }
