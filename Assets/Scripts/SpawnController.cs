@@ -10,10 +10,16 @@ class SpawnController : MonoBehaviour {
     private Student[] _studentList;
     private ClockManagement _cM;
     private NavMeshPath[,] _pathList;
+    private ClockManagement _clockManagement;
+    private static Vector3[] _path = new Vector3[0];
+
 
     [SerializeField] List<GameObject> _doors = new List<GameObject>();
 
     public GameObject agent;
+    private LineRenderer lineRenderer;
+    public NavMeshAgent navMeshAgent;
+    public GameObject lineObject;
     public GameObject doorsParent;
     
 
@@ -25,6 +31,7 @@ class SpawnController : MonoBehaviour {
     private void Awake() {
         GameManager.onGameStateChanced += GameManagerOnGameStateChanged;
         _spawnControllerInstance = this;
+        
     }
 
 
@@ -71,6 +78,7 @@ class SpawnController : MonoBehaviour {
 
             int gameTime = (int) ClockManagement.ClockManagementInstance.GetTime();
             GameObject instantiatedAgent = null;
+            GameObject instantiatedLine = null;
 
             foreach (Student student in _studentList) {
                 if(student.check(gameTime) == 1) {
@@ -115,6 +123,17 @@ class SpawnController : MonoBehaviour {
                     */
 
     
+                    instantiatedAgent.GetComponent<NavMeshAgentController>().Activate(FindDoor(routePoints[1]), spawnPoint);
+                    instantiatedLine = (GameObject)Instantiate(lineObject);
+
+                    yield return new WaitUntil(() => !instantiatedAgent.GetComponent<NavMeshAgent>().pathPending);
+                    _path = instantiatedAgent.GetComponent<NavMeshAgent>().path.corners;
+
+                    if (_path != null && _path.Length > 1) {
+                        instantiatedLine = (GameObject)Instantiate(lineObject);
+                        instantiatedLine.GetComponent<DrawPath>().DrawPathOnFloor(_path);
+                    }
+
                 } else if(student.check(gameTime) == 2) {
                     studentsFinished++;
                 }
@@ -125,6 +144,9 @@ class SpawnController : MonoBehaviour {
             }
             */
             _cM.SetGo();
+
+            _clockManagement.SetGo();
+            Debug.Log(_clockManagement.GetCurrentlyCalculationPathList());
             yield return new WaitForSeconds(3f);
         }
 
