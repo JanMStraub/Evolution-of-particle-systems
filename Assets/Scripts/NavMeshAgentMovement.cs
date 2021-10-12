@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NavMeshAgentMovement : MonoBehaviour
-{
+public class NavMeshAgentMovement : MonoBehaviour {
     private float _angularSpeed;
     private float _movementSpeed;
     private int _pathIndex;
