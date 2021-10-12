@@ -19,7 +19,6 @@ public class NavMeshAgentController : MonoBehaviour {
 
     public void Activate(Vector3 destination, Vector3 currentPosition) {
         agent = this.GetComponent<NavMeshAgent>();
-        line = DrawPath.DrawPathInstance.line;
         agent.SetDestination(destination); 
     }
 
@@ -52,12 +51,13 @@ public class NavMeshAgentController : MonoBehaviour {
         } else {
             agent.speed = _agentSpeed;
         }
-
+        /*
         path = agent.path.corners;
 
         if (path != null && path.Length > 1 && _pathDrawn == false) {
-            DrawPath.DrawPathInstance.AddPathToList(line, path);
+            DrawPath.DrawPathInstance.DrawPathOnFloor(line, path);
             _pathDrawn = true;
         }
+        */
     }
 }
