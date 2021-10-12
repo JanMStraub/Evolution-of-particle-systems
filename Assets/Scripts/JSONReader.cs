@@ -7,5 +7,4 @@ public class JSONReader : MonoBehaviour {
 
 
     void Awake() => myLectureList = JsonUtility.FromJson<LectureList>(textJSON.text);
-
 }

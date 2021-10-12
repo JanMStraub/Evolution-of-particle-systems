@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -9,9 +7,7 @@ public class ClockManagement : MonoBehaviour {
     private static ClockManagement _clockManagmentInstance;
     private float _currentTime;
     private float _timeSpeed;
-    private float _oldTimeSpeed;
-    private List<int> _currentlyCalculatingPathList = new List<int>(); 
-
+    
     public TMP_Text timeText;
 
 
@@ -28,7 +24,6 @@ public class ClockManagement : MonoBehaviour {
     public void StartTime() {
         _currentTime = 460;
         _timeSpeed = 0.8f;
-        _oldTimeSpeed = _timeSpeed;
     }
 
 
@@ -57,32 +52,5 @@ public class ClockManagement : MonoBehaviour {
 
     public float GetTime() {
         return _currentTime;
-    }
-
-
-    public float GetTimeSpeed() {
-        return _timeSpeed;
-    }
-
-
-    public void SetPause() {
-        _timeSpeed = 0;
-    }
-
-
-    public void SetGo() {
-        _timeSpeed = _oldTimeSpeed;
-    }
-
-    public void AddCurrentlyCalculatingPathList(int id) {
-        _currentlyCalculatingPathList.Add(id);
-    }
-
-    public void RemoveCurrentlyCalculatingPathList(int id) {
-        _currentlyCalculatingPathList.Remove(id);
-    }
-
-    public int GetCurrentlyCalculationPathList() {
-        return _currentlyCalculatingPathList.Count;
     }
 }

@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -50,7 +49,6 @@ class SpawnController : MonoBehaviour {
             _clockManagement = GameObject.Find("SimulationHandler").GetComponent<ClockManagement>();
 
             StartCoroutine(Spawn());
-            
         }
     }
     
@@ -68,7 +66,6 @@ class SpawnController : MonoBehaviour {
         int studentListSize = _studentList.Length;
 
         while (true) {
-            int studentsFinished = 0;
 
             int gameTime = (int) ClockManagement.ClockManagementInstance.GetTime();
             GameObject instantiatedAgent = null;
@@ -106,23 +103,19 @@ class SpawnController : MonoBehaviour {
                         instantiatedLine = (GameObject)Instantiate(lineObject);
                         instantiatedLine.GetComponent<DrawPath>().DrawPathOnFloor(path.corners);
                     }
-                    
                 }
             }
-            _clockManagement.SetGo();
-
-            _clockManagement.SetGo();
-            Debug.Log(_clockManagement.GetCurrentlyCalculationPathList());
             yield return new WaitForSeconds(3f);
         }
-
     }
+
 
     private GameObject FindDoor(string tag) {
         GameObject[] doors = GameObject.FindGameObjectsWithTag(tag);
         float randomPosition = UnityEngine.Random.Range(0,doors.Length); //System.Collections.Random.Range(0f, doors.Length -1f);
         return doors[(int)randomPosition];
     }
+
 
     private void CalcPaths() {
         _pathList = new NavMeshPath[_doors.Count,_doors.Count];
@@ -146,6 +139,7 @@ class SpawnController : MonoBehaviour {
             }
         }
     }
+
 
     private int NameToIndex(string name) { //Get number of the door out of its name
         string number = name.Split(' ')[1];

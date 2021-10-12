@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using UnityEngine;
 
 [System.Serializable]
 public class Lecture {
@@ -16,10 +15,12 @@ public class Lecture {
         return (int.Parse(splitted[0])*60 + (int.Parse(splitted[1])));
     }
 
+
     public int GetStartInMinutes() {
         string[] splitted = start.Split(':');
         return (int.Parse(splitted[0])*60 + (int.Parse(splitted[1])));
     }
+
 
     public void SetStartFromMinutes(int minutes) {
         string startString = "";
@@ -34,6 +35,7 @@ public class Lecture {
         startString += (int)(minutes%60f);
         this.start = startString;
     }
+
 
     public void SetEndFromMinutes(int minutes) {
         string endString = "";
@@ -57,8 +59,7 @@ public class LectureList {
     public List<Lecture> lecture;
 
 
-    public int Size()
-    {
+    public int Size() {
         return lecture.Count;
     }
 }

@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraMovement : MonoBehaviour {
+
     private float _moveSpeed;
     private float _zoomSpeed;
     private float _minHeight;
@@ -19,8 +18,8 @@ public class CameraMovement : MonoBehaviour {
         _minHeight = 20f;
         _maxHeight = 700f;
         
-        _xMax = 400f;
-        _zMax=550f;
+        _xMax = 750f;
+        _zMax= 750f;
         
         this.transform.position = GameObject.Find("Floor").transform.position;
         this.transform.position += new Vector3(0, (_minHeight + _maxHeight)/2, 0);

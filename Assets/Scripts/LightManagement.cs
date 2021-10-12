@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LightManagement : MonoBehaviour {
 
     private Light _sunLight;
-    float _time;
+    private float _time;
 
 
     void Start() {

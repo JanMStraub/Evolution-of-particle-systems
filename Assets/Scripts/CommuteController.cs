@@ -1,19 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 class CommuteController : MonoBehaviour {    
-    
-    // public float commuteProgress;
-    // public bool isDone;
 
     private GameObject _gameManager;
     private LectureList _lectureList;
     private Student[] _studentList;
     private static CommuteController _commuteControllerInstance;
-    // private int _progress = 1;
-
-    [SerializeField] GameObject[] _agentList;
 
 
     public static CommuteController CommuteControllerInstance {
@@ -68,7 +60,6 @@ class CommuteController : MonoBehaviour {
         bool nothingChanged = false;
 
         while(!nothingChanged) {
-            //Student student = _agentList[studentIndex].GetComponent<NavMeshAgentController>()._student;
             Student student = _studentList[studentIndex];
             bool searchOwn = false;
             if (freeSlots[(int)student.GetFaculty()] > 0) {
@@ -103,7 +94,7 @@ class CommuteController : MonoBehaviour {
 
 
     private Lecture FindLecture(bool searchOwn, Student student) {
-        for (int i=0; i<100; i++) { //100 tries max to find a fitting lecture
+        for (int i=0; i<100; i++) { // 100 tries max to find a fitting lecture
 
             Lecture lecture =_lectureList.lecture[Random.Range(0,_lectureList.Size())];
             
@@ -117,35 +108,34 @@ class CommuteController : MonoBehaviour {
         return null;
     }
     
+    
     private void AddLunch() {
 
         foreach(Student student in _studentList) {
             Lecture lunch = new Lecture();
             lunch.faculty = 42;
             lunch.number = 10001;
-            lunch.start = "11:00"; //660
-            lunch.end = "14:00"; //840
+            lunch.start = "11:00"; // 660
+            lunch.end = "14:00"; // 840
 
             bool noLunch = false;
 
             foreach (Lecture lecture in student.lectureList) {
-                if(lecture.GetStartInMinutes() < 660 && lecture.GetEndInMinutes() > 840) { //lecture in lunchtime, bad luck...
+                if(lecture.GetStartInMinutes() < 660 && lecture.GetEndInMinutes() > 840) { // lecture in lunchtime, bad luck...
                     noLunch = true;
                     break;
                 }
                 if(lecture.GetEndInMinutes() + 15 > lunch.GetStartInMinutes() && lecture.GetEndInMinutes() < 840) {
-                    lunch.SetStartFromMinutes(lecture.GetEndInMinutes() + 15); //if lecture reaches in lunchbreak
+                    lunch.SetStartFromMinutes(lecture.GetEndInMinutes() + 15); // if lecture reaches in lunchbreak
                 }
                 if(lecture.GetStartInMinutes() - 15 < lunch.GetEndInMinutes() && lecture.GetStartInMinutes() > 660) {
-                    lunch.SetEndFromMinutes(lecture.GetStartInMinutes()); //if lecture starts in lunchbreak
+                    lunch.SetEndFromMinutes(lecture.GetStartInMinutes()); // if lecture starts in lunchbreak
                 }
             }
 
-            /*
             if(noLunch) {
                 continue;
             }
-            */
             
             int lunchDuration = lunch.GetEndInMinutes() - lunch.GetStartInMinutes();
             if(lunchDuration >= 45 && !noLunch) {

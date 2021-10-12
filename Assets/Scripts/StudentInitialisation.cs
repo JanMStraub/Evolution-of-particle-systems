@@ -1,11 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 class StudentInitialisation : MonoBehaviour {
 
     public float studentInitialisationProgress;
-    public bool isDone;
 
     [SerializeField] private Student[] _studentList;
 

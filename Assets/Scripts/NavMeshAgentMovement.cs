@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class NavMeshAgentMovement : MonoBehaviour {
@@ -11,12 +9,14 @@ public class NavMeshAgentMovement : MonoBehaviour {
     private Vector3[] _path;
     private Transform _transform;
 
+
     void Start()
     {
         _transform = this.GetComponent<Transform>();
         _movementSpeed = 1f;
         _angularSpeed  = 0.1f;
     }
+
 
     void Update()
     {
@@ -32,13 +32,16 @@ public class NavMeshAgentMovement : MonoBehaviour {
         
     }
 
+
     private Vector3[] GetPath() {
         return _path;
     }
 
+
     private Vector3 GetDestination() {
         return _destination;
     }
+
 
     private bool TargetReached() {
         float distance = (_transform.position.x - _actualTarget.x) * (_transform.position.x - _actualTarget.x) +
@@ -51,6 +54,7 @@ public class NavMeshAgentMovement : MonoBehaviour {
         }
     }
 
+
     private bool DestinationReached() {
         if(_pathIndex == _path.Length) {
             Destroy(gameObject);
@@ -60,10 +64,12 @@ public class NavMeshAgentMovement : MonoBehaviour {
         }
     }
 
+
     private void move() {
         _transform.forward += (_actualTarget - _transform.position) * _angularSpeed;
         _transform.position += _transform.forward * _movementSpeed;
     }
+
 
     public void SetPath(Vector3[] path) {
         if(path != null && path.Length > 1) {

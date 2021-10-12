@@ -1,23 +1,18 @@
 using UnityEngine;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
-    public Slider slider;
+    private static GameManager _gameManagerInstance;
+    private List<AsyncOperation> _scenesLoading = new List<AsyncOperation>();
+
     public GameState state;
     public static event Action<GameState> onGameStateChanced;
     public GameObject loadingScreen;
 
-    private static GameManager _gameManagerInstance;
-    private List<AsyncOperation> _scenesLoading = new List<AsyncOperation>();
-    private float _totalSceneProgress;
-    // private float _totalSpawnProgress = 0;
-    // private float _totalCommuteProgress = 0;
-    
 
     public static GameManager GameManagerInstance {
         get {return _gameManagerInstance;}
@@ -81,53 +76,4 @@ public class GameManager : MonoBehaviour {
 
         onGameStateChanced?.Invoke(newState);
     }
-
-
-    // Managing LoadingScreen
-    IEnumerator GetSceneLoadProcess() {
-        
-        for (int i = 0; i < _scenesLoading.Count; i++) {
-            while (!_scenesLoading[i].isDone) {
-                _totalSceneProgress = 0;
-
-                foreach (AsyncOperation operation in _scenesLoading) {
-                    _totalSceneProgress += operation.progress;
-                }
-
-                _totalSceneProgress = (_totalSceneProgress / _scenesLoading.Count) * 100f;
-
-                yield return null;
-            }
-        }
-    }
-
-
-    /*
-    IEnumerator GetSpawnProgress() {
-        while (SpawnController.SpawnControllerInstance == null || !SpawnController.SpawnControllerInstance.isDone) {
-            if (SpawnController.SpawnControllerInstance != null) {
-                _totalSpawnProgress = Mathf.Round(SpawnController.SpawnControllerInstance.spawnProgress * 100f);
-            }
-            yield return null;
-        }
-    }
-
-
-    IEnumerator GetTotalProgress() {
-        float totalProgress = 0;
-
-        while (CommuteController.CommuteControllerInstance == null || !CommuteController.CommuteControllerInstance.isDone) {
-            if (CommuteController.CommuteControllerInstance != null) {
-                _totalCommuteProgress = Mathf.Round(CommuteController.CommuteControllerInstance.commuteProgress * 100f);
-            }
-
-            totalProgress = Mathf.Round((_totalSceneProgress + _totalSpawnProgress + _totalCommuteProgress) / 3f);
-            slider.value = Mathf.RoundToInt(totalProgress);
-
-            yield return null;
-        }
-        
-        loadingScreen.gameObject.SetActive(false);
-    }
-    */
 }

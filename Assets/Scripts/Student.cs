@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,10 +15,9 @@ public class Student {
     private bool _currentlyEnRoute = false;
     private bool _dayFinished = false;
 
-    public int _nextAppointment;
-
     [SerializeField] private Vector3 _spawnPoint;
 
+    public int _nextAppointment;
     public List<Lecture> lectureList = new List<Lecture>();
 
 
