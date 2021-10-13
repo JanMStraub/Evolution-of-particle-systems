@@ -23,7 +23,7 @@ public class ClockManagement : MonoBehaviour {
 
     public void StartTime() {
         _currentTime = 460;
-        _timeSpeed = 0.8f;
+        _timeSpeed = 0.8f; // 0.8f
     }
 
 

@@ -8,7 +8,10 @@ class SpawnController : MonoBehaviour {
     private static SpawnController _spawnControllerInstance;
     private Student[] _studentList;
     private NavMeshPath[,] _pathList;
+    private Dictionary<int, NavMeshPath> _alreadyUsedPaths = new Dictionary<int, NavMeshPath>();
     private ClockManagement _clockManagement;
+    private int _pathID = 0;
+    private Dictionary<int, GameObject> _instantiatedLineList = new Dictionary<int, GameObject>();
 
     [SerializeField] List<GameObject> _doors = new List<GameObject>();
 
@@ -95,13 +98,18 @@ class SpawnController : MonoBehaviour {
 
                     instantiatedAgent.GetComponent<NavMeshAgentMovement>().SetPath(path.corners);
                     
-                    instantiatedLine = (GameObject)Instantiate(lineObject);
-
-                    if (path == null) {
-                        throw new System.Exception("no path found");
-                    } else if(path.corners.Length > 1) {
+                    if(!_alreadyUsedPaths.ContainsValue(path)) {
                         instantiatedLine = (GameObject)Instantiate(lineObject);
                         instantiatedLine.GetComponent<DrawPath>().DrawPathOnFloor(path.corners);
+                        _alreadyUsedPaths.Add(_pathID, path);
+                        _instantiatedLineList.Add(_pathID, instantiatedLine);
+                        _pathID++;
+                    } else {
+                        foreach (var pair in _alreadyUsedPaths) {
+                            if (pair.Value == path) {
+                                _instantiatedLineList[pair.Key].GetComponent<DrawPath>().ChangeWidthOfLine();
+                            }
+                        }
                     }
                 }
             }
@@ -118,7 +126,7 @@ class SpawnController : MonoBehaviour {
 
 
     private void CalcPaths() {
-        _pathList = new NavMeshPath[_doors.Count,_doors.Count];
+        _pathList = new NavMeshPath[_doors.Count, _doors.Count];
         int pathcount = 0;
         foreach(GameObject startDoor in _doors) {
             foreach(GameObject finishDoor in _doors) {
@@ -126,7 +134,7 @@ class SpawnController : MonoBehaviour {
                 NavMeshPath path = new NavMeshPath();
 
                 NavMesh.CalculatePath(startDoor.transform.position, finishDoor.transform.position, 1, path);
-                pathcount++;
+                
                 if(path.corners.Length < 1) {
                     Debug.Log(startDoor.name + "  " + finishDoor.name);
                 }
@@ -136,8 +144,10 @@ class SpawnController : MonoBehaviour {
                 }
                 
                 _pathList[NameToIndex(startDoor.name), NameToIndex(finishDoor.name)] = path;
+                pathcount++;
             }
         }
+        Debug.Log("Path count: " + pathcount);
     }
 
 
