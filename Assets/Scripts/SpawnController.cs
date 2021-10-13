@@ -120,7 +120,7 @@ class SpawnController : MonoBehaviour {
 
     private GameObject FindDoor(string tag) {
         GameObject[] doors = GameObject.FindGameObjectsWithTag(tag);
-        float randomPosition = UnityEngine.Random.Range(0,doors.Length); //System.Collections.Random.Range(0f, doors.Length -1f);
+        float randomPosition = UnityEngine.Random.Range(0,doors.Length);
         return doors[(int)randomPosition];
     }
 
@@ -151,7 +151,7 @@ class SpawnController : MonoBehaviour {
     }
 
 
-    private int NameToIndex(string name) { //Get number of the door out of its name
+    private int NameToIndex(string name) { // Get number of the door out of its name
         string number = name.Split(' ')[1];
         number = number.Substring(1, number.Length - 2);
         return int.Parse(number);
