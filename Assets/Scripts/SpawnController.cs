@@ -68,7 +68,6 @@ class SpawnController : MonoBehaviour {
         int studentListSize = _studentList.Length;
 
         while (true) {
-            int studentsFinished = 0;
 
             int gameTime = (int) ClockManagement.ClockManagementInstance.GetTime();
             GameObject instantiatedAgent = null;
