@@ -10,16 +10,14 @@ public class NavMeshAgentMovement : MonoBehaviour {
     private Transform _transform;
 
 
-    void Start()
-    {
+    private void Start() {
         _transform = this.GetComponent<Transform>();
         _movementSpeed = 1f;
         _angularSpeed  = 0.1f;
     }
 
 
-    void Update()
-    {
+    private void Update() {
         if(_path != null && _path.Length > 0 && !DestinationReached()) {
             if(TargetReached()) {
                 _pathIndex++;
@@ -27,19 +25,9 @@ public class NavMeshAgentMovement : MonoBehaviour {
                     _actualTarget = _path[_pathIndex];
                 }
             }
-            move();
+            Move();
         }
         
-    }
-
-
-    private Vector3[] GetPath() {
-        return _path;
-    }
-
-
-    private Vector3 GetDestination() {
-        return _destination;
     }
 
 
@@ -65,7 +53,7 @@ public class NavMeshAgentMovement : MonoBehaviour {
     }
 
 
-    private void move() {
+    private void Move() {
         _transform.forward += (_actualTarget - _transform.position) * _angularSpeed;
         _transform.position += _transform.forward * _movementSpeed;
     }

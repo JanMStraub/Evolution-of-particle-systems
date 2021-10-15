@@ -2,13 +2,10 @@ using UnityEngine;
 
 class StudentInitialisation : MonoBehaviour {
 
-    public float studentInitialisationProgress;
-
-    [SerializeField] private Student[] _studentList;
-
     private int _numberOfStudents = 10000;
     private static StudentInitialisation _studentInitialisationInstance;
-    private GameObject[] _spawnPoints;
+
+    [SerializeField] private Student[] _studentList;
 
 
     private void Awake() {
@@ -17,7 +14,6 @@ class StudentInitialisation : MonoBehaviour {
 
 
     private void Start() {
-        _spawnPoints = GameObject.FindGameObjectsWithTag("Spawn");
         Initialize();
     }
 
@@ -47,11 +43,7 @@ class StudentInitialisation : MonoBehaviour {
 
         for (int i = 0; i < _numberOfStudents; i++) {
 
-            float size = Random.Range(1.5f, 2.2f);
-            float speed = Random.Range(45f, 60f);
-            int spawnPoint = Random.Range(0, _spawnPoints.Length);
-
-            Student student = new Student(i, size, speed, _spawnPoints[spawnPoint].transform.position);
+            Student student = new Student();
 
             // Assign each student a faculty
             if (medStudents > 0) {

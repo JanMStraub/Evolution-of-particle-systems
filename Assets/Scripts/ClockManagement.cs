@@ -4,7 +4,7 @@ using TMPro;
 
 public class ClockManagement : MonoBehaviour {
 
-    private static ClockManagement _clockManagmentInstance;
+    private static ClockManagement _clockManagementInstance;
     private float _currentTime;
     private float _timeSpeed;
     
@@ -12,12 +12,12 @@ public class ClockManagement : MonoBehaviour {
 
 
     public static ClockManagement ClockManagementInstance {
-        get {return _clockManagmentInstance;}
+        get {return _clockManagementInstance;}
     }
 
 
-    void Awake() {
-        _clockManagmentInstance = this;
+    private void Awake() {
+        _clockManagementInstance = this;
     }
 
 
@@ -27,7 +27,7 @@ public class ClockManagement : MonoBehaviour {
     }
 
 
-    void FixedUpdate() {
+    private void FixedUpdate() {
         if (_currentTime >= 1440) {
             _currentTime = 0;
         }
@@ -36,7 +36,7 @@ public class ClockManagement : MonoBehaviour {
     }
 
     
-    void DisplayTime() {
+    private void DisplayTime() {
         timeText.text = this.GetTimeString();
     }
     
