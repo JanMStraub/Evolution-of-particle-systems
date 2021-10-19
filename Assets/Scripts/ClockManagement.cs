@@ -6,7 +6,8 @@ public class ClockManagement : MonoBehaviour {
 
     private static ClockManagement _clockManagementInstance;
     private float _currentTime;
-    private float _timeSpeed;
+
+    [SerializeField] private float _timeSpeed;
     
     public TMP_Text timeText;
 
@@ -23,7 +24,7 @@ public class ClockManagement : MonoBehaviour {
 
     public void StartTime() {
         _currentTime = 460;
-        _timeSpeed = 0.8f; // 0.8f
+        _timeSpeed = SimulationSettings.timeSpeed; // 0.8f
     }
 
 
@@ -31,7 +32,7 @@ public class ClockManagement : MonoBehaviour {
         if (_currentTime >= 1440) {
             _currentTime = 0;
         }
-        _currentTime += (_timeSpeed/50); //about 50 calls per second
+        _currentTime += (_timeSpeed/50); // About 50 calls per second
         DisplayTime();
     }
 
