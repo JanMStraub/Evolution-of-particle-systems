@@ -80,6 +80,22 @@ Populationen, Anzahl, Interessen etc.
 * Nächstes Mal PDF und 
 
 
+## Meeting notes 21.10.2021 (German)
+* Annahmen überprüfen
+* Grenzfälle durchspielen
+* Phänomene beschreiben
+* Sensitivitätsanalyse
+* Extreme Einzelfälle
+* Random-Ereignisse
+* Evaluationsmethoden von dynamischen Prozessen
+* Schwarmverhalten
+* Hybridsystem
+* weniger Studenten
+* Hörsäle 66%
+* Annahmen durchgehen -> Ganzen Phänomene beobachtbar?
+* Sensitivität auf Veränderungen
+* Extremszenarien/Notfälle
+
 ## Technologies 
 * Unity Version 2020.3.12f1
 
