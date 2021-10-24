@@ -96,6 +96,7 @@ class SpawnController : MonoBehaviour {
                     int endIndex = NameToIndex(endDoor.name);
                     NavMeshPath path = _pathList[startIndex, endIndex];
 
+                    instantiatedAgent.GetComponent<NavMeshAgentMovement>().SetSpeed(student.GetStudentSpeed());
                     instantiatedAgent.GetComponent<NavMeshAgentMovement>().SetPath(path.corners);
                     
                     if(!_alreadyUsedPaths.ContainsValue(path)) {

@@ -6,6 +6,7 @@ public class SettingsMenu : MonoBehaviour {
 
     public TMP_Text timeText;
 
+
     public void SetTimeSpeed(float timeSpeed) {
         SimulationSettings.timeSpeed = timeSpeed;
         timeText.text = timeSpeed.ToString("F1");

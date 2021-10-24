@@ -43,7 +43,9 @@ class StudentInitialisation : MonoBehaviour {
 
         for (int i = 0; i < _numberOfStudents; i++) {
 
-            Student student = new Student();
+            float randomSpeed = Random.Range(0.5f, 1.5f);
+
+            Student student = new Student(randomSpeed);
 
             // Assign each student a faculty
             if (medStudents > 0) {

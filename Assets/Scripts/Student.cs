@@ -7,13 +7,15 @@ public class Student {
     private int _faculty;
     private int _latestLectureEnding; // in minutes
     private int _lectureIndex = 0;
+    public float _speed;
 
     public int _nextAppointment;
     public List<Lecture> lectureList = new List<Lecture>();
 
 
-    public Student() {
+    public Student(float speed) {
         _latestLectureEnding = 0;
+        _speed = speed;
     }
 
 
@@ -33,13 +35,18 @@ public class Student {
     }
 
 
-    public int GetFaculty(){
+    public int GetFaculty() {
         return _faculty;
     }
 
 
-    public int GetTimetableEnd(){
+    public int GetTimetableEnd() {
         return _latestLectureEnding;
+    }
+
+
+    public float GetStudentSpeed() {
+        return _speed;
     }
 
 
