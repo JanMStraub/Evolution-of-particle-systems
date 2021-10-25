@@ -53,13 +53,13 @@ public class Student {
     public string[] RoutePoints() {
         string actualPosition = "";
         string nextPosition = "";
-        if(_lectureIndex == 0) { //first lecture, start from spawnpoint
+        if(_lectureIndex == 0) { // First lecture, start from spawnpoint
             actualPosition = "Spawn";
             nextPosition = "" + lectureList[_lectureIndex].building;
-        } else if(_lectureIndex == lectureList.Count) { //last lecture, go back to spawnpoint
+        } else if(_lectureIndex == lectureList.Count) { // Last lecture, go back to spawnpoint
             actualPosition = "" + lectureList[_lectureIndex-1].building;
             nextPosition = "Spawn";
-            _lectureIndex = - 2; //day over
+            _lectureIndex = - 2; // Day over
         } else {
             actualPosition = "" + lectureList[_lectureIndex-1].building;
             nextPosition = "" + lectureList[_lectureIndex].building;
@@ -68,9 +68,9 @@ public class Student {
         _lectureIndex++;
 
         if(_lectureIndex >= lectureList.Count) {
-            _nextAppointment = lectureList[_lectureIndex-1].GetEndInMinutes() + 5; //the bell does not dismiss you, i do
+            _nextAppointment = lectureList[_lectureIndex-1].GetEndInMinutes() + 5; // The bell does not dismiss you, i do
         } else if(_lectureIndex > 0) {
-            _nextAppointment = lectureList[_lectureIndex].GetStartInMinutes() - 15; //but sit on your place when lecture starts
+            _nextAppointment = lectureList[_lectureIndex].GetStartInMinutes() - Random.Range(0, 30);
         }
 
         return new string[]{actualPosition, nextPosition};
@@ -80,17 +80,17 @@ public class Student {
     public int check(int time) {
 
         if(_lectureIndex < 0) {
-            return 2; //day over, no more checks necessary
+            return 2; // Day over, no more checks necessary
         }
 
         if(_nextAppointment == 0) {
-            _nextAppointment = lectureList[0].GetStartInMinutes()-15;
+            _nextAppointment = lectureList[0].GetStartInMinutes() - Random.Range(0, 30);
         }
 
         if(time > _nextAppointment) {
-            return 1; //have to go anywhere
+            return 1; // Have to go anywhere
         }
 
-        return 0; //still doing something
+        return 0; // Still doing something
     }
 }
