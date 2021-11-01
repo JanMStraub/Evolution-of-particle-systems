@@ -14,9 +14,6 @@ public class NavMeshAgentMovement : MonoBehaviour {
 
     void Start() {
         _transform = this.GetComponent<Transform>();
-        _movementSpeed = 1f;
-        _angularSpeed  = 0.1f;
-        _avoidDistance = 2f;
     }
 
     void Update() {
@@ -27,6 +24,7 @@ public class NavMeshAgentMovement : MonoBehaviour {
                     _actualTarget = _path[_pathIndex];
                 }
             }
+            LookAhead();
             Steer();
             Move();
             _movementSpeed = 1f;
@@ -60,24 +58,30 @@ public class NavMeshAgentMovement : MonoBehaviour {
     }
 
     private void Steer() {
-        int critCounter = 0;
         float rotationWidth = 0;
+        int collisions = 0;
         
-        for(float i = -3; i<=3; i++) {
-            if(Physics.Raycast(_transform.position, Quaternion.Euler(0,i*30,0) * _transform.forward, _avoidDistance, 1)) {
-                rotationWidth += i;
-                if(i*i < 2) {
-                    critCounter++;
+        for(float i = -5; i<=5; i++) {
+            if(Physics.Raycast(_transform.position, Quaternion.Euler(0,i*18,0) * _transform.forward, _avoidDistance, 1)) {
+                collisions++;
+                if(i<0) {
+                    rotationWidth += (-18+i);
+                } else {
+                    rotationWidth += -(18-i);
                 }
             }
         }
-
-        if((critCounter >= 2) && (Physics.Raycast(_transform.position, _transform.forward, _avoidDistance, 1))) { // Obstacels in way, no space left and right 
-            //_movementSpeed = 0;
-            _transform.forward = -_transform.forward;
-        } else {
-            _transform.forward = Quaternion.Euler(0,rotationWidth*30f,0) * _transform.forward;
+        if(collisions < 6) {
+            _transform.forward = Quaternion.Euler(0,rotationWidth*5f,0) * _transform.forward; //adjust looking direction
         }
+
+        if(Physics.Raycast(_transform.position, _transform.forward, _avoidDistance, 2)) { // Obstacels in way, dont walk into them
+            _movementSpeed = 0;
+        }
+    }
+
+    private void LookAhead() {
+
     }
 
     private bool NextVisible() {
@@ -91,5 +95,11 @@ public class NavMeshAgentMovement : MonoBehaviour {
             _destination = path[path.Length - 1];
             _actualTarget = path[1];
         }
+    }
+
+    public void SetPersonality(float[] personality) {
+        this._movementSpeed = personality[0];
+        this._angularSpeed = personality[1];
+        this._avoidDistance = personality[2];
     }
 }
