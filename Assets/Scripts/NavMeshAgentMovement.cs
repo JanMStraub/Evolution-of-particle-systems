@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class NavMeshAgentMovement : MonoBehaviour {
     private float _angularSpeed;
@@ -81,7 +82,11 @@ public class NavMeshAgentMovement : MonoBehaviour {
     }
 
     private void LookAhead() {
-
+        if(Physics.Raycast(_transform.position, _actualTarget - _transform.position, 20, 1<<6)) { // layer 6 for navmeshobstacles
+            NavMeshPath path = new UnityEngine.AI.NavMeshPath();
+            NavMesh.CalculatePath(_transform.position, _destination, 1, path);
+            SetPath(path.corners);
+        }
     }
 
     private bool NextVisible() {
