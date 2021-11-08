@@ -13,7 +13,7 @@ public class LightManagement : MonoBehaviour {
 
 
     void Update() {
-        float intensity = (_time*_time - 24*_time + 80)/-64;
+        float intensity = (_time*_time - 1750f*_time + 554400f)/-211225f;
         
         if (intensity > 0) {
             _sunLight.intensity = intensity;
