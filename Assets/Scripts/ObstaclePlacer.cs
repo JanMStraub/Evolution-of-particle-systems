@@ -31,7 +31,7 @@ public class ObstaclePlacer : MonoBehaviour {
             RaycastHit hit;
             if(Physics.Raycast(ray.origin, ray.direction, out hit, Mathf.Infinity)) {
                 Destroy((hit.collider).gameObject);
-                Debug.Log("Object");
+                Debug.Log("Object has been placed");
             }
         }
     }

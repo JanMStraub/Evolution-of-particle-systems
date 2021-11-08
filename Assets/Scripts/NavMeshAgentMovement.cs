@@ -72,12 +72,14 @@ public class NavMeshAgentMovement : MonoBehaviour {
                 }
             }
         }
-        if(collisions < 6) {
+        if(collisions < 3) {
             _transform.forward = Quaternion.Euler(0,rotationWidth*5f,0) * _transform.forward; //adjust looking direction
+        } else {
+            _movementSpeed = 0.5f;
         }
 
         if(Physics.Raycast(_transform.position, _transform.forward, _avoidDistance, 2)) { // Obstacels in way, dont walk into them
-            _movementSpeed = 0;
+            _movementSpeed = 0.1f;
         }
     }
 

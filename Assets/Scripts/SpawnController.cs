@@ -107,7 +107,7 @@ class SpawnController : MonoBehaviour {
                     int endIndex = NameToIndex(endDoor.name);
                     NavMeshPath path = _pathList[startIndex, endIndex];
 
-                    instantiatedAgent.GetComponent<NavMeshAgentMovement>().SetPersonality(new float[]{student.GetSpeed(), 0.04f, 8f});
+                    instantiatedAgent.GetComponent<NavMeshAgentMovement>().SetPersonality(new float[]{student.GetSpeed(), 0.04f, 4f});
                     instantiatedAgent.GetComponent<NavMeshAgentMovement>().SetPath(path.corners);
                     
                     instantiatedLine = (GameObject)Instantiate(lineObject);
