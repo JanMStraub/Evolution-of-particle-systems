@@ -18,7 +18,6 @@ public class Student {
 
 
     public Student(int id, float size, float speed) {
-        _id = id;
         _size = size;
         _speed = speed;
         _latestLectureEnding = 0;
