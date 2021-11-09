@@ -11,6 +11,8 @@ public class NavMeshAgentMovement : MonoBehaviour {
     private Vector3[] _path;
     private Transform _transform;
 
+    public GameObject lineObject;
+
     void Start() {
         _transform = this.GetComponent<Transform>();
     }
@@ -85,8 +87,23 @@ public class NavMeshAgentMovement : MonoBehaviour {
     private void LookAhead() {
         if(Physics.Raycast(_transform.position, _actualTarget - _transform.position, 20, 1<<6)) { // layer 6 for navmeshobstacles
             NavMeshPath path = new UnityEngine.AI.NavMeshPath();
+            GameObject instantiatedLine = null;
             NavMesh.CalculatePath(_transform.position, _destination, 1, path);
             SetPath(path.corners);
+            
+            if(!SpawnController.SpawnControllerInstance.alreadyUsedPaths.ContainsValue(path)) {
+                instantiatedLine = (GameObject)Instantiate(lineObject);
+                instantiatedLine.GetComponent<DrawPath>().DrawPathOnFloor(path.corners);
+                SpawnController.SpawnControllerInstance.alreadyUsedPaths.Add(SpawnController.SpawnControllerInstance.pathID, path);
+                SpawnController.SpawnControllerInstance.instantiatedLineList.Add(SpawnController.SpawnControllerInstance.pathID, instantiatedLine);
+                SpawnController.SpawnControllerInstance.pathID++;
+            } else {
+                foreach (var pair in SpawnController.SpawnControllerInstance.alreadyUsedPaths) {
+                    if (pair.Value == path) {
+                        SpawnController.SpawnControllerInstance.instantiatedLineList[pair.Key].GetComponent<DrawPath>().ChangeWidthOfLine();
+                    }
+                }
+            }
         }
     }
 
@@ -103,7 +120,7 @@ public class NavMeshAgentMovement : MonoBehaviour {
         }
     }
 
-    public void SetPersonality(float[] personality) {
+    public void SetPersonality(float[] personality) { // We could implement that in the student initialisation
         this._movementSpeed = personality[0];
         this._angularSpeed = personality[1];
         this._avoidDistance = personality[2];

@@ -8,17 +8,17 @@ class SpawnController : MonoBehaviour {
     private static SpawnController _spawnControllerInstance;
     private Student[] _studentList;
     private NavMeshPath[,] _pathList;
-    private Dictionary<int, NavMeshPath> _alreadyUsedPaths = new Dictionary<int, NavMeshPath>();
     private ClockManagement _clockManagement;
-    private int _pathID = 0;
-    private Dictionary<int, GameObject> _instantiatedLineList = new Dictionary<int, GameObject>();
 
     [SerializeField] List<GameObject> _doors = new List<GameObject>();
 
     public GameObject agent;
     public GameObject lineObject;
     public GameObject doorsParent;
-    
+    public Dictionary<int, NavMeshPath> alreadyUsedPaths = new Dictionary<int, NavMeshPath>();
+    public Dictionary<int, GameObject> instantiatedLineList = new Dictionary<int, GameObject>();
+    public int pathID = 0;
+
 
     public static SpawnController SpawnControllerInstance {
         get {return _spawnControllerInstance;}
@@ -111,16 +111,16 @@ class SpawnController : MonoBehaviour {
                     instantiatedAgent.GetComponent<NavMeshAgentMovement>().SetPersonality(new float[]{student.GetSpeed(), 0.04f, 4f});
                     instantiatedAgent.GetComponent<NavMeshAgentMovement>().SetPath(path.corners);
                     
-                    if(!_alreadyUsedPaths.ContainsValue(path)) {
+                    if(!alreadyUsedPaths.ContainsValue(path)) {
                         instantiatedLine = (GameObject)Instantiate(lineObject);
                         instantiatedLine.GetComponent<DrawPath>().DrawPathOnFloor(path.corners);
-                        _alreadyUsedPaths.Add(_pathID, path);
-                        _instantiatedLineList.Add(_pathID, instantiatedLine);
-                        _pathID++;
+                        alreadyUsedPaths.Add(pathID, path);
+                        instantiatedLineList.Add(pathID, instantiatedLine);
+                        pathID++;
                     } else {
-                        foreach (var pair in _alreadyUsedPaths) {
+                        foreach (var pair in alreadyUsedPaths) {
                             if (pair.Value == path) {
-                                _instantiatedLineList[pair.Key].GetComponent<DrawPath>().ChangeWidthOfLine();
+                                instantiatedLineList[pair.Key].GetComponent<DrawPath>().ChangeWidthOfLine();
                             }
                         }
                     }
