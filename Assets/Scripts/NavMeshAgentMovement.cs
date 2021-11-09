@@ -4,6 +4,7 @@ public class NavMeshAgentMovement : MonoBehaviour {
     private float _angularSpeed;
     private float _movementSpeed;
     private int _pathIndex;
+    private float _avoidDistance;
     private Vector3 _actualTarget;
     private Vector3 _destination;
     private Vector3[] _path;
@@ -12,7 +13,9 @@ public class NavMeshAgentMovement : MonoBehaviour {
 
     private void Start() {
         _transform = this.GetComponent<Transform>();
-        _angularSpeed  = 0.2f;
+        _movementSpeed = 1f;
+        _angularSpeed  = 0.1f;
+        _avoidDistance = 2f;
     }
 
 
@@ -24,7 +27,9 @@ public class NavMeshAgentMovement : MonoBehaviour {
                     _actualTarget = _path[_pathIndex];
                 }
             }
-            Move();
+            steer();
+            move();
+            _movementSpeed = 1f;
         }
         
     }
@@ -57,6 +62,31 @@ public class NavMeshAgentMovement : MonoBehaviour {
         _transform.position += _transform.forward * _movementSpeed;
     }
 
+    private void steer() {
+        int critCounter = 0;
+        float rotationWidth = 0;
+
+        if(Physics.Raycast(_transform.position, Quaternion.Euler(0,-45,0) * _transform.forward, _avoidDistance, 1)) {
+            rotationWidth += 1;
+        }
+        if(Physics.Raycast(_transform.position, Quaternion.Euler(0,-15,0) * _transform.forward, _avoidDistance, 1)) {
+            rotationWidth += 2;
+            critCounter += 1;
+        }
+        if(Physics.Raycast(_transform.position, Quaternion.Euler(0,15,0) * _transform.forward, _avoidDistance, 1)) {
+            rotationWidth -= 2;
+            critCounter += 1;
+        }
+        if(Physics.Raycast(_transform.position, Quaternion.Euler(0,45,0) * _transform.forward, _avoidDistance, 1)) {
+            rotationWidth -= 1;
+        }
+
+        if((critCounter >= 2) && (Physics.Raycast(_transform.position, _transform.forward, _avoidDistance, 1<<1))) { //obstacels in way, no space left and right 
+            _movementSpeed = 0;
+        } else {
+            _transform.forward = Quaternion.Euler(0,rotationWidth*30f,0) * _transform.forward;
+        }
+    }
 
     public void SetPath(Vector3[] path) {
         if(path != null && path.Length > 1) {
