@@ -27,8 +27,8 @@ public class NavMeshAgentMovement : MonoBehaviour {
                     _actualTarget = _path[_pathIndex];
                 }
             }
-            steer();
-            move();
+            Steer();
+            Move();
             _movementSpeed = 1f;
         }
         
@@ -62,7 +62,7 @@ public class NavMeshAgentMovement : MonoBehaviour {
         _transform.position += _transform.forward * _movementSpeed;
     }
 
-    private void steer() {
+    private void Steer() {
         int critCounter = 0;
         float rotationWidth = 0;
 
