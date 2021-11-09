@@ -5,8 +5,6 @@ class StudentInitialisation : MonoBehaviour {
     private int _numberOfStudents = 10000;
     private static StudentInitialisation _studentInitialisationInstance;
 
-    [SerializeField] private Student[] _studentList;
-
 
     private void Awake() {
         _studentInitialisationInstance = this;
@@ -43,9 +41,10 @@ class StudentInitialisation : MonoBehaviour {
 
         for (int i = 0; i < _numberOfStudents; i++) {
 
-            float randomSpeed = Random.Range(0.5f, 1.5f);
+            float size = Random.Range(1.5f, 2.2f);
+            float speed = Random.Range(0.8f, 1.2f);
 
-            Student student = new Student(randomSpeed);
+            Student student = new Student(i, size, speed);
 
             // Assign each student a faculty
             if (medStudents > 0) {

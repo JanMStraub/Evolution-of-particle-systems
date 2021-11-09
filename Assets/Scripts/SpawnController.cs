@@ -8,17 +8,17 @@ class SpawnController : MonoBehaviour {
     private static SpawnController _spawnControllerInstance;
     private Student[] _studentList;
     private NavMeshPath[,] _pathList;
-    private Dictionary<int, NavMeshPath> _alreadyUsedPaths = new Dictionary<int, NavMeshPath>();
     private ClockManagement _clockManagement;
-    private int _pathID = 0;
-    private Dictionary<int, GameObject> _instantiatedLineList = new Dictionary<int, GameObject>();
 
     [SerializeField] List<GameObject> _doors = new List<GameObject>();
 
     public GameObject agent;
     public GameObject lineObject;
     public GameObject doorsParent;
-    
+    public Dictionary<int, NavMeshPath> alreadyUsedPaths = new Dictionary<int, NavMeshPath>();
+    public Dictionary<int, GameObject> instantiatedLineList = new Dictionary<int, GameObject>();
+    public int pathID = 0;
+
 
     public static SpawnController SpawnControllerInstance {
         get {return _spawnControllerInstance;}
@@ -76,14 +76,26 @@ class SpawnController : MonoBehaviour {
 
             foreach (Student student in _studentList) {
                 if(student.check(gameTime) == 1) {
+                    GameObject startDoor;
+                    GameObject endDoor;
+
                     string[] routePoints = student.RoutePoints();
 
                     if(routePoints[0] == routePoints[1]) {
                         continue;
                     }
 
-                    GameObject startDoor = FindDoor(routePoints[0]);
-                    GameObject endDoor = FindDoor(routePoints[1]);
+                    if(routePoints[0] == "Spawn") {
+                        startDoor = GameObject.Find("SpawnPoint (" + student.GetSpawnID() + ")");
+                    } else {
+                        startDoor = FindDoor(routePoints[0]);
+                    }
+
+                    if(routePoints[1] == "Spawn") {
+                        endDoor = GameObject.Find("SpawnPoint (" + student.GetSpawnID() + ")");
+                    } else {
+                        endDoor = FindDoor(routePoints[1]);
+                    }
 
                     Vector3 spawnPoint = UnityEngine.Random.insideUnitSphere * 30f + startDoor.transform.position;
                     NavMeshHit hit;
@@ -96,19 +108,19 @@ class SpawnController : MonoBehaviour {
                     int endIndex = NameToIndex(endDoor.name);
                     NavMeshPath path = _pathList[startIndex, endIndex];
 
-                    instantiatedAgent.GetComponent<NavMeshAgentMovement>().SetSpeed(student.GetStudentSpeed());
+                    instantiatedAgent.GetComponent<NavMeshAgentMovement>().SetPersonality(new float[]{student.GetSpeed(), 0.04f, 4f});
                     instantiatedAgent.GetComponent<NavMeshAgentMovement>().SetPath(path.corners);
                     
-                    if(!_alreadyUsedPaths.ContainsValue(path)) {
+                    if(!alreadyUsedPaths.ContainsValue(path)) {
                         instantiatedLine = (GameObject)Instantiate(lineObject);
                         instantiatedLine.GetComponent<DrawPath>().DrawPathOnFloor(path.corners);
-                        _alreadyUsedPaths.Add(_pathID, path);
-                        _instantiatedLineList.Add(_pathID, instantiatedLine);
-                        _pathID++;
+                        alreadyUsedPaths.Add(pathID, path);
+                        instantiatedLineList.Add(pathID, instantiatedLine);
+                        pathID++;
                     } else {
-                        foreach (var pair in _alreadyUsedPaths) {
+                        foreach (var pair in alreadyUsedPaths) {
                             if (pair.Value == path) {
-                                _instantiatedLineList[pair.Key].GetComponent<DrawPath>().ChangeWidthOfLine();
+                                instantiatedLineList[pair.Key].GetComponent<DrawPath>().ChangeWidthOfLine();
                             }
                         }
                     }

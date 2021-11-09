@@ -17,7 +17,7 @@ public class ClockManagement : MonoBehaviour {
     }
 
 
-    private void Awake() {
+    void Awake() {
         _clockManagementInstance = this;
     }
 

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class NavMeshAgentMovement : MonoBehaviour {
     private float _angularSpeed;
@@ -10,23 +11,21 @@ public class NavMeshAgentMovement : MonoBehaviour {
     private Vector3[] _path;
     private Transform _transform;
 
+    public GameObject lineObject;
 
-    private void Start() {
+    void Start() {
         _transform = this.GetComponent<Transform>();
-        _movementSpeed = 1f;
-        _angularSpeed  = 0.1f;
-        _avoidDistance = 2f;
     }
 
-
-    private void Update() {
+    void Update() {
         if(_path != null && _path.Length > 0 && !DestinationReached()) {
-            if(TargetReached()) {
+            if(TargetReached() || NextVisible()) {
                 _pathIndex++;
                 if(!DestinationReached()) {
                     _actualTarget = _path[_pathIndex];
                 }
             }
+            LookAhead();
             Steer();
             Move();
             _movementSpeed = 1f;
@@ -34,12 +33,11 @@ public class NavMeshAgentMovement : MonoBehaviour {
         
     }
 
-
     private bool TargetReached() {
         float distance = (_transform.position.x - _actualTarget.x) * (_transform.position.x - _actualTarget.x) +
                          (_transform.position.y - _actualTarget.y) * (_transform.position.y - _actualTarget.y) + 
                          (_transform.position.z - _actualTarget.z) * (_transform.position.z - _actualTarget.z);
-        if(distance < 9) {
+        if(distance < 25) {
             return true;
         } else {
             return false;
@@ -56,36 +54,61 @@ public class NavMeshAgentMovement : MonoBehaviour {
         }
     }
 
-
     private void Move() {
         _transform.forward += (_actualTarget - _transform.position) * _angularSpeed;
         _transform.position += _transform.forward * _movementSpeed;
     }
 
     private void Steer() {
-        int critCounter = 0;
         float rotationWidth = 0;
-
-        if(Physics.Raycast(_transform.position, Quaternion.Euler(0,-45,0) * _transform.forward, _avoidDistance, 1)) {
-            rotationWidth += 1;
+        int collisions = 0;
+        
+        for(float i = -5; i<=5; i++) {
+            if(Physics.Raycast(_transform.position, Quaternion.Euler(0,i*18,0) * _transform.forward, _avoidDistance, 1)) {
+                collisions++;
+                if(i<0) {
+                    rotationWidth += (-18+i);
+                } else {
+                    rotationWidth += -(18-i);
+                }
+            }
         }
-        if(Physics.Raycast(_transform.position, Quaternion.Euler(0,-15,0) * _transform.forward, _avoidDistance, 1)) {
-            rotationWidth += 2;
-            critCounter += 1;
-        }
-        if(Physics.Raycast(_transform.position, Quaternion.Euler(0,15,0) * _transform.forward, _avoidDistance, 1)) {
-            rotationWidth -= 2;
-            critCounter += 1;
-        }
-        if(Physics.Raycast(_transform.position, Quaternion.Euler(0,45,0) * _transform.forward, _avoidDistance, 1)) {
-            rotationWidth -= 1;
-        }
-
-        if((critCounter >= 2) && (Physics.Raycast(_transform.position, _transform.forward, _avoidDistance, 1<<1))) { //obstacels in way, no space left and right 
-            _movementSpeed = 0;
+        if(collisions < 3) {
+            _transform.forward = Quaternion.Euler(0,rotationWidth*5f,0) * _transform.forward; //adjust looking direction
         } else {
-            _transform.forward = Quaternion.Euler(0,rotationWidth*30f,0) * _transform.forward;
+            _movementSpeed = 0.5f;
         }
+
+        if(Physics.Raycast(_transform.position, _transform.forward, _avoidDistance, 2)) { // Obstacels in way, dont walk into them
+            _movementSpeed = 0.1f;
+        }
+    }
+
+    private void LookAhead() {
+        if(Physics.Raycast(_transform.position, _actualTarget - _transform.position, 20, 1<<6)) { // layer 6 for navmeshobstacles
+            NavMeshPath path = new UnityEngine.AI.NavMeshPath();
+            GameObject instantiatedLine = null;
+            NavMesh.CalculatePath(_transform.position, _destination, 1, path);
+            SetPath(path.corners);
+            
+            if(!SpawnController.SpawnControllerInstance.alreadyUsedPaths.ContainsValue(path)) {
+                instantiatedLine = (GameObject)Instantiate(lineObject);
+                instantiatedLine.GetComponent<DrawPath>().DrawPathOnFloor(path.corners);
+                SpawnController.SpawnControllerInstance.alreadyUsedPaths.Add(SpawnController.SpawnControllerInstance.pathID, path);
+                SpawnController.SpawnControllerInstance.instantiatedLineList.Add(SpawnController.SpawnControllerInstance.pathID, instantiatedLine);
+                SpawnController.SpawnControllerInstance.pathID++;
+            } else {
+                foreach (var pair in SpawnController.SpawnControllerInstance.alreadyUsedPaths) {
+                    if (pair.Value == path) {
+                        SpawnController.SpawnControllerInstance.instantiatedLineList[pair.Key].GetComponent<DrawPath>().ChangeWidthOfLine();
+                    }
+                }
+            }
+        }
+    }
+
+    private bool NextVisible() {
+        return false;
     }
 
     public void SetPath(Vector3[] path) {
@@ -97,8 +120,9 @@ public class NavMeshAgentMovement : MonoBehaviour {
         }
     }
 
-
-    public void SetSpeed(float speed) {
-        _movementSpeed = speed;
+    public void SetPersonality(float[] personality) { // We could implement that in the student initialisation
+        this._movementSpeed = personality[0];
+        this._angularSpeed = personality[1];
+        this._avoidDistance = personality[2];
     }
 }

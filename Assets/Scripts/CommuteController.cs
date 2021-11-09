@@ -37,6 +37,7 @@ class CommuteController : MonoBehaviour {
             
             AddLecturesToStudents();
             AddLunch();
+            FindSpawn();
             GameManager.GameManagerInstance.UpdateGameState(GameState.RunSimulation);
         }
     }
@@ -133,9 +134,11 @@ class CommuteController : MonoBehaviour {
                 }
             }
 
+            
             if(noLunch) {
                 continue;
             }
+            
             
             int lunchDuration = lunch.GetEndInMinutes() - lunch.GetStartInMinutes();
             if(lunchDuration >= 45 && !noLunch) {
@@ -151,6 +154,21 @@ class CommuteController : MonoBehaviour {
                 if(notInserted) {
                     student.lectureList.Add(lunch);
                 }
+            }
+        }
+    }
+
+    private void FindSpawn() {
+        int[] freeSlots = new int[5]{2000, 2000, 2000, 2000, 2000};
+        int spawnIndex = 0;
+        foreach(Student student in _studentList) {
+            if(freeSlots[spawnIndex] == 0) {
+                spawnIndex++;
+            }
+            student.SetSpawnID(80 + spawnIndex);
+            freeSlots[spawnIndex]--;
+            if(freeSlots[spawnIndex] < 0) {
+                throw new System.Exception("Something went wrong...");
             }
         }
     }
