@@ -76,14 +76,26 @@ class SpawnController : MonoBehaviour {
 
             foreach (Student student in _studentList) {
                 if(student.check(gameTime) == 1) {
+                    GameObject startDoor;
+                    GameObject endDoor;
+
                     string[] routePoints = student.RoutePoints();
 
                     if(routePoints[0] == routePoints[1]) {
                         continue;
                     }
 
-                    GameObject startDoor = FindDoor(routePoints[0]);
-                    GameObject endDoor = FindDoor(routePoints[1]);
+                    if(routePoints[0] == "Spawn") {
+                        startDoor = GameObject.Find("SpawnPoint (" + student.GetSpawnID() + ")");
+                    } else {
+                        startDoor = FindDoor(routePoints[0]);
+                    }
+
+                    if(routePoints[1] == "Spawn") {
+                        endDoor = GameObject.Find("SpawnPoint (" + student.GetSpawnID() + ")");
+                    } else {
+                        endDoor = FindDoor(routePoints[1]);
+                    }
 
                     Vector3 spawnPoint = UnityEngine.Random.insideUnitSphere * 30f + startDoor.transform.position;
                     NavMeshHit hit;
@@ -96,6 +108,7 @@ class SpawnController : MonoBehaviour {
                     int endIndex = NameToIndex(endDoor.name);
                     NavMeshPath path = _pathList[startIndex, endIndex];
 
+                    instantiatedAgent.GetComponent<NavMeshAgentMovement>().SetPersonality(new float[]{student.GetSpeed(), 0.04f, 4f});
                     instantiatedAgent.GetComponent<NavMeshAgentMovement>().SetPath(path.corners);
                     
                     if(!_alreadyUsedPaths.ContainsValue(path)) {

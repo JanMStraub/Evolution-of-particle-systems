@@ -14,18 +14,17 @@ public class Student {
     private List<GameObject> _doorsWithinCurrentComplex = new List<GameObject>();
     private bool _currentlyEnRoute = false;
     private bool _dayFinished = false;
-
-    [SerializeField] private Vector3 _spawnPoint;
+    private int _spawnID;
 
     public int _nextAppointment;
+
     public List<Lecture> lectureList = new List<Lecture>();
 
 
-    public Student(int id, float size, float speed, Vector3 spawnPoint) {
+    public Student(int id, float size, float speed) {
         _id = id;
         _size = size;
         _speed = speed;
-        _spawnPoint = spawnPoint;
         _latestLectureEnding = 0;
 
     }
@@ -49,6 +48,16 @@ public class Student {
         else {
             this._latestLectureEnding = newEnd;
         }
+    }
+
+
+    public int GetSpawnID() {
+        return _spawnID;
+    }
+
+
+    public void SetSpawnID(int sid) {
+        this._spawnID = sid;
     }
 
 
@@ -99,11 +108,6 @@ public class Student {
 
     public float GetSpeed() {
         return _speed;
-    }
-
-
-    public Vector3 GetSpawnPoint() {
-        return _spawnPoint;
     }
 
 
