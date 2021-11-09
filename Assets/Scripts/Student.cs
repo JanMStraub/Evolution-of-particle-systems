@@ -11,6 +11,8 @@ public class Student {
     private bool _currentlyEnRoute = false;
     private bool _dayFinished = false;
     private int _spawnID;
+    private float _size;
+    private float _speed;
 
     public int _nextAppointment;
 
@@ -93,6 +95,10 @@ public class Student {
 
     public int GetLectureIndex() {
         return _lectureIndex;
+    }
+
+    public float GetSpeed() {
+        return _speed;
     }
 
 

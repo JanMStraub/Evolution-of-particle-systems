@@ -5,6 +5,8 @@ class StudentInitialisation : MonoBehaviour {
     private int _numberOfStudents = 10000;
     private static StudentInitialisation _studentInitialisationInstance;
 
+    [SerializeField] private Student[] _studentList;
+
 
     private void Awake() {
         _studentInitialisationInstance = this;
