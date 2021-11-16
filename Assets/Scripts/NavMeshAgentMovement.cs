@@ -26,7 +26,7 @@ public class NavMeshAgentMovement : MonoBehaviour {
                 }
             }
             LookAhead();
-            Steer();
+            //Steer();
             Move();
             _movementSpeed = 1f;
         }

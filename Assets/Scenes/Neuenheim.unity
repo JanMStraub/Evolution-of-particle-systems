@@ -1496,6 +1496,7 @@ MonoBehaviour:
   agent: {fileID: 458701480}
   lineObject: {fileID: 157148362}
   doorsParent: {fileID: 1959119915}
+  pathID: 0
 --- !u!4 &271035690
 Transform:
   m_ObjectHideFlags: 0
@@ -2806,7 +2807,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 458701480}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 1
   m_Height: 2
   m_Direction: 1

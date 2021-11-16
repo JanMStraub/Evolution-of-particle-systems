@@ -28,7 +28,7 @@ public class ClockManagement : MonoBehaviour {
     }
 
 
-    private void FixedUpdate() {
+    private void Update() {
         if (_currentTime >= 1440) {
             _currentTime = 0;
         }
