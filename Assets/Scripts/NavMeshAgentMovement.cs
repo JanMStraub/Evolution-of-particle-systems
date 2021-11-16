@@ -15,6 +15,7 @@ public class NavMeshAgentMovement : MonoBehaviour {
     public bool avoidEachOther;
 
     void Start() {
+        avoidEachOther = SimulationSettings.agentAvoidance;
         _transform = this.GetComponent<Transform>();
         if(!avoidEachOther) {
             this.GetComponent<Collider>().enabled = false;
@@ -30,7 +31,6 @@ public class NavMeshAgentMovement : MonoBehaviour {
                 }
             }
             LookAhead();
-            //Steer();
             if(avoidEachOther) {
                 Steer();
             }

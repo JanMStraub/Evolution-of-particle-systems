@@ -17,4 +17,10 @@ public class SettingsMenu : MonoBehaviour {
         SimulationSettings.coronaSimulation = true;
         Debug.Log(SimulationSettings.coronaSimulation);
     }
+
+
+    public void SetAvoidance(bool agentAvoidance) {
+        SimulationSettings.agentAvoidance = agentAvoidance;
+        Debug.Log(SimulationSettings.agentAvoidance);
+    }
 }
