@@ -12,9 +12,13 @@ public class NavMeshAgentMovement : MonoBehaviour {
     private Transform _transform;
 
     public GameObject lineObject;
+    public bool avoidEachOther;
 
     void Start() {
         _transform = this.GetComponent<Transform>();
+        if(!avoidEachOther) {
+            this.GetComponent<Collider>().enabled = false;
+        }
     }
 
     void Update() {
@@ -27,6 +31,9 @@ public class NavMeshAgentMovement : MonoBehaviour {
             }
             LookAhead();
             //Steer();
+            if(avoidEachOther) {
+                Steer();
+            }
             Move();
             _movementSpeed = 1f;
         }

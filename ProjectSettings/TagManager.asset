@@ -25,6 +25,7 @@ TagManager:
   - 229
   - ComplexController
   - 501
+  - Obstacle
   layers:
   - Default
   - TransparentFX

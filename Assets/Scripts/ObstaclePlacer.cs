@@ -30,8 +30,10 @@ public class ObstaclePlacer : MonoBehaviour {
             Ray ray = _mainCamera.ScreenPointToRay(mousePosition);
             RaycastHit hit;
             if(Physics.Raycast(ray.origin, ray.direction, out hit, Mathf.Infinity)) {
-                Destroy((hit.collider).gameObject);
-                Debug.Log("Object has been placed");
+                if((hit.collider).gameObject.tag == "Obstacle") {
+                    Destroy((hit.collider).gameObject);
+                    Debug.Log("Object has been destroyed");
+                }
             }
         }
     }
