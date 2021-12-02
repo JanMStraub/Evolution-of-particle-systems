@@ -96,6 +96,22 @@ Populationen, Anzahl, Interessen etc.
 * Sensitivität auf Veränderungen
 * Extremszenarien/Notfälle
 
+## Meeting notes 02.12.2021 (German)
+* Was war alles nötig um das zu erreichen was wir wollten
+* Farben deutlicher machen
+* Bilder prüfen, ob sie selbsterklärend sind
+* Bushaltestellen kennzeichnen
+* Wegenetz einbauen, da es interessante Informationen sind
+* Farben deutlicher machen
+* Seite 14: Erklären wie genau wir darauf kamen, kleine Geschichte
+* Seite 15: Constrains aufzeigen, Modellgrenzen sagen
+* Seite 19: Erklären was Runde ist
+* Performance noch einbauen und wie wir uns warum entschieden haben
+* Einfach als Tabelle und dann Anzahl + Frames und wie das sich verändert
+* Es kommt darauf an eine Bewerung zu machen und ob wir glauben das die Simulation realistisch ist
+* Nochmal kritische Diskussionsgrundlage liefer und was kann man damit erziehlen
+* Symbole auf die Map
+
 ## Technologies 
 * Unity Version 2020.3.12f1
 

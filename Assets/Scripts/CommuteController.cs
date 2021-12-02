@@ -52,11 +52,11 @@ class CommuteController : MonoBehaviour {
         int studentIndex = 0;
 
         int[] freeSlots = new int[7];
-        foreach (Lecture lecture in _lectureList.lecture) { //count all available seats in all lectures, sorted to faculties
+        foreach (Lecture lecture in _lectureList.lecture) { // count all available seats in all lectures, sorted to faculties
             freeSlots[lecture.faculty] += lecture.number;
         }
 
-        int controllSlotNumber = 16736; //ist zwar falsch aber muss so
+        int controllSlotNumber = 16736; // ist zwar falsch aber muss so
         int actualSlotNumber = 16735;
         bool nothingChanged = false;
 
@@ -159,7 +159,8 @@ class CommuteController : MonoBehaviour {
     }
 
     private void FindSpawn() {
-        int[] freeSlots = new int[5]{2000, 2000, 2000, 2000, 2000};
+        int[] freeSlots = new int[10]{500, 1500, 4000, 1000, 500, 500, 500, 500, 500, 500};
+        // int[] freeSlots = new int[11]{400, 1500, 1500, 1000, 400, 400, 200, 400, 400, 400, 3400};
         int spawnIndex = 0;
         foreach(Student student in _studentList) {
             if(freeSlots[spawnIndex] == 0) {
