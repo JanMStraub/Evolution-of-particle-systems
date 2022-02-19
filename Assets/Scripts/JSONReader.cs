@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// Used to get lectures from Json file
 public class JSONReader : MonoBehaviour {
 
     public TextAsset textJSON;

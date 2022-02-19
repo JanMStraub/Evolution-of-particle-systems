@@ -22,6 +22,7 @@ public class Lecture {
     }
 
 
+    // Set start time as HH:MM from minutes
     public void SetStartFromMinutes(int minutes) {
         string startString = "";
         if((int)(minutes/60f) < 10) {
@@ -29,6 +30,7 @@ public class Lecture {
         }
         startString += (int)(minutes/60f);
         startString += ":";
+
         if((int)(minutes%60f) < 10) {
             startString += "0";
         }
@@ -37,6 +39,7 @@ public class Lecture {
     }
 
 
+    // Set endtime as HH:MM from minutes
     public void SetEndFromMinutes(int minutes) {
         string endString = "";
         if((int)(minutes/60f) < 10) {
@@ -44,6 +47,7 @@ public class Lecture {
         }
         endString += (int)(minutes/60f);
         endString += ":";
+        
         if((int)(minutes%60f) < 10) {
             endString += "0";
         }

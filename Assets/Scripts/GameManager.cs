@@ -11,9 +11,9 @@ public class GameManager : MonoBehaviour {
 
     public GameState state;
     public static event Action<GameState> onGameStateChanced;
-    public GameObject loadingScreen;
 
 
+    // Instance for reference during run time
     public static GameManager GameManagerInstance {
         get {return _gameManagerInstance;}
     }
@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour {
     }
     
 
-    // Managing GameStates 
+    // Used to load the simulation step by step to avoid race conditions
     public void UpdateGameState(GameState newState) {
 
         state = newState;

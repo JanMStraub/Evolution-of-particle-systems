@@ -8,6 +8,7 @@ class CommuteController : MonoBehaviour {
     private static CommuteController _commuteControllerInstance;
 
 
+    // Instance for reference during run time
     public static CommuteController CommuteControllerInstance {
         get {return _commuteControllerInstance;}
     }
@@ -52,11 +53,11 @@ class CommuteController : MonoBehaviour {
         int studentIndex = 0;
 
         int[] freeSlots = new int[7];
-        foreach (Lecture lecture in _lectureList.lecture) { // count all available seats in all lectures, sorted to faculties
+        foreach (Lecture lecture in _lectureList.lecture) { // Count all available seats in all lectures, sorted to faculties
             freeSlots[lecture.faculty] += lecture.number;
         }
 
-        int controllSlotNumber = 16736; // ist zwar falsch aber muss so
+        int controllSlotNumber = 16736;
         int actualSlotNumber = 16735;
         bool nothingChanged = false;
 
@@ -84,7 +85,7 @@ class CommuteController : MonoBehaviour {
 
             if(studentIndex == 0) { 
                 if(controllSlotNumber == actualSlotNumber) {
-                    nothingChanged = true; // break if all students cant get more lessons;
+                    nothingChanged = true; // Break if all students can not get more lessons
                 }
                 controllSlotNumber = actualSlotNumber;
             }
@@ -93,7 +94,7 @@ class CommuteController : MonoBehaviour {
         Debug.Log("free slots left: " + actualSlotNumber);
     }
 
-
+    // Search available lectures in lecture list
     private Lecture FindLecture(bool searchOwn, Student student) {
         for (int i=0; i<100; i++) { // 100 tries max to find a fitting lecture
 
@@ -116,8 +117,8 @@ class CommuteController : MonoBehaviour {
             Lecture lunch = new Lecture();
             lunch.faculty = 42;
             lunch.number = 10001;
-            lunch.start = "11:00"; // 660
-            lunch.end = "14:00"; // 840
+            lunch.start = "11:00"; // 660 minutes
+            lunch.end = "14:00"; // 840 minutes
 
             bool noLunch = false;
 
@@ -127,10 +128,10 @@ class CommuteController : MonoBehaviour {
                     break;
                 }
                 if(lecture.GetEndInMinutes() + 15 > lunch.GetStartInMinutes() && lecture.GetEndInMinutes() < 840) {
-                    lunch.SetStartFromMinutes(lecture.GetEndInMinutes() + 15); // if lecture reaches in lunchbreak
+                    lunch.SetStartFromMinutes(lecture.GetEndInMinutes() + 15); // If lecture reaches in lunchbreak
                 }
                 if(lecture.GetStartInMinutes() - 15 < lunch.GetEndInMinutes() && lecture.GetStartInMinutes() > 660) {
-                    lunch.SetEndFromMinutes(lecture.GetStartInMinutes()); // if lecture starts in lunchbreak
+                    lunch.SetEndFromMinutes(lecture.GetStartInMinutes()); // If lecture starts in lunchbreak
                 }
             }
 
@@ -158,9 +159,9 @@ class CommuteController : MonoBehaviour {
         }
     }
 
+    // Assign set number of students to each spawn point 
     private void FindSpawn() {
         int[] freeSlots = new int[10]{500, 1500, 4000, 1000, 500, 500, 500, 500, 500, 500};
-        // int[] freeSlots = new int[11]{400, 1500, 1500, 1000, 400, 400, 200, 400, 400, 400, 3400};
         int spawnIndex = 0;
         foreach(Student student in _studentList) {
             if(freeSlots[spawnIndex] == 0) {
@@ -169,7 +170,7 @@ class CommuteController : MonoBehaviour {
             student.SetSpawnID(80 + spawnIndex);
             freeSlots[spawnIndex]--;
             if(freeSlots[spawnIndex] < 0) {
-                throw new System.Exception("Something went wrong...");
+                throw new System.Exception("Something went wrong");
             }
         }
     }

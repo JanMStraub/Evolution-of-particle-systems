@@ -16,6 +16,7 @@ public class ObstaclePlacer : MonoBehaviour {
     
 
     void Update() {
+        // Place obstacle
         if(Input.GetButtonDown("Fire1")) {
             Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
             Ray ray = _mainCamera.ScreenPointToRay(mousePosition);
@@ -25,6 +26,8 @@ public class ObstaclePlacer : MonoBehaviour {
                 Debug.Log("Object placed");
             }
         }
+        
+        // Delete obstacle
         if(Input.GetButtonDown("Fire2")) {
             Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
             Ray ray = _mainCamera.ScreenPointToRay(mousePosition);

@@ -8,6 +8,7 @@ class StudentInitialisation : MonoBehaviour {
     [SerializeField] private Student[] _studentList;
 
 
+    // Instance for reference during run time
     private void Awake() {
         _studentInitialisationInstance = this;
     }

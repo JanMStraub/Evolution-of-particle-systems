@@ -20,6 +20,7 @@ class SpawnController : MonoBehaviour {
     public int pathID = 0;
 
 
+    // Instance for reference during run time
     public static SpawnController SpawnControllerInstance {
         get {return _spawnControllerInstance;}
     }
@@ -131,6 +132,7 @@ class SpawnController : MonoBehaviour {
     }
 
 
+    // Find door from its name
     private GameObject FindDoor(string tag) {
         GameObject[] doors = GameObject.FindGameObjectsWithTag(tag);
         float randomPosition = UnityEngine.Random.Range(0,doors.Length);
@@ -138,6 +140,7 @@ class SpawnController : MonoBehaviour {
     }
 
 
+    // Precalculate paths
     private void CalcPaths() {
         _pathList = new NavMeshPath[_doors.Count, _doors.Count];
         int pathcount = 0;
@@ -164,7 +167,8 @@ class SpawnController : MonoBehaviour {
     }
 
 
-    private int NameToIndex(string name) { // Get number of the door out of its name
+    // Get number of the door out of its name
+    private int NameToIndex(string name) { 
         string number = name.Split(' ')[1];
         number = number.Substring(1, number.Length - 2);
         return int.Parse(number);

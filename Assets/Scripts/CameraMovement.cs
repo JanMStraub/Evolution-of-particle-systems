@@ -28,7 +28,7 @@ public class CameraMovement : MonoBehaviour {
         _cameraStart = this.transform.position;
     }
 
- 
+    // Unity control functions
     private void Update() {
         if (Input.GetKey("w") && ((this.transform.position.z - _cameraStart.z) < _zMax)) {
             this.transform.position += (this.transform.up * _moveSpeed);

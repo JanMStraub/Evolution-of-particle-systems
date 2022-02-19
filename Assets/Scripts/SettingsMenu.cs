@@ -13,6 +13,7 @@ public class SettingsMenu : MonoBehaviour {
     }
 
 
+    // Not implemented yet
     public void SetCoronaSimulation() {
         SimulationSettings.coronaSimulation = true;
         Debug.Log(SimulationSettings.coronaSimulation);

@@ -5,17 +5,13 @@ using UnityEngine;
 public class Student {
 
     private int _faculty;
-    private int _latestLectureEnding; // in minutes
+    private int _latestLectureEnding; // In minutes
     private int _lectureIndex = 0;
-    private List<GameObject> _doorsWithinCurrentComplex = new List<GameObject>();
-    private bool _currentlyEnRoute = false;
-    private bool _dayFinished = false;
     private int _spawnID;
     private float _size;
     private float _speed;
 
     public int _nextAppointment;
-
     public List<Lecture> lectureList = new List<Lecture>();
 
 
@@ -53,31 +49,6 @@ public class Student {
     }
 
 
-    public void SetSize(float size) {
-        _size = size;
-    }
-
-
-    public void SetSpeed(float speed) {
-        _speed = speed;
-    } 
-
-
-    public void SetNextLecture() {
-        _lectureIndex++;
-    }
-
-
-    public void SetCurrentlyEnRoute(bool currentlyEnRoute) {
-        _currentlyEnRoute = currentlyEnRoute;
-    }
-
-
-    public void SetDayFinished() {
-        _dayFinished = true;
-    }
-
-
     public int GetFaculty(){
         return _faculty;
     }
@@ -87,72 +58,22 @@ public class Student {
         return _latestLectureEnding;
     }
 
-
-    public float GetStudentSpeed() {
-        return _speed;
-    }
-
-
-    public int GetLectureIndex() {
-        return _lectureIndex;
-    }
-
     public float GetSpeed() {
         return _speed;
     }
 
 
-    // Exception ?
-    public Lecture GetCurrentLecture() {
-        if (lectureList.Count != 0)
-            return lectureList[_lectureIndex];
-        else
-            throw new System.Exception("hab ich dich du Schlingel");
-    }
-
-
-    public Lecture GetNextLecture() {
-        if(_lectureIndex + 1 < lectureList.Count) {
-            return lectureList[_lectureIndex + 1];
-        } else if(_lectureIndex < lectureList.Count) {
-            return lectureList[_lectureIndex];
-        } else {
-            Debug.Log("this is silly");
-            return null;
-        }
-    }
-
-
-    public bool GetCurrentlyEnRoute() {
-        return _currentlyEnRoute;
-    }
-
-
-    public bool GetDayFinished() {
-        return _dayFinished;
-    }
-
-
-    public List<GameObject> GetDoorsWithinCurrentComplex() {
-        return _doorsWithinCurrentComplex;
-    }
-
-
-    public void EmptyCurrentLectureDoorList () {
-        _doorsWithinCurrentComplex.Clear();
-    }
-
-
+    // Get start and end of path
     public string[] RoutePoints() {
         string actualPosition = "";
         string nextPosition = "";
-        if(_lectureIndex == 0) { //first lecture, start from spawnpoint
+        if(_lectureIndex == 0) { // First lecture, start from spawnpoint
             actualPosition = "Spawn";
             nextPosition = "" + lectureList[_lectureIndex].building;
-        } else if(_lectureIndex == lectureList.Count) { //last lecture, go back to spawnpoint
+        } else if(_lectureIndex == lectureList.Count) { // Last lecture, go back to spawnpoint
             actualPosition = "" + lectureList[_lectureIndex-1].building;
             nextPosition = "Spawn";
-            _lectureIndex = - 2; //day over
+            _lectureIndex = - 2; // Day over
         } else {
             actualPosition = "" + lectureList[_lectureIndex-1].building;
             nextPosition = "" + lectureList[_lectureIndex].building;
@@ -161,19 +82,20 @@ public class Student {
         _lectureIndex++;
 
         if(_lectureIndex >= lectureList.Count) {
-            _nextAppointment = lectureList[_lectureIndex-1].GetEndInMinutes() + 5; //the bell does not dismiss you, i do
+            _nextAppointment = lectureList[_lectureIndex-1].GetEndInMinutes() + 5;
         } else if(_lectureIndex > 0) {
-            _nextAppointment = lectureList[_lectureIndex].GetStartInMinutes() - 15; //but sit on your place when lecture starts
+            _nextAppointment = lectureList[_lectureIndex].GetStartInMinutes() - 15;
         }
 
         return new string[]{actualPosition, nextPosition};
     }
 
 
+    // Checks in-game time to evaluate its actions
     public int check(int time) {
 
         if(_lectureIndex < 0) {
-            return 2; //day over, no more checks necessary
+            return 2; // Day over, no more checks necessary
         }
 
         if(_nextAppointment == 0) {
@@ -181,9 +103,9 @@ public class Student {
         }
 
         if(time > _nextAppointment) {
-            return 1; //have to go anywhere
+            return 1; // Have to go anywhere
         }
 
-        return 0; //still doing something
+        return 0; // Still doing something
     }
 }

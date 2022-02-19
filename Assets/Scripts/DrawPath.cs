@@ -6,10 +6,12 @@ class DrawPath : MonoBehaviour {
 
     public LineRenderer line;
 
+
     public void DrawPathOnFloor(Vector3[] path) {
         this.line.positionCount = path.Length;
         this.line.SetPositions(path);
     }
+
 
     public void ChangeWidthOfLine() {
         this.line.widthMultiplier = _width;
