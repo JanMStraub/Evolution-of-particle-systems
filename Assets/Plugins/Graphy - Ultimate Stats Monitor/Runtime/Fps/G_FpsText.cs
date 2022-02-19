@@ -93,6 +93,7 @@ namespace Tayx.Graphy.Fps
                 // Reset variables
                 m_deltaTime = 0f;
                 m_frameCount = 0;
+
             }
         }
 
